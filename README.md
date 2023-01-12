@@ -15,3 +15,5 @@ As a busy parent, I want to be able to create and assign tasks to my children, a
 As a team leader, I want to be able to assign tasks to my team members and set reminders for them to complete the tasks, so that the project can stay on schedule.
 
 As a person with a busy schedule, I want to be able to set up recurring tasks, so that I can be reminded to do regular activities like taking medication, paying bills, and doing exercise.
+
+As a workout enthusiast, I want to be able to plan out my workouts so that I won't have to constantly reference alternatives websites, reducing my time in the gym.

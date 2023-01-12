@@ -6,14 +6,13 @@ This is my capstone project for Nashville Software School's Software Engineering
 
 User stories:
 
-As a busy college student, I want to be able to easily add tasks and set reminders for them on my phone, so that I can stay on top of my assignments and deadlines.
+As someone who does spends a lot of time away from the computer, I would like to be able to plan out my tasks ahead of time to keep track of my day.
 
-As a working professional, I want to be able to organize and prioritize my tasks, and receive text message reminders for important meetings and deadlines, so that I can stay on top of my workload.
+As a busy individual who has scheduled my day with RemindMe, I want to be able to receive text message reminders whenever I have something coming up.
 
-As a busy parent, I want to be able to create and assign tasks to my children, and set reminders for them to complete their chores so I can perform my own tasks.
+As a working professional, I want to be able to invite my co-workers to participate in a to-do list so we can manage our workload for the day.
 
-As a team leader, I want to be able to assign tasks to my team members and set reminders for them to complete the tasks, so that the project can stay on schedule.
+As a team leader using RemindMe, I want my employees to receive SMS notifications when something important during the day is coming up.
 
 As a person with a busy schedule, I want to be able to set up recurring tasks, so that I can be reminded to do regular activities like taking medication, paying bills, and doing exercise.
 
-As a workout enthusiast, I want to be able to plan out my workouts so that I won't have to constantly reference alternatives websites, reducing my time in the gym.

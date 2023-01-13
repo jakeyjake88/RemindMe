@@ -2,6 +2,8 @@
 People have busy lives, and find it easy to lose track of the things they need to accomplish on a day-to-day basis. I want to solve this problem by developing a web-application that allows individuals to
 create a task manager, add tasks, and set reminders - as well as collaborate with others who may partake in their daily schedule.
 
+<h2> 1.1 <a href="https://www.figma.com/file/AWzYFwfgcWTkbYy00JJg7N/Untitled?node-id=0%3A1&t=3N4ohA8MC7kbgAWQ-1"> Wireframe </a></h2>
+
 <h1> 2. Top Questions to Resolve </h1>
 1. How will I store, query, and get tasks?
 

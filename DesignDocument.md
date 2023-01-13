@@ -49,3 +49,64 @@ create a task manager, add tasks, and set reminders - as well as collaborate wit
 * May want creators to have the ability to prioritize certain tasks
 
 * May want to allow for email reminders for tasks
+
+<h1> 5. Architecture Overview </h1>
+
+<b> Pages: </b>
+
+* Homepage (<i>Login/Create account pop-ups)
+
+* Profile page (Overview of task managers)
+
+* Task Manager Page 
+
+<b> Tables: </b>
+
+* TaskManager table
+* User Table
+* Task table
+
+<b> API: </b>
+
+* Gets the TaskManager
+* Gets the tasks
+* Adds tasks
+* Adds TaskManager
+* Create user
+* Add user to TaskManager
+* Remove Tasks
+* Remove TaskManager
+
+
+<h1> 6. API </h1>
+<h2> 6.1. Public Models </h2>
+
+*`TaskManagerModel`*
+
+- id : String
+
+- taskManagerName : String
+
+- tasks : Set<Task>
+
+*`TaskModel`*
+
+- id : String
+
+- taskName : String
+
+- taskDueDate : String / LocalDateTime *need clarification*
+
+*`UserModel`*
+
+- id : String
+
+- userName : String
+
+- isOwner : boolean
+
+- phoneNumber : String
+
+
+
+

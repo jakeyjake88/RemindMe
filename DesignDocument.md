@@ -107,6 +107,35 @@ create a task manager, add tasks, and set reminders - as well as collaborate wit
 
 - phoneNumber : String
 
-
+  <h2> 6.2. Get TaskManager </h2>
+  
+  * Accepts GET requests to /taskmanager/:taskmanagerid
+  * Accepts a task manager id and returns the corresponding TaskManager
+  
+  <h2> 6.3. Add Task to TaskManager </h2>
+  
+  *Accepts PUT requests to /taskmanager/taskManagerId/taskid
+  *Accepts data to add an additional task to the specified Taskmanager
+  *Returns the added task
+  
+  <h2> 6.4 Get Task </h2>
+  * Accepts GET requests to /taskmanager/taskmanagerid/taskid
+  * Accepts a taskmanagerId and a taskId to return the corresponding taskmodel
+  
+  <h2> 6.5 Update Task </h2>
+  * Accepts PUT requests to taskmanager/taskmanagerid/taskid
+  * Takes a task and replaces it with the updated version, returning the new taskmodel
+  
+  <h2> 6.6 GetUser </h2>
+  * Accepts GET requests to /user/userId
+  * Returns the corresponding usermodel
+  
+  <h2> 6.7 CreateUser </h2>
+  * Accepts POST requests to /user/
+  * Accepts data to add a new user with a provided first name, last name, and phone number - creating a user ID and returning the new user.
+  
+  
+  
+  
 
 

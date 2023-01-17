@@ -106,6 +106,10 @@ create a task manager, add tasks, and set reminders - as well as collaborate wit
 - isOwner : boolean
 
 - phoneNumber : String
+  
+  <h2> 6.1.1. Create TaskManager</h2>
+  * Accepts POST requests to /taskmanager/
+  * Creates a new TaskManager with a corresponding ID
 
   <h2> 6.2. Get TaskManager </h2>
   

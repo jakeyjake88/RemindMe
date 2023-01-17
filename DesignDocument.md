@@ -114,9 +114,9 @@ create a task manager, add tasks, and set reminders - as well as collaborate wit
   
   <h2> 6.3. Add Task to TaskManager </h2>
   
-  *Accepts PUT requests to /taskmanager/taskManagerId/taskid
-  *Accepts data to add an additional task to the specified Taskmanager
-  *Returns the added task
+  * Accepts PUT requests to /taskmanager/taskManagerId/taskid
+  * Accepts data to add an additional task to the specified Taskmanager
+  * Returns the added task
   
   <h2> 6.4 Get Task </h2>
   * Accepts GET requests to /taskmanager/taskmanagerid/taskid

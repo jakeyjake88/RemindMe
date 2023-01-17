@@ -22,6 +22,13 @@ create a task manager, add tasks, and set reminders - as well as collaborate wit
 
 <b>U5. </b> As a person with a busy schedule, I want to be able to set up recurring tasks, so that I can be reminded to do regular activities like taking medication, paying bills, and doing exercise.
 
+<b>U6. </b> As someone interested in RemindMe, I want to be able to securely create an account and keep track of my username and password.
+
+<b>U7. </b> As a RemindMe user, I want to be able to sign up for SMS texts for certain reminders.
+
+<b>U8. </b> As a web user, I want to be able to comfortably utilize this application from the comfort of my PC.
+
+
 <h1> 4. Scope </h1>
 <h2> 4.1. In Scope</h2>
 

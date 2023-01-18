@@ -1,0 +1,37 @@
+@startuml Class Diagram
+class CreateTaskManagerActivity
+class CreateTaskManagerRequest
+class CreateTaskManagerResult
+class GetTaskManagerActivity
+class GetTaskManagerRequest
+class GetTaskManagerResult
+class AddTaskActivity
+class AddTaskRequest
+class AddTaskResult
+class GetTaskActivity 
+class GetTaskRequest 
+class GetTaskResult 
+class DeleteTaskActivity
+class DeleteTaskRequest
+class DeleteTaskResult
+class CreateUserActivity
+class CreateUserRequest
+class CreateUserResult
+class GetUserActivity
+class GetUserRequest
+class GetUserResult
+class TaskManagerDao
+class TaskDao 
+class UserDao 
+
+TaskManagerDao --> AddTaskActivity
+TaskManagerDao --> CreateTaskManagerActivity
+TaskManagerDao --> GetTaskManagerActivity
+TaskManagerDao --> DeleteTaskActivity
+TaskDao --> AddTaskActivity
+TaskDao --> DeleteTaskActivity
+UserDao --> CreateUserActivity
+UserDao --> GetUserActivity
+
+@enduml
+

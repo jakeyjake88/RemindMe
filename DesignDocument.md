@@ -105,7 +105,7 @@ Additional AWS: Cognito, Amazon SNS
 
 - taskName : String
 
-- taskDueDate : String / LocalDateTime *need clarification*
+- taskDueDate : String / LocalDateTime
 
 *`UserModel`*
 

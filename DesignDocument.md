@@ -5,6 +5,8 @@ create a task manager, add tasks, and set reminders - as well as collaborate wit
 <h2> 1.1 <a href="https://www.figma.com/file/AWzYFwfgcWTkbYy00JJg7N/Untitled?node-id=0%3A1&t=3N4ohA8MC7kbgAWQ-1"> Wireframe </a></h2>
 draft PUML https://github.com/jakeyjake88/RemindMe/blob/main/draftCD.puml
 
+Additional AWS: Cognito, Amazon SNS
+
 <h1> 2. Top Questions to Resolve </h1>
 1. How will I store, query, and get tasks?
 

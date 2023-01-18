@@ -134,10 +134,10 @@ create a task manager, add tasks, and set reminders - as well as collaborate wit
   * Accepts GET requests to /taskmanager/taskmanagerid/taskid
   * Accepts a taskmanagerId and a taskId to return the corresponding taskmodel
   
-  <h2> 6.5 Update Task </h2>
+  <h2> 6.5 Delete Task </h2>
   
-  * Accepts PUT requests to taskmanager/taskmanagerid/taskid
-  * Takes a task and replaces it with the updated version, returning the new taskmodel
+  * Accepts DELETE requests to taskmanager/taskmanagerid/taskid
+  * Takes a task and removes it from the TaskManager. Returns the deleted Task
   
   <h2> 6.6 GetUser </h2>
   

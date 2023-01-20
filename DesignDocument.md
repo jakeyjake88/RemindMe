@@ -17,19 +17,21 @@ Additional AWS: Cognito, Amazon SNS
 <h1> 3. Use Cases </h1>
 <b>U1.</b> As someone who does spends a lot of time away from the computer, I would like to be able to plan out my tasks ahead of time to keep track of my day.
 
-<b>U2.</b> As a busy individual who has scheduled my day with RemindMe, I want to be able to receive text message reminders whenever I have something coming up.
+<b>U2.</b> As someone interested in RemindMe, I want to be able to securely create an account and keep track of my username and password.
 
 <b>U3.</b> As a working professional, I want to be able to invite my co-workers to participate in a to-do list so we can manage our workload for the day.
 
-<b>U4.</b> As a team leader using RemindMe, I want my employees to receive SMS notifications when something important during the day is coming up.
+<b>U4.</b> As a user, I want to be able to see only 10 tasks per page on my daily to-do list.
 
-<b>U5. </b> As a person with a busy schedule, I want to be able to set up recurring tasks, so that I can be reminded to do regular activities like taking medication, paying bills, and doing exercise.
+<b>U5. </b> As a user, I want to be able to see 15 tasks per page on my all-time tasks list.
 
-<b>U6. </b> As someone interested in RemindMe, I want to be able to securely create an account and keep track of my username and password.
+<b> U6. </b> As a user, I want to be able to add a new task using the date and time for which the task is due.
 
 <b>U7. </b> As a RemindMe user, I want to be able to sign up for SMS texts for certain reminders.
 
 <b>U8. </b> As a web user, I want to be able to comfortably utilize this application from the comfort of my PC.
+
+<b>U9. </b> As a person with a busy schedule, I want to be able to set up recurring tasks, so that I can be reminded to do regular activities like taking medication, paying bills, and doing exercise.
 
 
 <h1> 4. Scope </h1>

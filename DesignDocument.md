@@ -155,6 +155,8 @@ Additional AWS: Cognito, Amazon SNS
 
 - dueDate : LocalDateTime
 
+- description : String
+
 - isActive : boolean
   
 

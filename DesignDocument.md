@@ -158,7 +158,42 @@ Additional AWS: Cognito, Amazon SNS
   * Accepts POST requests to /user/
   * Accepts data to add a new user with a provided first name, last name, and phone number - creating a user ID and returning the new user.
   
+  <h2> 6.8 Tables </h1>
   
+  *`TaskManager Table*
+
+- id : String
+
+- taskManagerName : String
+
+- owner : User
+
+*`Task Table`*
+
+- id : String
+
+- taskName : String
+
+- taskDueDate : String / LocalDateTime
+  
+*`All Tasks Table`*
+  
+  - id : String
+  
+  - taskName : String
+  
+  - taskDueDate : LocalDateTime
+  
+  - managerId : String
+  
+
+*`User Table`*
+
+- id : String
+
+- userName : String
+
+- phoneNumber : String
   
   
 

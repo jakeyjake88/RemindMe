@@ -142,7 +142,7 @@ Additional AWS: Cognito, Amazon SNS
 
 - owner : User
   
-- 
+- allTasks : Set<Task>
   
 
 *`Task Table`*

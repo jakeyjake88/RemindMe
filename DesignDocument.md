@@ -141,9 +141,7 @@ Additional AWS: Cognito, Amazon SNS
 - taskManagerName : String
 
 - owner : User
-  
-- allTasks : Set<Task>
-  
+    
 
 *`Task Table`*
 

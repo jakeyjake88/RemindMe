@@ -8,3 +8,6 @@
  */
 
 rootProject.name = 'RemindMe'
+include 'RemindMeModule'
+include 'Application'
+

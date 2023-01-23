@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91efdb5c-1093-4af2-b647-5a2142554d30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RemindMeModule/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RemindMe/src/main/dependencies/DaoModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/dependencies/DaoModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RemindMe/src/main/models/TaskModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/models/TaskModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/RemindMeModule/RemindMe.RemindMeModule.test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/main/dependencies/DynamoDbClientProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/dependencies/DaoModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/dependencies/DaoModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/models/TaskModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/models/TaskModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,17 +63,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "/home/jake/workspace/jpcapstone/RemindMe",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jake/workspace/jpcapstone/RemindMe&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/RemindMeModule" />

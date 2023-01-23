@@ -56,7 +56,7 @@ public class TaskModel {
 
         TaskModel that = (TaskModel) o;
 
-        return taskId == that.taskId && Objects.equals(taskManagerId, that.taskManagerId)
+        return Objects.equals(taskId, that.taskId) && Objects.equals(taskManagerId, that.taskManagerId)
         && Objects.equals(name, that.name) && Objects.equals(dueDate, that.dueDate)
         && Objects.equals(description, that.description) && Objects.equals(isActive, that.isActive);
     }

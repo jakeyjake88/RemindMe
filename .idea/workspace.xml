@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91efdb5c-1093-4af2-b647-5a2142554d30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/main/remindme/activity/Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/main/remindme/dependency/DaoModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemindMe/src/main/activity/CreateUserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/activity/CreateUserActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemindMe/src/main/dependency/DaoModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/dependency/DaoModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemindMe/src/main/lambda/CreateUserLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/lambda/CreateUserLambda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/draftCD.puml" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/resources/draftCD.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/activity/CreateUserActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/dependency/DaoModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/lambda/CreateUserLambda.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,15 +45,15 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "11",
     "last_opened_file_path": "/home/jake/workspace/jpcapstone/RemindMe",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/RemindMeModule/resources" />
       <recent name="$PROJECT_DIR$/RemindMeModule" />
       <recent name="$PROJECT_DIR$/Application" />

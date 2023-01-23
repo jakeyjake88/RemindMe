@@ -136,24 +136,26 @@ Additional AWS: Cognito, Amazon SNS
   
  *`TaskManager Table`*
 
-- id : String //HashKey
-
-- taskManagerName : String
-
-- owner : User
+  - taskManagerId : String //HashKey
+  
+  - CreatorId : String
+  
+  - taskManagerName : String
+  
+  - isActive : boolean
     
 
 *`Task Table`*
 
-- id : String //HashKey
-
-- taskName : String
-
-- taskDueDate : String / LocalDateTime //SortKey
+- taskId : String //HashKey
   
-- managerId : String
+- taskManagerId : String //SortKey
   
+- name : String
 
+- dueDate : LocalDateTime
+
+- isActive : boolean
   
 
 *`User Table`*

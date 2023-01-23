@@ -19,19 +19,21 @@ Additional AWS: Cognito, Amazon SNS
 
 <b>U2.</b> As someone interested in RemindMe, I want to be able to securely create an account and keep track of my username and password.
 
-<b>U3.</b> As a working professional, I want to be able to invite my co-workers to participate in a to-do list so we can manage our workload for the day.
+<b>U3.</b> As a user, I want to be able to create a TaskManager assigned to my userid.
 
-<b>U4.</b> As a user, I want to be able to see only 10 tasks per page on my daily to-do list.
+<b> U4. </b> As a user, I want to be able to add a new task using the date and time for which the task is due.
 
-<b>U5. </b> As a user, I want to be able to see 15 tasks per page on my all-time tasks list.
+<b>U5.</b> As a working professional, I want to be able to invite my co-workers to participate in a to-do list so we can manage our workload for the day.
 
-<b> U6. </b> As a user, I want to be able to add a new task using the date and time for which the task is due.
+<b>U6.</b> As a user, I want to be able to see only 10 tasks per page on my daily to-do list.
 
-<b>U7. </b> As a RemindMe user, I want to be able to sign up for SMS texts for certain reminders.
+<b>U7. </b> As a user, I want to be able to see 15 tasks per page on my all-time tasks list.
 
-<b>U8. </b> As a web user, I want to be able to comfortably utilize this application from the comfort of my PC.
+<b>U8. </b> As a RemindMe user, I want to be able to sign up for SMS texts for certain reminders.
 
-<b>U9. </b> As a person with a busy schedule, I want to be able to set up recurring tasks, so that I can be reminded to do regular activities like taking medication, paying bills, and doing exercise.
+<b>U9. </b> As a web user, I want to be able to comfortably utilize this application from the comfort of my PC.
+
+<b>U10. </b> As a person with a busy schedule, I want to be able to set up recurring tasks, so that I can be reminded to do regular activities like taking medication, paying bills, and doing exercise.
 
 
 <h1> 4. Scope </h1>
@@ -53,6 +55,8 @@ Additional AWS: Cognito, Amazon SNS
 
 
 <h2> 4.2. Out of Scope</h2>
+
+* Allow users to receive SMS notifications
 
 * May want creators/users to customize the amount of texts/reminders they receive for each task
 
@@ -101,6 +105,8 @@ Additional AWS: Cognito, Amazon SNS
 
 - tasks : Set<Task>
 
+- owner : User
+
 *`TaskModel`*
 
 - id : String
@@ -114,8 +120,6 @@ Additional AWS: Cognito, Amazon SNS
 - id : String
 
 - userName : String
-
-- isOwner : boolean
 
 - phoneNumber : String
   

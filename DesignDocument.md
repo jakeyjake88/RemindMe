@@ -176,15 +176,7 @@ Additional AWS: Cognito, Amazon SNS
 
 - taskDueDate : String / LocalDateTime
   
-*`All Tasks Table`*
-  
-  - id : String
-  
-  - taskName : String
-  
-  - taskDueDate : LocalDateTime
-  
-  - managerId : String
+- managerId : String
   
 
 *`User Table`*

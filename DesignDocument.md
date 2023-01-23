@@ -96,32 +96,6 @@ Additional AWS: Cognito, Amazon SNS
 
 <h1> 6. API </h1>
 <h2> 6.1. Public Models </h2>
-
-*`TaskManagerModel`*
-
-- id : String
-
-- taskManagerName : String
-
-- tasks : Set<Task>
-
-- owner : User
-
-*`TaskModel`*
-
-- id : String
-
-- taskName : String
-
-- taskDueDate : String / LocalDateTime
-
-*`UserModel`*
-
-- id : String
-
-- userName : String
-
-- phoneNumber : String
   
   <h2> 6.1.1. Create TaskManager</h2>
   * Accepts POST requests to /taskmanager/
@@ -160,32 +134,37 @@ Additional AWS: Cognito, Amazon SNS
   
   <h2> 6.8 Tables </h1>
   
-  *`TaskManager Table*
+ *`TaskManager Table*
 
-- id : String
+- id : String //HashKey
 
 - taskManagerName : String
 
 - owner : User
+  
+- 
+  
 
 *`Task Table`*
 
-- id : String
+- id : String //HashKey
 
 - taskName : String
 
-- taskDueDate : String / LocalDateTime
+- taskDueDate : String / LocalDateTime //SortKey
   
 - managerId : String
   
 
+  
+
 *`User Table`*
 
-- id : String
+- id : String //HashKey
 
 - userName : String
 
-- phoneNumber : String
+- phoneNumber : String //SortKey
   
   
 

@@ -134,7 +134,7 @@ Additional AWS: Cognito, Amazon SNS
   
   <h2> 6.8 Tables </h1>
   
- *`TaskManager Table*
+ *`TaskManager Table`*
 
 - id : String //HashKey
 

@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91efdb5c-1093-4af2-b647-5a2142554d30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/main/models/UserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/main/dynamodb/TaskDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/main/dynamodb/models/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignDocument.md" beforeDir="false" afterPath="$PROJECT_DIR$/DesignDocument.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

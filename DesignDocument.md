@@ -147,9 +147,9 @@ Additional AWS: Cognito, Amazon SNS
 
 *`Task Table`*
 
-- taskId : String //HashKey
+- taskId : String //Sort key
   
-- taskManagerId : String //SortKey
+- taskManagerId : String //HashKey
   
 - name : String
 

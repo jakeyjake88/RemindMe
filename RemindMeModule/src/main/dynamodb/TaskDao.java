@@ -29,7 +29,7 @@ public class TaskDao {
         Task task = dynamoDBMapper.load(Task.class, taskManagerId, taskId);
         if (null == task) {
             throw new TaskNotFoundException(
-                    String.format("Could not find Task with TaskManagerId '%s' and TaskId %d"));
+                    "Could not find Task with TaskManagerId '%s' and TaskId %d");
         }
         return task;
     }

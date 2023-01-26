@@ -8,7 +8,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 LOG_DIR="$SCRIPT_DIR/../logs"
 LOG_FILE="$LOG_DIR/service.log"
 
-lambda=''
+com.nashss.se.remindme.lambda=''
 event=''
 debug=''
 
@@ -24,10 +24,10 @@ function die_if_empty() {
 }
 
 function parse_args() {
-  # get lambda function mame
+  # get com.nashss.se.remindme.lambda function mame
   die_if_empty "$1" "expected first argument to be the name of the lambda function"
 
-  lambda="$1"
+  com.nashss.se.remindme.lambda="$1"
   shift
 
   # Parse options

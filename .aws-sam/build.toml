@@ -5,7 +5,7 @@
 codeuri = "/home/jake/workspace/jpcapstone/RemindMe/RemindMeModule"
 runtime = "java11"
 architecture = "x86_64"
-handler = "lambda.GetTaskLambda::handleRequest"
+handler = "com.nashss.se.remindme.lambda.GetTaskLambda::handleRequest"
 manifest_hash = ""
 packagetype = "Zip"
 functions = ["RemindMeModule"]

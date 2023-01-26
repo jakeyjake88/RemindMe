@@ -2,6 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
   RemindMe
+
 Parameters:
   S3Bucket:
     Type: String
@@ -31,7 +32,7 @@ Globals:
 
 Resources:
 
-  GetNextMoveLambda:
+  RemindMeModule:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: RemindMeModule
@@ -47,5 +48,75 @@ Resources:
         RemindMeModule:
           Type: Api
           Properties:
-            Path: /taskmanager/{taskmanagerId/{taskid}
+            Path: /taskmanager/{taskmanagerId}/{taskid}
             Method: get
+
+  TaskManagerTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: "taskManagerId"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "taskManagerId"
+          KeyType: "HASH"
+      BillingMode: "PAY_PER_REQUEST"
+      TableName: "taskManager"
+
+    TaskTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: "taskId"
+            AttributeType: "S"
+          - AttributeName: "taskManagerId"
+            AttributeType: "S"
+        KeySchema:
+          - AttributeName: "taskId"
+            KeyType: "HASH"
+          - AttributeName: "taskManagerId"
+            KeyType: "RANGE"
+        BillingMode: "PAY_PER_REQUEST"
+        TableName: "tasks"
+        GlobalSecondaryIndexes:
+          - IndexName: "TaskManagerSearch"
+            KeySchema:
+              - AttributeName: "taskManagerId"
+                KeyType: "HASH"
+            Projection:
+              ProjectionType: "ALL"
+
+    AccessRole:
+      Type: AWS::IAM::Role
+      Properties:
+        ManagedPolicyArns:
+          - 'arn:aws:iam::aws:policy/service-role/AWSLambdaRole'
+          - 'arn:aws:iam::aws:policy/AWSLambdaExecute'
+        AssumeRolePolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - 'sts:AssumeRole'
+        Policies:
+          - PolicyName: 'AccessTaskManagerTable'
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action: dynamodb:*
+                  Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/taskManager"
+
+          - PolicyName: 'AccessTasksTable'
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action: dynamodb:*
+                  Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/tasks"
+                - Effect : Allow
+                  Action: dynamodb:*
+                  Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/tasks/index/*"

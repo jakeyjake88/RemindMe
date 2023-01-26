@@ -60,6 +60,10 @@ public class TaskModel {
         && Objects.equals(name, that.name) && Objects.equals(dueDate, that.dueDate)
         && Objects.equals(description, that.description) && Objects.equals(isActive, that.isActive);
     }
+    //CHECKSTYLE:OFF:Builder
+    public static Builder builder() {
+        return new Builder();
+    }
 
     @Override
     public int hashCode() {

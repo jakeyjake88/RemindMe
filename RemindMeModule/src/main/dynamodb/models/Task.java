@@ -1,9 +1,7 @@
 package dynamodb.models;
 
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import com.amazonaws.services.dynamodbv2.datamodeling.*;
+import converters.LocalDateTimeConverter;
 
 import java.time.LocalDateTime;
 
@@ -44,6 +42,7 @@ public class Task {
         this.name = name;
     }
 
+    @DynamoDBTypeConverted(converter = LocalDateTimeConverter.class)
     @DynamoDBAttribute(attributeName = "dueDate")
     public LocalDateTime getDueDate() {
         return dueDate;

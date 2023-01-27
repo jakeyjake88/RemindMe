@@ -22,6 +22,7 @@ public class TaskDao {
     }
 
     public Task getTask(String taskManagerId, String taskId) {
+        if (taskManagerId == null || taskId == null) throw new TaskNotFoundException("Nope");
         Task task = dynamoDBMapper.load(Task.class, taskManagerId, taskId);
         if (null == task) {
             throw new TaskNotFoundException(

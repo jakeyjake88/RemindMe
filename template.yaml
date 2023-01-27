@@ -48,7 +48,7 @@ Resources:
         RemindMeModule:
           Type: Api
           Properties:
-            Path: /taskmanager/{taskmanagerId}/{taskid}
+            Path: /taskmanager/{taskManagerId}/{taskId}
             Method: get
 
   TaskManagerTable:
@@ -72,9 +72,9 @@ Resources:
         - AttributeName: "taskManagerId"
           AttributeType: "S"
       KeySchema:
-        - AttributeName: "taskId"
-          KeyType: "HASH"
         - AttributeName: "taskManagerId"
+          KeyType: "HASH"
+        - AttributeName: "taskId"
           KeyType: "RANGE"
       BillingMode: "PAY_PER_REQUEST"
       TableName: "tasks"
@@ -98,7 +98,7 @@ Resources:
           - Effect: Allow
             Principal:
               Service:
-                - com.nashss.se.remindme.lambda.amazonaws.com
+                - lambda.amazonaws.com
             Action:
               - 'sts:AssumeRole'
       Policies:
@@ -107,16 +107,15 @@ Resources:
             Version: '2012-10-17'
             Statement:
               - Effect: Allow
-                Action: com.nashss.se.remindme.dynamodb:*
-                Resource: !Sub "arn:aws:com.nashss.se.remindme.dynamodb:${AWS::Region}:${AWS::AccountId}:table/taskManager"
-
+                Action: dynamodb:*
+                Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/taskManager"
         - PolicyName: 'AccessTasksTable'
           PolicyDocument:
             Version: '2012-10-17'
             Statement:
               - Effect: Allow
-                Action: com.nashss.se.remindme.dynamodb:*
-                Resource: !Sub "arn:aws:com.nashss.se.remindme.dynamodb:${AWS::Region}:${AWS::AccountId}:table/tasks"
+                Action: dynamodb:*
+                Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/tasks"
               - Effect : Allow
-                Action: com.nashss.se.remindme.dynamodb:*
-                Resource: !Sub "arn:aws:com.nashss.se.remindme.dynamodb:${AWS::Region}:${AWS::AccountId}:table/tasks/index/*"
+                Action: dynamodb:*
+                Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/tasks/index/*"

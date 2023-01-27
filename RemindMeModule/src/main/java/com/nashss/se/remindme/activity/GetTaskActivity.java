@@ -19,7 +19,7 @@ public class GetTaskActivity {
 
     public GetTaskResult handleRequest(final GetTaskRequest getTaskRequest) {
         String taskId = getTaskRequest.getTaskId();
-        String taskManagerId = getTaskRequest.getTaskManagerId();;
+        String taskManagerId = getTaskRequest.getTaskManagerId();
         Task task = taskDao.getTask(taskManagerId, taskId);
         TaskModel taskModel = new ModelConverter().toTaskModel(task);
 

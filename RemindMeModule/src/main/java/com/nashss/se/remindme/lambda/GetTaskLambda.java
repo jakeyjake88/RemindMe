@@ -12,7 +12,7 @@ public class GetTaskLambda extends LambdaActivityRunner<GetTaskRequest, GetTaskR
     public LambdaResponse handleRequest(LambdaRequest<GetTaskRequest> input, Context context) {
         return super.runActivity(() -> input.fromPath(path -> GetTaskRequest.builder()
                 .withTaskManagerId(path.get("taskManagerId"))
-                .withId(path.get("id"))
+                .withId(path.get("taskId"))
                 .build()),
                 (request, serviceComponent) -> serviceComponent.provideGetTaskActivity().handleRequest(request));
     }

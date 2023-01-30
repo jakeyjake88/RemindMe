@@ -10,6 +10,9 @@ implements RequestHandler<LambdaRequest<GetAllTasksRequest>, LambdaResponse> {
 
     @Override
     public LambdaResponse handleRequest(LambdaRequest<GetAllTasksRequest> input, Context context) {
-        return super.runActivity(() -> input.fromPath(path -> GetAllTasksRequest.builder()))
+        return super.runActivity(() -> input.fromPath(path -> GetAllTasksRequest.builder()
+                .withTaskManagerId(path.get("taskManagerId"))
+                .build()),
+                (request, serviceComponent) -> serviceComponent.provideGetAllTasksActivity().handleRequest(request));
     }
 }

@@ -32,6 +32,71 @@ Globals:
 
 Resources:
 
+  #-----------------------------------------------------
+  # Cognito Configuration for user management
+  #-----------------------------------------------------
+
+  UserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      AccountRecoverySetting:
+        RecoveryMechanisms:
+          - Name: verified_email
+            Priority: 1
+      UsernameAttributes:
+        - email
+      UsernameConfiguration:
+        CaseSensitive: false
+      AutoVerifiedAttributes:
+        - email
+      UserPoolName: !Sub ${CognitoDomain}-user-pool
+      Schema:
+        - Name: email
+          AttributeDataType: String
+          Mutable: false
+          Required: true
+        - Name: name
+          AttributeDataType: String
+          Mutable: true
+          Required: true
+
+  UserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      UserPoolId: !Ref UserPool
+      AllowedOAuthFlowsUserPoolClient: true
+      CallbackURLs:
+        - !If
+          - DeployCloudFront
+          - !Sub "https://${CloudfrontDistribution.DomainName}"
+          - http://localhost:8000
+      LogoutURLs:
+        - !If
+          - DeployCloudFront
+          - !Sub "https://${CloudfrontDistribution.DomainName}"
+          - http://localhost:8000
+      AllowedOAuthFlows:
+        - code
+        - implicit
+      AllowedOAuthScopes:
+        - phone
+        - email
+        - openid
+        - profile
+      SupportedIdentityProviders:
+        - COGNITO
+      PreventUserExistenceErrors: ENABLED
+
+  UserPoolDomain:
+    Type: AWS::Cognito::UserPoolDomain
+    Properties:
+      Domain: !Ref CognitoDomain
+      UserPoolId: !Ref UserPool
+
+        #-----------------------------------------------------
+      # API Endpoints and whatnot
+      #-----------------------------------------------------
+
   RemindMeModule:
     Type: AWS::Serverless::Function
     Properties:

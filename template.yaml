@@ -45,10 +45,15 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        RemindMeModule:
+        GetTaskLambda:
           Type: Api
           Properties:
             Path: /taskmanager/{taskManagerId}/{taskId}
+            Method: get
+        GetAllTasksLambda:
+          Type: Api
+          Properties:
+            Path: /taskmanager/{taskManagerId}/
             Method: get
 
   TaskManagerTable:

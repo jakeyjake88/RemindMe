@@ -136,11 +136,11 @@ Additional AWS: Cognito, Amazon SNS
   
  *`TaskManager Table`*
 
-  - taskManagerId : String //HashKey
+  - taskManagerId : String 
   
-  - CreatorId : String
+  - CreatorId : String //HashKey
   
-  - taskManagerName : String
+  - taskManagerName : String //RangeKey
   
   - isActive : boolean
     

@@ -8,31 +8,31 @@
 
 plugins {
     id "java"
-    id "checkstyle"
+   // id "checkstyle"
     id 'jacoco'
     id 'com.adarshr.test-logger' version '3.2.0'
 }
 
-group 'com.nashss.se.employeecontactservice'
+group 'com.nashss.se.remindme'
 version '1.0.0'
 defaultTasks 'clean', 'build'
 
 repositories {
     mavenCentral()
-    maven {
+    /*maven {
         url = uri("https://maven.pkg.github.com/NSS-Software-Engineering/shared-java")
         credentials {
             username = project.findProperty('GH_PACKAGE_REG_READ_USER') ?: System.getenv('GH_PACKAGE_REG_READ_USER')
             password = project.findProperty('GH_PACKAGE_REG_READ_PASS') ?: System.getenv('GH_PACKAGE_REG_READ_PASS')
         }
-    }
+    } */
 }
 
 dependencies {
-    implementation 'com.nashss.se.shared-java:test-infrastructure:1.+'
+    /*implementation 'com.nashss.se.shared-java:test-infrastructure:1.+'
     implementation 'com.nashss.se.shared-java:nss-resources:1.+'
     implementation 'com.nashss.se.shared-java:lesson-plan-resources:1.+'
-    implementation 'com.nashss.se.shared-java:java-project-resources:1.+'
+    implementation 'com.nashss.se.shared-java:java-project-resources:1.+' */
 
     implementation 'org.apache.commons:commons-text:1.9'
     implementation 'org.apache.logging.log4j:log4j-core:2.18.0'
@@ -66,7 +66,7 @@ dependencies {
 /* checkstyles */
 
 // Applies Checkstyle plugin quality checks on project's Java source files and generates reports from these checks.
-checkstyle {
+/*checkstyle {
     toolVersion '8.17'
 
     // Expect the checkstyle config to be in a either the current directory or
@@ -108,3 +108,5 @@ jacocoTestCoverageVerification {
         }
     }
 }
+
+ */

@@ -1,3 +1,4 @@
+import RemindMePlaylistClient from "../api/remindMeClient";
 import BindingClass from "../util/bindingClass";
 
 /**
@@ -13,7 +14,7 @@ export default class Header extends BindingClass {
         ];
         this.bindClassMethods(methodsToBind, this);
 
-        this.client = new MusicPlaylistClient();
+        this.client = new RemindMePlaylistClient();
     }
 
     /**
@@ -34,11 +35,15 @@ export default class Header extends BindingClass {
         const homeButton = document.createElement('a');
         homeButton.classList.add('header_home');
         homeButton.href = 'index.html';
+        console.log("href added");
         homeButton.innerText = 'Home';
 
         const siteTitle = document.createElement('div');
+        console.log("element cr8d");
         siteTitle.classList.add('site-title');
+        console.log("added classList");
         siteTitle.appendChild(homeButton);
+        console.log(siteTitle);
 
         return siteTitle;
     }

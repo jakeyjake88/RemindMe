@@ -2,57 +2,41 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src = "assets/indexPage.js"></script>
     <meta charset="UTF-8">
-    <title>RemindMe - Home</title>
+    <title>RemindMe - Your Personal Task Manager</title>
   </head>
   <body>
-    <header>
+    <header id="header">
       <h1>RemindMe</h1>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#features">Features</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <p>Your Personal Task Reminder</p>
     </header>
     <main>
-      <section id="about">
-        <h2>About RemindMe</h2>
-        <p>RemindMe is a web application that allows users to set reminders for tasks they have.</p>
+      <section>
+        <h2>Never forget a task again</h2>
+        <p>Set up reminders for individual tasks and receive alerts when it's time to complete them with RemindMe.</p>
       </section>
-      <section id="features">
-        <h2>Features</h2>
-        <ul>
-          <li>Create reminders for tasks</li>
-          <li>Set reminder time and date</li>
-          <li>Receive notifications for reminders</li>
-        </ul>
-      </section>
+      <section>
+        <h2>How it works</h2>
+        <div class="info-box">
+          <h3>Add a task</h3>
+          <p>Add your task and set a reminder time.</p>
+        </div>
+        <div class="info-box">
 
-      <section id="login">
-        <h2>Login</h2>
-        <form action="login.php" method="post">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password">
-          <input type="submit" value="Login">
-        </form>
-      </section>
-      <section id="create-account">
-        <h2>Create Account</h2>
-        <form action="create-account.php" method="post">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password">
-          <input type="submit" value="Create Account">
-        </form>
+          <h3>Get notified</h3>
+          <p>RemindMe will send you a notification when it's time to complete the task.</p>
+        </div>
+        <div class="info-box">
+  
+          <h3>Mark as complete</h3>
+          <p>Mark the task as complete and move on to the next one.</p>
+        </div>
       </section>
     </main>
     <footer>
       <p>&copy; 2023 RemindMe</p>
     </footer>
   </body>
+  
 </html>

@@ -49,22 +49,27 @@ public class UserModel {
         return Objects.hash(userId, userName, phoneNumber);
     }
 
+    //CHECKSTYLE:OFF:Builder
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public static class Builder {
         private String userId;
         private String userName;
         private String phoneNumber;
 
-        public UserModel.Builder withUserId(String userId) {
+        public Builder withUserId(String userId) {
             this.userId = userId;
             return this;
         }
 
-        public UserModel.Builder withPhoneNumber(String phoneNumber) {
+        public Builder withPhoneNumber(String phoneNumber) {
             this.phoneNumber = phoneNumber;
             return this;
         }
 
-        public UserModel.Builder withUserName(String userName) {
+        public Builder withUserName(String userName) {
             this.userName = userName;
             return this;
         }

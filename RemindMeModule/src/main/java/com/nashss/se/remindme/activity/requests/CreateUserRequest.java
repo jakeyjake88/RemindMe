@@ -45,5 +45,7 @@ public class CreateUserRequest {
             this.phoneNumber = phoneNumber;
             return this;
         }
+
+        public CreateUserRequest build() { return new CreateUserRequest(userId, userName, phoneNumber); }
     }
 }

@@ -169,7 +169,7 @@ Resources:
       # API Endpoints and whatnot
       #-----------------------------------------------------
 
-  RemindMeModule:
+  GetTaskLambda:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: RemindMeModule
@@ -187,15 +187,41 @@ Resources:
           Properties:
             Path: /taskmanager/{taskManagerId}/{taskId}
             Method: get
+  GetAllTasksLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: RemindMeModule
+      Handler: com.nashss.se.remindme.lambda.GetAllTasksLambda::handleRequest
+      Runtime: java11
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Environment:
+        Variables:
+          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+      Events:
         GetAllTasksLambda:
           Type: Api
           Properties:
-            Path: /taskmanager/{taskManagerId}/
+            Path: /tasks/{taskManagerId}/
             Method: get
+  CreateTaskManagerLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: RemindMeModule
+      Handler: com.nashss.se.remindme.lambda.CreateTaskManagerLambda::handleRequest
+      Runtime: java11
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Environment:
+        Variables:
+          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+      Events:
         CreateTaskManagerLambda:
           Type: Api
           Properties:
-            Path: /taskmanager/{taskManagerId}/
+            Path: /taskmanagers/{taskManagerId}/
             Method: post
 
   TaskManagerTable:

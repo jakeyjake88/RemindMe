@@ -131,6 +131,9 @@ Resources:
           AttributeDataType: String
           Mutable: true
           Required: true
+        - Name: phone
+          AttributeDataType: String
+          Mutable: true
 
   UserPoolClient:
     Type: AWS::Cognito::UserPoolClient

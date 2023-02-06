@@ -17,4 +17,13 @@ public class UserDao {
         this.dynamoDBMapper.save(user);
         return user;
     }
+
+    public User getUser(String userId) {
+        if (userId == null) throw new IllegalArgumentException("User not found");
+        User user = dynamoDBMapper.load(User.class, userId);
+        if (null == user) {
+            throw new IllegalArgumentException("User is null");
+        }
+        return user;
+    }
 }

@@ -55,4 +55,6 @@ export default class RemindMePlaylistClient extends BindingClass {
 
         return await this.authenticator.getUserToken();
     }
+
+    async createUser()
 }

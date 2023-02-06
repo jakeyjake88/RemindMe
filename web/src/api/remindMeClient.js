@@ -74,7 +74,7 @@ export default class RemindMePlaylistClient extends BindingClass {
         }
     }
 
-    async verifyUser() {
+    async verifyUser(errorCallback) {
         try {
             const token = await this.getTokenOrThrow("Only authenticated users can access their userinfo");
             const response = await this.axiosClient.get('users', {
@@ -85,6 +85,20 @@ export default class RemindMePlaylistClient extends BindingClass {
             return response.data.verifyUser;
         } catch (error) {
             this.handleError(error, errorCallback);
+        }
+    }
+
+    handleError(error, errorCallback) {
+        console.error(error);
+
+        const errorFromApi = error?.response?.data?.error_message;
+        if (errorFromApi) {
+            console.error(errorFromApi)
+            error.message = errorFromApi;
+        }
+
+        if (errorCallback) {
+            errorCallback(error);
         }
     }
 }

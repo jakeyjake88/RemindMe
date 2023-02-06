@@ -24,6 +24,8 @@ module.exports = {
   },
   entry: {
     indexPage: path.resolve(__dirname, 'src', 'pages', 'indexPage.js'),
+    checker: path.resolve(__dirname, 'src', 'pages', 'checker.js'),
+    welcomePage: path.resolve(__dirname, 'src', 'pages', 'welcomePage.js'),
   },
   output: {
     path: path.resolve(__dirname, 'build', 'assets'),

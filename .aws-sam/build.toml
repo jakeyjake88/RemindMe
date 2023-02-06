@@ -8,6 +8,6 @@ architecture = "x86_64"
 handler = "com.nashss.se.remindme.lambda.GetTaskLambda::handleRequest"
 manifest_hash = ""
 packagetype = "Zip"
-functions = ["GetTaskLambda", "GetAllTasksLambda", "CreateTaskManagerLambda"]
+functions = ["GetTaskLambda", "GetAllTasksLambda", "CreateTaskManagerLambda", "GetUserLambda", "CreateUserLambda"]
 
 [layer_build_definitions]

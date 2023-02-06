@@ -55,4 +55,36 @@ export default class RemindMePlaylistClient extends BindingClass {
 
         return await this.authenticator.getUserToken();
     }
+
+    async createUser(userId, userName, phoneNumber) {
+        try {
+            const token = await this.getTokenOrThrow("Only authenticated users can register.");
+            const response = await this.axiosClient.post('users', {
+                userName: userName,
+                userId: userId,
+                phoneNumber: phoneNumber
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.createUser;
+        }   catch (error) {
+        this.handleError(error, errorCallback);
+        }
+    }
+
+    async verifyUser() {
+        try {
+            const token = await this.getTokenOrThrow("Only authenticated users can access their userinfo");
+            const response = await this.axiosClient.get('users', {
+                headers: {
+                    Authorization: `Bearer: ${token}`
+                }
+            });
+            return response.data.verifyUser;
+        } catch (error) {
+            this.handleError(error, errorCallback);
+        }
+    }
 }

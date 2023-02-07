@@ -20,7 +20,7 @@ class Checker extends BindingClass {
             window.location.href = `/taskManager.html`;
         } else {
             await this.client.createUser();
-            window.location.href = `/welcomePage.html`;
+            //window.location.href = `/welcomePage.html`;
         }
     }
 }

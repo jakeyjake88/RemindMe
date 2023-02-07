@@ -240,7 +240,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        GetTaskLambda:
+        GetUserLambda:
           Type: Api
           Properties:
             Path: /users/{userId}/
@@ -258,7 +258,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        GetTaskLambda:
+        CreateUserLambda:
           Type: Api
           Properties:
             Path: /users/{userId}/

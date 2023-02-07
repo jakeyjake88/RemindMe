@@ -32,7 +32,7 @@ Globals:
   Api:
     Cors:
       AllowMethods: "'GET,POST,PUT,OPTIONS'"
-      AllowHeaders: "'content-type'"
+      AllowHeaders: "'content-type,authorization'"
       AllowOrigin: "'*'"
     Auth:
       DefaultAuthorizer: CognitoAuthorizer
@@ -207,7 +207,7 @@ Resources:
         GetAllTasksLambda:
           Type: Api
           Properties:
-            Path: /tasks/{taskManagerId}/
+            Path: /tasks/{taskManagerId}
             Method: get
   CreateTaskManagerLambda:
     Type: AWS::Serverless::Function
@@ -225,7 +225,7 @@ Resources:
         CreateTaskManagerLambda:
           Type: Api
           Properties:
-            Path: /taskmanagers/{taskManagerId}/
+            Path: /taskmanagers/{taskManagerId}
             Method: post
   GetUserLambda:
     Type: AWS::Serverless::Function
@@ -243,7 +243,7 @@ Resources:
         GetUserLambda:
           Type: Api
           Properties:
-            Path: /users/{userId}/
+            Path: /users
             Method: get
   CreateUserLambda:
     Type: AWS::Serverless::Function
@@ -261,7 +261,7 @@ Resources:
         CreateUserLambda:
           Type: Api
           Properties:
-            Path: /users/{userId}/
+            Path: /users
             Method: post
 
   TaskManagerTable:

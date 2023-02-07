@@ -86,7 +86,6 @@ export default class RemindMePlaylistClient extends BindingClass {
 
     handleError(error, errorCallback) {
         console.error(error);
-
         const errorFromApi = error?.response?.data?.error_message;
         if (errorFromApi) {
             console.error(errorFromApi)

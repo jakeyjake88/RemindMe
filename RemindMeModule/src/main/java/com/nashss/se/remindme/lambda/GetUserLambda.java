@@ -6,13 +6,14 @@ import com.nashss.se.remindme.activity.requests.GetUserRequest;
 import com.nashss.se.remindme.activity.results.GetUserResult;
 
 public class GetUserLambda extends LambdaActivityRunner<GetUserRequest, GetUserResult>
-implements RequestHandler<LambdaRequest<GetUserRequest>, LambdaResponse> {
-
+implements RequestHandler<AuthenticatedLambdaRequest<GetUserRequest>, LambdaResponse> {
     @Override
-    public LambdaResponse handleRequest(LambdaRequest<GetUserRequest> input, Context context) {
-        return super.runActivity(() -> input.fromPath(path -> GetUserRequest.builder()
-                .withId(path.get("userId"))
-                .build()),
-                (request, serviceComponent) -> serviceComponent.provideGetUserActivity().handleRequest(request));
+    public LambdaResponse handleRequest(AuthenticatedLambdaRequest<GetUserRequest> input, Context context) {
+        return super.runActivity(() -> input.fromUserClaims(claims ->
+                GetUserRequest.builder()
+                        .withId(claims.get("email"))
+                        .build()),
+                (request, serviceComponent) -> serviceComponent.provideGetUserActivity().handleRequest(request)
+        );
     }
 }

@@ -92,7 +92,7 @@ h1:after {
   border: 1px solid #fff;
   color: #fff;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.2em;
   opacity: .8;
   padding: 20px 40px;
   text-decoration: none;
@@ -100,6 +100,9 @@ h1:after {
   margin: 0 auto;
   display: block;
   width: 100px;
+  display: inline-block;
+  margin-right: 0px;
+  text-align: justify;
 }
 
 .button-line:hover {

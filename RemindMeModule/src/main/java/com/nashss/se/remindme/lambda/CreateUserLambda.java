@@ -10,15 +10,12 @@ implements RequestHandler<AuthenticatedLambdaRequest<CreateUserRequest>, LambdaR
     @Override
     public LambdaResponse handleRequest(AuthenticatedLambdaRequest<CreateUserRequest> input, Context context) {
         return super.runActivity(
-                () -> {
-                    CreateUserRequest unauthenticatedRequest = input.fromBody(CreateUserRequest.class);
-                    return input.fromUserClaims(claims ->
-                            CreateUserRequest.builder()
-                                    .withUserId(claims.get("email"))
-                                    .withUserName(claims.get("name"))
-                                    .withPhoneNumber(unauthenticatedRequest.getPhoneNumber())
-                                    .build());
-                },
+                () -> input.fromUserClaims(claims ->
+                        CreateUserRequest.builder()
+                                .withUserId(claims.get("email"))
+                                .withUserName(claims.get("name"))
+                                .withPhoneNumber(claims.get("phone"))
+                                .build()),
                 (request, serviceComponent) -> serviceComponent.provideCreateUserActivity().handleRequest(request)
         );
     }

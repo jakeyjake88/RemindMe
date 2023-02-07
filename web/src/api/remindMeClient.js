@@ -56,14 +56,10 @@ export default class RemindMePlaylistClient extends BindingClass {
         return await this.authenticator.getUserToken();
     }
 
-    async createUser(userId, userName, phoneNumber) {
+    async createUser() {
         try {
             const token = await this.getTokenOrThrow("Only authenticated users can register.");
-            const response = await this.axiosClient.post('users', {
-                userName: userName,
-                userId: userId,
-                phoneNumber: phoneNumber
-            }, {
+            const response = await this.axiosClient.post('users', {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

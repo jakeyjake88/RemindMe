@@ -15,10 +15,11 @@ class Checker extends BindingClass {
     }
 
     async redirectToPage() {
-        const isUser = await this.client.verifyUser();
-        if (isUser) {
+        const userLoggedIn = await this.client.verifyUser();
+        if (userLoggedIn) {
             window.location.href = `/taskManager.html`;
         } else {
+            await this.client.createUser();
             window.location.href = `/welcomePage.html`;
         }
     }

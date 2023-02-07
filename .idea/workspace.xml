@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0f7439c2-0b71-4768-8e06-aacc4c553105" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/template.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/CreateTaskManagerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/CreateTaskManagerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/models/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/models/TaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/CreateTaskManagerLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/CreateTaskManagerLambda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/api/remindMeClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/api/remindMeClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/welcomePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static_assets/css/welcome.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static_assets/css/welcome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static_assets/welcomePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static_assets/welcomePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,26 +74,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "/home/jake/workspace/jpcapstone/RemindMe"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jake/workspace/jpcapstone/RemindMe&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.nashss.se.remindme" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.RemindMe [build]">
+  <component name="RunManager" selected="Remote JVM Debug.debugger">
     <configuration name="RemindMe [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -123,6 +130,24 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="debugger" type="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="5005" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.RemindMe [build]" />
+      <item itemvalue="Gradle.RemindMe [clean]" />
+      <item itemvalue="Remote JVM Debug.debugger" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.RemindMe [build]" />

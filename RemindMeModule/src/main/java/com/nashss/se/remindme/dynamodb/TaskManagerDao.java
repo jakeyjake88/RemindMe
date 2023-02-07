@@ -19,6 +19,11 @@ public class TaskManagerDao {
         return tm;
     }
 
+    public TaskManager createTaskManager(TaskManager tm) {
+        this.dynamoDBMapper.save(tm);
+        return tm;
+    }
+
     public String generateNewId() {
         return RandomStringUtils.randomAlphanumeric(7);
     }

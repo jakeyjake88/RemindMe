@@ -19,10 +19,13 @@ class TaskManager extends BindingClass {
         if (managers) {
             var temp = "";
             for (let element of managers) {
-                temp += "<li>";
-                temp += "<td>" + element.taskManagerName + "</td>";
+                temp += `<li class="task" id="task_${element.taskManagerId}"> ${element.taskManagerName} </li>`;
             }
             document.getElementById('task-list').innerHTML = temp;
+            var tasks = document.querySelectorAll(".task");
+            for (let task of tasks) {
+                task.addEventListener('click', )
+            }
         }
         }
     }

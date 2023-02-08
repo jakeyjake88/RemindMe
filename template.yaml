@@ -261,7 +261,7 @@ Resources:
         GetTaskManagerLambda:
           Type: Api
           Properties:
-            Path: /taskmanagers/{creatorId}
+            Path: /taskmanagers
             Method: get
   CreateUserLambda:
     Type: AWS::Serverless::Function

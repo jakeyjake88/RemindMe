@@ -9,10 +9,10 @@ public class TaskManagerModel {
     private final boolean isActive;
 
 
-    private TaskManagerModel(String taskId, String taskManagerId, String name, boolean isActive) {
+    private TaskManagerModel(String taskId, String taskManagerId, String taskManagerName, boolean isActive) {
         this.creatorId = taskId;
         this.taskManagerId = taskManagerId;
-        this.taskManagerName = name;
+        this.taskManagerName = taskManagerName;
         this.isActive = isActive;
     }
 
@@ -52,35 +52,36 @@ public class TaskManagerModel {
     public int hashCode() {
         return Objects.hash(creatorId, taskManagerId, taskManagerName, isActive);
     }
-
+    //CHECKSTYLE:OFF:Builder
+    public static Builder builder() { return new Builder(); }
     public static class Builder {
         private String creatorId;
         private String taskManagerName;
         private String taskManagerId;
         private boolean isActive;
 
-        public TaskManagerModel.Builder withTaskId(String creatorId) {
+        public Builder withCreatorId(String creatorId) {
             this.creatorId = creatorId;
             return this;
         }
 
-        public TaskManagerModel.Builder withTaskManagerId(String taskManagerId) {
+        public Builder withTaskManagerId(String taskManagerId) {
             this.taskManagerId = taskManagerId;
             return this;
         }
 
-        public TaskManagerModel.Builder withName(String name) {
+        public Builder withTaskManagerName(String taskManagerName) {
             this.taskManagerName = taskManagerName;
             return this;
         }
 
-        public TaskManagerModel.Builder withIsActive(boolean isActive) {
+        public Builder withIsActive(boolean isActive) {
             this.isActive = isActive;
             return this;
         }
 
         public TaskManagerModel build() {
-            return new TaskManagerModel(creatorId, taskManagerName, taskManagerId, isActive);
+            return new TaskManagerModel(creatorId, taskManagerId, taskManagerName, isActive);
         }
     }
 }

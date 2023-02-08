@@ -10,10 +10,10 @@ implements RequestHandler<AuthenticatedLambdaRequest<CreateTaskManagerRequest>, 
 
     @Override
     public LambdaResponse handleRequest(AuthenticatedLambdaRequest<CreateTaskManagerRequest> input, Context context) {
-        CreateTaskManagerRequest req = input.fromBody(CreateTaskManagerRequest.class);
+        CreateTaskManagerRequest req = input.fromPath(path -> CreateTaskManagerRequest.builder()
+                .withTaskManagerName(path.get("taskManagerName")).build());
         return super.runActivity(() -> input.fromUserClaims(claims -> CreateTaskManagerRequest.builder()
                         .withCreatorId(claims.get("email"))
-                        .withManagerId(req.getTaskManagerId())
                         .withTaskManagerName(req.getTaskManagerName())
                 .build()),
                 (request, serviceComponent) -> serviceComponent.provideCreateTaskManagerActivity().handleRequest(request));

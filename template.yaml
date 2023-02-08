@@ -207,7 +207,7 @@ Resources:
         GetAllTasksLambda:
           Type: Api
           Properties:
-            Path: /tasks/{taskManagerId}
+            Path: /tasks
             Method: get
   CreateTaskManagerLambda:
     Type: AWS::Serverless::Function
@@ -225,7 +225,7 @@ Resources:
         CreateTaskManagerLambda:
           Type: Api
           Properties:
-            Path: /taskmanagers/{taskManagerId}
+            Path: /taskManagers/{taskManagerName}
             Method: post
   GetUserLambda:
     Type: AWS::Serverless::Function
@@ -244,6 +244,24 @@ Resources:
           Type: Api
           Properties:
             Path: /users
+            Method: get
+  GetTaskManagerLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: RemindMeModule
+      Handler: com.nashss.se.remindme.lambda.GetTaskManagerLambda::handleRequest
+      Runtime: java11
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Environment:
+        Variables:
+          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+      Events:
+        GetTaskManagerLambda:
+          Type: Api
+          Properties:
+            Path: /taskmanagers
             Method: get
   CreateUserLambda:
     Type: AWS::Serverless::Function

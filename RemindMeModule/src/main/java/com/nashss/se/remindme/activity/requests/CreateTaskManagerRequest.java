@@ -7,19 +7,14 @@ import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 public class CreateTaskManagerRequest {
     private final String creatorId;
     private final String taskManagerName;
-    private final String managerId;
 
-    private CreateTaskManagerRequest(String managerId, String creatorId, String taskManagerName) {
-        this.managerId = managerId;
+    private CreateTaskManagerRequest(String creatorId, String taskManagerName) {
         this.creatorId = creatorId;
         this.taskManagerName = taskManagerName;
     }
 
     public String getCreatorId() { return creatorId; }
     public String getTaskManagerName() { return taskManagerName; }
-    public String getTaskManagerId() {
-        return managerId;
-    }
 
 
     @Override
@@ -34,12 +29,7 @@ public class CreateTaskManagerRequest {
     public static class Builder {
         private String creatorId;
         private String taskManagerName;
-        private String managerId;
 
-        public Builder withManagerId(String managerId) {
-            this.managerId = managerId;
-            return this;
-        }
 
         public Builder withCreatorId(String creatorId) {
             this.creatorId = creatorId;
@@ -52,6 +42,6 @@ public class CreateTaskManagerRequest {
         }
 
 
-        public CreateTaskManagerRequest build() { return new CreateTaskManagerRequest(managerId, creatorId, taskManagerName); }
+        public CreateTaskManagerRequest build() { return new CreateTaskManagerRequest(creatorId, taskManagerName); }
     }
 }

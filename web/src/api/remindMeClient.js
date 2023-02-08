@@ -59,11 +59,11 @@ export default class RemindMePlaylistClient extends BindingClass {
 
     async createTaskManager(name, errorCallback) {
         try {
+            console.log("About to get token");
             const token = await this.getTokenOrThrow("Only authenticated users can make a tm");
-            const response = await this.axiosClient.post('taskManager', {
-                taskManagerName: name,
-                taskManagerId : this.makeid(8)
-            }, {
+            console.log("got token");
+            const response = await this.axiosClient.post(`taskManagers/${name}`, {},
+             {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -72,18 +72,6 @@ export default class RemindMePlaylistClient extends BindingClass {
         } catch (error) {
             this.handleError(error, errorCallback);
         }
-    }
-
-        makeid(length) {
-        let result = '';
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        const charactersLength = characters.length;
-        let counter = 0;
-        while (counter < length) {
-          result += characters.charAt(Math.floor(Math.random() * charactersLength));
-          counter += 1;
-        }
-        return result;
     }
     
 

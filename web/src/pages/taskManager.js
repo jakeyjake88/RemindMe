@@ -24,7 +24,9 @@ class TaskManager extends BindingClass {
             document.getElementById('task-list').innerHTML = temp;
             var tasks = document.querySelectorAll(".task");
             for (let task of tasks) {
-                task.addEventListener('click', )
+                task.addEventListener('click', function(event) {
+                    this.client.getAllTasks();
+                });
             }
         }
         }

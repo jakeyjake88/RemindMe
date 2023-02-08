@@ -2,10 +2,10 @@ import axios from "axios";
 import BindingClass from "../util/bindingClass";
 import Authenticator from "./authenticator";
 
-export default class RemindMePlaylistClient extends BindingClass {
+export default class RemindMeClient extends BindingClass {
     constructor(props = {}) {
         super();
-        const methodsToBind = ['clientLoaded', 'getIdentity', 'login', 'logout'];
+        const methodsToBind = ['clientLoaded', 'getIdentity', 'login', 'logout', 'getAllTasks'];
         this.bindClassMethods(methodsToBind, this);
         this.authenticator = new Authenticator();;
         this.props = props;
@@ -91,7 +91,7 @@ export default class RemindMePlaylistClient extends BindingClass {
 
     async getAllTasks(errorCallback, taskManagerId) {
         try {
-            console.log("About to get token(get TM");
+            console.log("About to get token(get tasks");
             const token = await this.getTokenOrThrow("Only authenticated users can get a tm");
             console.log(token);
             const response = await this.axiosClient.get('tasks', {

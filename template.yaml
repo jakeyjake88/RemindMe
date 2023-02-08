@@ -258,7 +258,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        GetUserLambda:
+        GetTaskManagerLambda:
           Type: Api
           Properties:
             Path: /taskmanagers

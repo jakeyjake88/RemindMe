@@ -16,22 +16,16 @@ class TaskManager extends BindingClass {
 
     async displayManagers() {
         const managers = await this.client.getTaskManager();
-        var maindiv = document.getElementById('side-bar');
         if (managers) {
-            managers.forEach(tm => {
-                console.log("entered forloop");
-                var a = document.createElement('a');
-                console.log("a created");
-                var tmname = document.createTextNode(tm.taskManagerName);
-                console.log(tmname);
-                a.appendChild(tmname);
-                a.title = tm.taskManagerName;
-                maindiv.append(a);
-            });
+            var temp = "";
+            for (let element of managers) {
+                temp += "<li>";
+                temp += "<td>" + element.taskManagerName + "</td>";
+            }
+            document.getElementById('task-list').innerHTML = temp;
+        }
         }
     }
-
-}
 
 const main = async () => {
     const taskManager = new TaskManager();

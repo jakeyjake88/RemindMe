@@ -1,5 +1,9 @@
 package com.nashss.se.remindme.activity.requests;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+@JsonDeserialize(builder = GetTaskManagerRequest.Builder.class)
+
 public class GetTaskManagerRequest {
     private final String creatorId;
 

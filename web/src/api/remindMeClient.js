@@ -73,6 +73,22 @@ export default class RemindMePlaylistClient extends BindingClass {
             this.handleError(error, errorCallback);
         }
     }
+
+    async getTaskManager(errorCallback) {
+        try {
+            console.log("About to get token(get TM");
+            const token = await this.getTokenOrThrow("Only authenticated users can get a tm");
+            console.log("got get tm token");
+            const response = await this.axiosClient.get('taskManagers', {}, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.tasks;
+        } catch (error) {
+            this.handleError(error, errorCallback);
+        }
+    }
     
 
     async createUser(errorCallback) {

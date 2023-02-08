@@ -1,8 +1,6 @@
 package com.nashss.se.remindme.activity.results;
 
-import com.nashss.se.remindme.dynamodb.models.TaskManager;
 import com.nashss.se.remindme.models.TaskManagerModel;
-import com.nashss.se.remindme.models.TaskModel;
 
 import java.util.List;
 

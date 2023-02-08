@@ -25,7 +25,8 @@ module.exports = {
   entry: {
     indexPage: path.resolve(__dirname, 'src', 'pages', 'indexPage.js'),
     checker: path.resolve(__dirname, 'src', 'pages', 'checker.js'),
-    createTaskManager: path.resolve(__dirname, 'src', 'pages', 'createTaskManager.js')
+    createTaskManager: path.resolve(__dirname, 'src', 'pages', 'createTaskManager.js'),
+    taskManager: path.resolve(__dirname, 'src', 'pages',  'taskManager.js')
   },
   output: {
     path: path.resolve(__dirname, 'build', 'assets'),

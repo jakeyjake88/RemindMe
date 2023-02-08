@@ -7,6 +7,7 @@ class CreateTaskManager extends BindingClass {
         super();
         this.bindClassMethods(['mount', 'submit', 'redirectToTaskManager'], this);
         this.dataStore = new DataStore();
+        this.dataStore.addChangeListener(this.redirectToTaskManager);
     }
 
     mount() {
@@ -22,9 +23,12 @@ class CreateTaskManager extends BindingClass {
     }
 
     redirectToTaskManager() {
+        console.log("redir");
         const tm = this.dataStore.get('tm');
+        if (tm == null) console.log("NULL");
         if (tm != null) {
             window.location.href = `/taskManager.html`;
+            console.log("GOOOO");
         }
     }
     

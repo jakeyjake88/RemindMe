@@ -68,7 +68,7 @@ export default class RemindMePlaylistClient extends BindingClass {
                     Authorization: `Bearer ${token}`
                 }
             });
-            return response.data.createTaskManager;
+            return response.data.managerId;
         } catch (error) {
             this.handleError(error, errorCallback);
         }

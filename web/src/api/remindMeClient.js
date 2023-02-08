@@ -1,4 +1,3 @@
-import { generateRandomString } from "@aws-amplify/core";
 import axios from "axios";
 import BindingClass from "../util/bindingClass";
 import Authenticator from "./authenticator";
@@ -78,13 +77,13 @@ export default class RemindMePlaylistClient extends BindingClass {
         try {
             console.log("About to get token(get TM");
             const token = await this.getTokenOrThrow("Only authenticated users can get a tm");
-            console.log("got get tm token");
-            const response = await this.axiosClient.get('taskManagers', {}, {
+            console.log(token);
+            const response = await this.axiosClient.get('taskmanagers', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
-            return response.data.tasks;
+            return response.data.allTask;
         } catch (error) {
             this.handleError(error, errorCallback);
         }

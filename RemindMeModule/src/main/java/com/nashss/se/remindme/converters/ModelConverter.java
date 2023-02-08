@@ -32,7 +32,7 @@ public class ModelConverter {
                 .withTaskManagerId(tm.getTaskManagerId())
                 .withCreatorId(tm.getCreatorId())
                 .withIsActive(tm.getIsActive())
-                .withName(tm.getTaskManagerName())
+                .withTaskManagerName(tm.getTaskManagerName())
                 .build();
     }
 

@@ -9,10 +9,10 @@ public class TaskManagerModel {
     private final boolean isActive;
 
 
-    private TaskManagerModel(String taskId, String taskManagerId, String name, boolean isActive) {
+    private TaskManagerModel(String taskId, String taskManagerId, String taskManagerName, boolean isActive) {
         this.creatorId = taskId;
         this.taskManagerId = taskManagerId;
-        this.taskManagerName = name;
+        this.taskManagerName = taskManagerName;
         this.isActive = isActive;
     }
 
@@ -70,7 +70,7 @@ public class TaskManagerModel {
             return this;
         }
 
-        public Builder withName(String name) {
+        public Builder withTaskManagerName(String taskManagerName) {
             this.taskManagerName = taskManagerName;
             return this;
         }
@@ -81,7 +81,7 @@ public class TaskManagerModel {
         }
 
         public TaskManagerModel build() {
-            return new TaskManagerModel(creatorId, taskManagerName, taskManagerId, isActive);
+            return new TaskManagerModel(creatorId, taskManagerId, taskManagerName, isActive);
         }
     }
 }

@@ -19,8 +19,11 @@ class TaskManager extends BindingClass {
         var maindiv = document.getElementById('side-bar');
         if (managers) {
             managers.forEach(tm => {
+                console.log("entered forloop");
                 var a = document.createElement('a');
+                console.log("a created");
                 var tmname = document.createTextNode(tm.taskManagerName);
+                console.log(tmname);
                 a.appendChild(tmname);
                 a.title = tm.taskManagerName;
                 maindiv.append(a);

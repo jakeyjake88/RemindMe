@@ -14,4 +14,5 @@ public interface ServiceComponent {
     CreateUserActivity provideCreateUserActivity();
     GetUserActivity provideGetUserActivity();
     GetTaskManagerActivity provideGetTaskManagerActivity();
+    AddTaskToManagerActivity provideAddTaskToManagerActivity();
 }

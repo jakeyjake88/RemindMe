@@ -5,6 +5,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.nashss.se.remindme.dynamodb.models.Task;
 import com.nashss.se.remindme.exceptions.TaskNotFoundException;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -54,5 +55,14 @@ public class TaskDao {
                 .withFilterExpression("taskManagerId = :val1")
                 .withExpressionAttributeValues(expressionAttributeValues);
         return dynamoDBMapper.scan(Task.class, scanExpression);
+    }
+
+    public Task createTask(Task task) {
+        this.dynamoDBMapper.save(task);
+        return task;
+    }
+
+    public String generateNewId() {
+        return RandomStringUtils.randomAlphanumeric(5);
     }
 }

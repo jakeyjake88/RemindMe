@@ -227,6 +227,24 @@ Resources:
           Properties:
             Path: /taskManagers/{taskManagerName}
             Method: post
+  AddTaskToManagerLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: RemindMeModule
+      Handler: com.nashss.se.remindme.lambda.AddTaskToManagerLambda::handleRequest
+      Runtime: java11
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Environment:
+        Variables:
+          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+      Events:
+        AddTaskToManagerLambda:
+          Type: Api
+          Properties:
+            Path: /tasks
+            Method: post
   GetUserLambda:
     Type: AWS::Serverless::Function
     Properties:

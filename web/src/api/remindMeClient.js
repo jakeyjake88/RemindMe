@@ -94,8 +94,6 @@ export default class RemindMeClient extends BindingClass {
             console.log("About to get token(get tasks");
             console.log(taskManagerId);
             const token = await this.getTokenOrThrow("Only authenticated users can get a tm");
-            console.log(token);
-            const payload = {"taskManagerId": taskManagerId};
             const response = await this.axiosClient.get(`tasks/${taskManagerId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`

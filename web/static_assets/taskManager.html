@@ -7,21 +7,25 @@
     <title>RemindMe - Your Personal Task Manager</title>
   </head>
   <body>
+    <div class="full-screen">
     <div id="side-bar">
-        <h2>Task Managers</h2>
-        <ul id="task-manager-list">
-        </ul>
+        <h2>Redirect</h2>
+        <button class="custom-btn btn-3" onclick="location.href= 'createTaskManager.html';"><span>Create</span></button>
+        <button class="custom-btn btn-3" onclick="location.href= 'index.html';"><span>Home</span></button>
       </div>
       <div id="task-box">
-        <h2>Tasks for <span id="task-manager-name"></span></h2>
-        <div id="task-list"></div>
+        <h2 class="hTmname">Tasks for <span id="task-manager-name"></span></h2>
+        <div id="task-list" class="task-list-box"></div>
       </div>
-    
-    <div id="right-side-bar"> 
-      <div id="allTasksBox">
-        <h2>All Tasks</h2>
-        <div id="allTasks"></div>
+      <div id="right-side-bar"> 
+        <div id="allTasksBox">
+          <h2 class="hAllTask">All Tasks</h2>
+          <div id="allTasks" class="all-tasks-box"></div>
+      
+          <h2 class="hAddTask">Add a task</h2>
+          <div id="addTask" class="add-task-box"></div>
+        </div>
       </div>
-    </div>
-</body>
-</html>
+      </div>
+    </body>
+  </html>

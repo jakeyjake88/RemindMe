@@ -42,6 +42,7 @@ class TaskManager extends BindingClass {
             for (let addTaskButton of addTaskButtons) {
                 addTaskButton.addEventListener('click',  async (event) => {
                     const taskManagerId = event.target.id.split("_")[1];
+                    console.log(taskManagerId);
                     this.addTaskToManager(taskManagerId);
                 });
             }
@@ -49,33 +50,25 @@ class TaskManager extends BindingClass {
     }
 
     addTaskToManager(managerId) {
-        // Your implementation to add a task to a task manager goes here
-        console.log(`Adding task to manager with id: ${managerId}`);
+        const form = `
+        <form id="addTaskForm">
+            <input type="text" id="taskName" placeholder="Task Name"></input><br>
+            <input type="text" id="taskDescription" placeholder="Task Description"></input><br>
+            <input type="hidden" id="taskManagerId" value="${managerId}"></input><br>
+            <button type="submit" id="submitTaskButton">Submit</button>
+        </form>
+    `;
+    document.getElementById('addTask').innerHTML = form;
+
+    const submitTaskButton = document.getElementById('submitTaskButton');
+    submitTaskButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        const taskName = document.getElementById('taskName').value;
+        const taskDescription = document.getElementById('taskDescription').value;
+    });
     }
 
-    /*async displayManagers() {
-        const managers = await this.client.getTaskManager();
-        if (managers) {
-            var temp = "";
-            for (let element of managers) {
-                temp += `<li class="task" id="task_${element.taskManagerId}"> ${element.taskManagerName} </li>`;
-            }
-            document.getElementById('task-list').innerHTML = temp;
-            var tasks = document.querySelectorAll(".task");
-            for (let task of tasks) {
-                task.addEventListener('click',  async (event) => {
-                    document.getElementById('allTasks').innerHTML = "";
-                    var p = "";
-                    const allT = await this.client.getAllTasks("jkKEhHX");
-                    for (let element of allT) {
-                        p += `<li class="anger"> ${element.name}</li>`;
-                    }
-                    document.getElementById('allTasks').innerHTML = p;
-                });
-            }
-        }
-        } */
-    }
+}
 
 const main = async () => {
     const taskManager = new TaskManager();

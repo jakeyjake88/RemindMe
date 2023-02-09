@@ -8,19 +8,16 @@ public class AddTaskToManagerRequest {
     private String taskManagerId;
     private String name;
     private String description;
-    private LocalDateTime dueDate;
 
-    private AddTaskToManagerRequest(String taskManagerId, String name, String description, LocalDateTime dueDate) {
+    private AddTaskToManagerRequest(String taskManagerId, String name, String description) {
         this.taskManagerId = taskManagerId;
         this.name = name;
         this.description = description;
-        this.dueDate = dueDate;
     }
 
     public String getTaskManagerId() { return taskManagerId; }
     public String getName() { return name; }
     public String getDescription() { return description; }
-    public LocalDateTime getDueDate() { return dueDate; }
 
     @Override
     public String toString() {
@@ -36,7 +33,6 @@ public class AddTaskToManagerRequest {
         private String taskManagerId;
         private String name;
         private String description;
-        private LocalDateTime dueDate;
 
         public Builder withTaskManagerId(String taskManagerId) {
             this.taskManagerId = taskManagerId;
@@ -53,10 +49,6 @@ public class AddTaskToManagerRequest {
             return this;
         }
 
-        public Builder withDueDate(LocalDateTime dueDate) {
-            this.dueDate = dueDate;
-            return this;
-        }
-        public AddTaskToManagerRequest build() { return new AddTaskToManagerRequest(taskManagerId, name, description, dueDate); }
+        public AddTaskToManagerRequest build() { return new AddTaskToManagerRequest(taskManagerId, name, description); }
     }
 }

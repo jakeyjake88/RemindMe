@@ -21,6 +21,14 @@ public class TaskDao {
         this.dynamoDBMapper = dynamoDBMapper;
     }
 
+    /**
+     * Retrieves a Task from the database using the task manager ID and task ID.
+     *
+     * @param taskManagerId The ID of the task manager that the task belongs to.
+     * @param taskId The ID of the task to retrieve.
+     * @return The Task with the specified task manager ID and task ID.
+     * @throws TaskNotFoundException If the task manager ID or task ID is `null` or if the task cannot be found.
+     */
     public Task getTask(String taskManagerId, String taskId) {
         if (taskManagerId == null || taskId == null) throw new TaskNotFoundException("Nope");
         Task task = dynamoDBMapper.load(Task.class, taskManagerId, taskId);
@@ -31,6 +39,13 @@ public class TaskDao {
         return task;
     }
 
+    /**
+     * Retrieves all tasks for a task manager from the database.
+     *
+     * @param taskManagerId The ID of the task manager to retrieve tasks for.
+     * @return A list of all tasks for the specified task manager.
+     * @throws TaskNotFoundException If the task manager ID is `null` or if no tasks are found.
+     */
     public List<Task> getAllTasksForManager(String taskManagerId) {
         if (taskManagerId == null) throw new TaskNotFoundException("No task found!!");
         Map<String, AttributeValue> expressionAttributeValues = new HashMap<String, AttributeValue>();

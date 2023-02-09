@@ -19,6 +19,13 @@ public class GetTaskManagerActivity {
         this.tmDao = tmDao;
     }
 
+    /**
+     * This method handles a `GetTaskManagerRequest` and returns a `GetTaskManagerResult`.
+     * It retrieves a list of `TaskManagerModel` objects that are associated with the provided `creatorId`.
+     *
+     * @param request The `GetTaskManagerRequest` object that contains the `creatorId` to search for.
+     * @return A `GetTaskManagerResult` object that contains a list of `TaskManagerModel` objects.
+     */
     public GetTaskManagerResult handleRequest(final GetTaskManagerRequest request) {
         String creatorId = request.getCreatorId();
         List<TaskManagerModel> tmList = new ArrayList<>();

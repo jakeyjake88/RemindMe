@@ -17,6 +17,12 @@ public class GetAllTasksActivity {
     @Inject
     public GetAllTasksActivity(TaskDao taskDao) { this.taskDao = taskDao; }
 
+    /**
+     * Handles the request to get all tasks for a task manager.
+     *
+     * @param request The request containing the task manager ID.
+     * @return A result object containing a list of task models.
+     */
     public GetAllTasksResult handleRequest(final GetAllTasksRequest request) {
         String taskManagerId = request.getTaskManagerId();
         List<TaskModel> taskModel = new ArrayList<>();

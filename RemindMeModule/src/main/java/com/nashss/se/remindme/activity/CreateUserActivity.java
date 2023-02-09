@@ -17,6 +17,14 @@ public class CreateUserActivity {
         this.userDao = userDao;
     }
 
+    /**
+     * handleRequest() is a method that handles the creation of a new user. It creates a new instance of the User object, sets its properties using the parameters
+     * provided in the CreateUserRequest, saves it to the database using the `saveUser` method, and then returns a CreateUserResult object that contains the
+     * created user in the form of a UserModel object.
+     *
+     * @param request - a CreateUserRequest object that contains the user details to be created
+     * @return CreateUserResult - a CreateUserResult object that contains the created user
+     */
     public CreateUserResult handleRequest(final CreateUserRequest request) {
         User user = new User();
         user.setUserId(request.getUserId());

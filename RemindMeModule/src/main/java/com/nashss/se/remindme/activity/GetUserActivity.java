@@ -17,6 +17,13 @@ public class GetUserActivity {
         this.userDao = userDao;
     }
 
+    /**
+     * Handles the request for getting a user and returns the result in the form of GetUserResult object.
+     *
+     * @param request object containing userId of the user to be retrieved
+     * @return GetUserResult object containing the userModel of the requested user
+     * @throws IllegalArgumentException if userId is null or the user with given userId is not found
+     */
     public GetUserResult handleRequest(final GetUserRequest request) {
         String userId = request.getUserId();
         User user = userDao.getUser(userId);

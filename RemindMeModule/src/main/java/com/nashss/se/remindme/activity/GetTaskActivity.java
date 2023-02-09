@@ -17,6 +17,12 @@ public class GetTaskActivity {
         this.taskDao = taskDao;
     }
 
+    /**
+     * The `handleRequest` method handles a request to retrieve a task given the task manager id and task id.
+     *
+     * @param getTaskRequest the request that contains the task manager id and task id
+     * @return a GetTaskResult object containing the task
+     */
     public GetTaskResult handleRequest(final GetTaskRequest getTaskRequest) {
         String taskId = getTaskRequest.getTaskId();
         String taskManagerId = getTaskRequest.getTaskManagerId();

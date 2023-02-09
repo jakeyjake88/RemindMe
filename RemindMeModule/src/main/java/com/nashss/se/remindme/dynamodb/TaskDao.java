@@ -32,9 +32,9 @@ public class TaskDao {
     }
 
     public List<Task> getAllTasksForManager(String taskManagerId) {
+        if (taskManagerId == null) throw new TaskNotFoundException("No task found!!");
         Map<String, AttributeValue> expressionAttributeValues = new HashMap<String, AttributeValue>();
         expressionAttributeValues.put(":val1", new AttributeValue().withS(taskManagerId));
-
         DynamoDBScanExpression scanExpression = new DynamoDBScanExpression()
                 .withFilterExpression("taskManagerId = :val1")
                 .withExpressionAttributeValues(expressionAttributeValues);

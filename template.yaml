@@ -207,7 +207,7 @@ Resources:
         GetAllTasksLambda:
           Type: Api
           Properties:
-            Path: /tasks
+            Path: /tasks/{taskManagerId}
             Method: get
   CreateTaskManagerLambda:
     Type: AWS::Serverless::Function

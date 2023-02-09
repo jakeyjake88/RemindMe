@@ -5,7 +5,7 @@ import DataStore from "../util/DataStore";
 class TaskManager extends BindingClass {
     constructor() {
         super();
-        this.bindClassMethods(['mount', 'displayManagers', 'getTasksForManager'], this);
+        this.bindClassMethods(['mount', 'displayManagers'], this);
         this.dataStore = new DataStore();
     }
 
@@ -26,16 +26,17 @@ class TaskManager extends BindingClass {
             document.getElementById('task-list').innerHTML = temp;
             var tasks = document.querySelectorAll(".task");
             for (let task of tasks) {
-                task.addEventListener('click', (event) => {
-                    this.getTasksForManager("jkKEhHX");
+                task.addEventListener('click',  async (event) => {
+                    document.getElementById('allTasks').innerHTML = "";
+                    var p = "";
+                    const allT = await this.client.getAllTasks("jkKEhHX");
+                    for (let element of allT) {
+                        p += `<li class="anger"> ${element.name}</li>`;
+                    }
+                    document.getElementById('allTasks').innerHTML = p;
                 });
             }
         }
-        }
-
-        //helper
-        getTasksForManager(managerId) {
-            return this.client.getAllTasks(managerId);
         }
     }
 

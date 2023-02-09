@@ -32,12 +32,12 @@ public class TaskDao {
     }
 
     public List<Task> getAllTasksForManager(String taskManagerId) {
-        Map<String, AttributeValue> rs = new HashMap<String, AttributeValue>();
-        rs.put(":val1", new AttributeValue().withS(taskManagerId));
+        Map<String, AttributeValue> expressionAttributeValues = new HashMap<String, AttributeValue>();
+        expressionAttributeValues.put(":val1", new AttributeValue().withS(taskManagerId));
 
         DynamoDBScanExpression scanExpression = new DynamoDBScanExpression()
                 .withFilterExpression("taskManagerId = :val1")
-                .withExpressionAttributeValues(rs);
+                .withExpressionAttributeValues(expressionAttributeValues);
         return dynamoDBMapper.scan(Task.class, scanExpression);
     }
 }

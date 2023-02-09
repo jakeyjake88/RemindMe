@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f7439c2-0b71-4768-8e06-aacc4c553105" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/web/src/api/remindMeClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/api/remindMeClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/TaskDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/taskManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/taskManager.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

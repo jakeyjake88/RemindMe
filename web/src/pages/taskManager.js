@@ -5,9 +5,11 @@ import DataStore from "../util/DataStore";
 class TaskManager extends BindingClass {
     constructor() {
         super();
-        this.bindClassMethods(['mount', 'displayManagers'], this);
+        this.bindClassMethods(['mount', 'displayManagers', 'getTasksForManager'], this);
         this.dataStore = new DataStore();
     }
+
+    
 
     mount() {
         this.client = new RemindMeClient();
@@ -24,11 +26,16 @@ class TaskManager extends BindingClass {
             document.getElementById('task-list').innerHTML = temp;
             var tasks = document.querySelectorAll(".task");
             for (let task of tasks) {
-                task.addEventListener('click', function(event) {
-                    this.client.getAllTasks();
+                task.addEventListener('click', (event) => {
+                    this.getTasksForManager("jkKEhHX");
                 });
             }
         }
+        }
+
+        //helper
+        getTasksForManager(managerId) {
+            return this.client.getAllTasks(managerId);
         }
     }
 

@@ -13,7 +13,7 @@ public class CreateUserActivity {
     private final UserDao userDao;
 
     @Inject
-    CreateUserActivity(UserDao userDao) {
+    public CreateUserActivity(UserDao userDao) {
         this.userDao = userDao;
     }
 

@@ -12,7 +12,7 @@ public class TaskModel {
     private final boolean isActive;
 
 
-    private TaskModel(String taskId, String taskManagerId, String name, LocalDateTime dueDate, String description, boolean isActive) {
+    public TaskModel(String taskId, String taskManagerId, String name, LocalDateTime dueDate, String description, boolean isActive) {
         this.taskId = taskId;
         this.taskManagerId = taskManagerId;
         this.name = name;

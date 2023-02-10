@@ -3,7 +3,6 @@ package com.nashss.se.remindme.activity.requests;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
-import java.time.LocalDateTime;
 
 @JsonDeserialize(builder = AddTaskToManagerRequest.Builder.class)
 public class AddTaskToManagerRequest {

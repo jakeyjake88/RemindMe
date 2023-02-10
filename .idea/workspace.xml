@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f7439c2-0b71-4768-8e06-aacc4c553105" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/activity/AddTaskToManagerActivityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/activity/CreateTaskManagerActivityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/activity/CreateUserActivityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/activity/GetAllTasksActivityTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/api/remindMeClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/api/remindMeClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/taskManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/taskManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/AddTaskToManagerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/AddTaskToManagerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/CreateUserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/CreateUserActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/AddTaskToManagerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/AddTaskToManagerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/models/TaskModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/models/TaskModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,22 +75,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/jake/workspace/jpcapstone/RemindMe&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "/home/jake/workspace/jpcapstone/RemindMe",
+    "settings.editor.selected.configurable": "preferences.sourceCode"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.nashss.se.remindme" />
     </key>
   </component>
-  <component name="RunManager" selected="Remote JVM Debug.debugger">
-    <configuration name="RemindMe [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.GetAllTasksActivityTest.handleRequest_WithTasksForManager_ReturnsTasksResult">
+    <configuration name="AddTaskToManagerActivityTest.testHandleRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -94,33 +101,106 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":RemindMeModule:test" />
+            <option value="--tests" />
+            <option value="&quot;com.nashss.se.remindme.unittest.activity.AddTaskToManagerActivityTest.testHandleRequest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RemindMe [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CreateTaskManagerActivityTest.handleRequest_whenCalled_createsTaskManager" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value=":RemindMeModule:test" />
+            <option value="--tests" />
+            <option value="&quot;com.nashss.se.remindme.unittest.activity.CreateTaskManagerActivityTest.handleRequest_whenCalled_createsTaskManager&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CreateUserActivityTest.handleRequest_withValidInput_returnsCreateUserResult" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":RemindMeModule:test" />
+            <option value="--tests" />
+            <option value="&quot;com.nashss.se.remindme.unittest.activity.CreateUserActivityTest.handleRequest_withValidInput_returnsCreateUserResult&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GetAllTasksActivityTest.handleRequest_WithNoTasksForManager_ReturnsEmptyTaskResult" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":RemindMeModule:test" />
+            <option value="--tests" />
+            <option value="&quot;com.nashss.se.remindme.unittest.activity.GetAllTasksActivityTest.handleRequest_WithNoTasksForManager_ReturnsEmptyTaskResult&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GetAllTasksActivityTest.handleRequest_WithTasksForManager_ReturnsTasksResult" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":RemindMeModule:test" />
+            <option value="--tests" />
+            <option value="&quot;com.nashss.se.remindme.unittest.activity.GetAllTasksActivityTest.handleRequest_WithTasksForManager_ReturnsTasksResult&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -139,14 +219,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.RemindMe [build]" />
-      <item itemvalue="Gradle.RemindMe [clean]" />
+      <item itemvalue="Gradle.CreateTaskManagerActivityTest.handleRequest_whenCalled_createsTaskManager" />
+      <item itemvalue="Gradle.CreateUserActivityTest.handleRequest_withValidInput_returnsCreateUserResult" />
+      <item itemvalue="Gradle.GetAllTasksActivityTest.handleRequest_WithNoTasksForManager_ReturnsEmptyTaskResult" />
+      <item itemvalue="Gradle.GetAllTasksActivityTest.handleRequest_WithTasksForManager_ReturnsTasksResult" />
+      <item itemvalue="Gradle.AddTaskToManagerActivityTest.testHandleRequest" />
       <item itemvalue="Remote JVM Debug.debugger" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.RemindMe [build]" />
-        <item itemvalue="Gradle.RemindMe [clean]" />
+        <item itemvalue="Gradle.GetAllTasksActivityTest.handleRequest_WithTasksForManager_ReturnsTasksResult" />
+        <item itemvalue="Gradle.GetAllTasksActivityTest.handleRequest_WithNoTasksForManager_ReturnsEmptyTaskResult" />
+        <item itemvalue="Gradle.CreateUserActivityTest.handleRequest_withValidInput_returnsCreateUserResult" />
+        <item itemvalue="Gradle.CreateTaskManagerActivityTest.handleRequest_whenCalled_createsTaskManager" />
+        <item itemvalue="Gradle.AddTaskToManagerActivityTest.testHandleRequest" />
       </list>
     </recent_temporary>
   </component>

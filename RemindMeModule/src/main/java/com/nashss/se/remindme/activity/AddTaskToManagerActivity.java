@@ -13,7 +13,7 @@ public class AddTaskToManagerActivity {
     private final TaskDao taskDao;
 
     @Inject
-    AddTaskToManagerActivity(TaskDao taskDao) {
+    public AddTaskToManagerActivity(TaskDao taskDao) {
         this.taskDao = taskDao;
     }
 

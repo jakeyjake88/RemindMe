@@ -43,15 +43,9 @@ Additional AWS: Cognito, Amazon SNS
 
 * User can create a task manager to store their daily tasks
 
-* The creator of the task manager should be able to allow other users, upon invitation, to access the task manager.
-
 * The creator should be able to add a task using a date for which the task is due.
 
 * The daily tasks page, for sake of length, will only be able to hold 10 tasks per page.
-
-* The all tasks page will only be able to hold 15 tasks per page.
-
-* Creator and users should be able to select a RemindMe button for each task, giving them an SMS reminder shortly before the task is due.
 
 
 <h2> 4.2. Out of Scope</h2>
@@ -65,6 +59,11 @@ Additional AWS: Cognito, Amazon SNS
 * May want creators to have the ability to prioritize certain tasks
 
 * May want to allow for email reminders for tasks
+
+* Creator and users should be able to select a RemindMe button for each task, giving them an SMS reminder shortly before the task is due.
+
+* The creator of the task manager should be able to allow other users, upon invitation, to access the task manager.
+
 
 <h1> 5. Architecture Overview </h1>
 
@@ -89,9 +88,7 @@ Additional AWS: Cognito, Amazon SNS
 * Adds tasks
 * Adds TaskManager
 * Create user
-* Add user to TaskManager
-* Remove Tasks
-* Remove TaskManager
+* Adds tasks to Managers
 
 
 <h1> 6. API </h1>

@@ -6,6 +6,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.Map;
 
+/**
+ * An APIGateway response from a lambda function.
+ */
 public class LambdaResponse extends APIGatewayProxyResponseEvent {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 

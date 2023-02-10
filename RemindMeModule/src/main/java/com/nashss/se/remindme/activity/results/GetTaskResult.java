@@ -8,6 +8,10 @@ import com.nashss.se.remindme.models.TaskModel;
 public class GetTaskResult {
     private final TaskModel task;
 
+    /**
+     * Constructor for the GetTaskResult class.
+     * @param task the associated task
+     */
     private GetTaskResult(TaskModel task) {
         this.task = task;
     }

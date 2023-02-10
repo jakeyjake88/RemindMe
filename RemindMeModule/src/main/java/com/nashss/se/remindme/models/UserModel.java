@@ -2,6 +2,10 @@ package com.nashss.se.remindme.models;
 
 import java.util.Objects;
 
+/**
+ * Model for the Users.
+ */
+//CHECKSTYLE:OFF:Model
 public class UserModel {
 
     private final String userId;

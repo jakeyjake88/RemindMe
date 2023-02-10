@@ -8,6 +8,10 @@ import com.nashss.se.remindme.models.UserModel;
 public class CreateUserResult {
     private final UserModel user;
 
+    /**
+     * Constructor for the CreateUserResult endpoint.
+     * @param user the user object
+     */
     public CreateUserResult(UserModel user) {
         this.user = user;
     }

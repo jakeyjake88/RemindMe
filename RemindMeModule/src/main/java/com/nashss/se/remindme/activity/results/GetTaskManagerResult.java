@@ -10,6 +10,10 @@ import java.util.List;
 public class GetTaskManagerResult {
     private final List<TaskManagerModel> tasks;
 
+    /**
+     * Constructor for the GetAllTaskManagersResult class.
+     * @param tasks the list of taskmanager
+     */
     private GetTaskManagerResult(List<TaskManagerModel> tasks) {
         this.tasks = tasks;
     }

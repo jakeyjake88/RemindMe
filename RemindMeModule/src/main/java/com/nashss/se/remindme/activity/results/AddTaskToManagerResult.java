@@ -8,6 +8,10 @@ import com.nashss.se.remindme.models.TaskModel;
 public class AddTaskToManagerResult {
     private final TaskModel task;
 
+    /**
+     * Constructor for the AddTaskToManagerResult endpoint.
+     * @param task the task object
+     */
     private AddTaskToManagerResult(TaskModel task) {
         this.task = task;
     }

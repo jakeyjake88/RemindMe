@@ -7,8 +7,16 @@ import com.nashss.se.remindme.models.TaskManagerModel;
 import com.nashss.se.remindme.models.TaskModel;
 import com.nashss.se.remindme.models.UserModel;
 
+/**
+ * Class for the ModelConverter.
+ */
 public class ModelConverter {
 
+    /**
+     * Method to convert to TaskModel.
+     * @param task the task to be converted
+     * @return the converted task
+     */
     public TaskModel toTaskModel(Task task) {
         return TaskModel.builder().withTaskId(task.getTaskId())
                 .withDescription(task.getDescription())
@@ -19,6 +27,11 @@ public class ModelConverter {
                 .build();
     }
 
+    /**
+     * Method to convert to UserModel.
+     * @param user the user to be converted
+     * @return the converted User
+     */
     public UserModel toUserModel(User user) {
         return UserModel.builder()
                 .withUserId(user.getUserId())
@@ -27,6 +40,11 @@ public class ModelConverter {
                 .build();
     }
 
+    /**
+     * Method to convert to TaskManagerModel.
+     * @param tm the TaskManager to be converted
+     * @return the converted TaskManager
+     */
     public TaskManagerModel toTaskManagerModel(TaskManager tm) {
         return TaskManagerModel.builder()
                 .withTaskManagerId(tm.getTaskManagerId())

@@ -8,6 +8,12 @@ public class CreateTaskManagerResult {
     private final String creatorId;
     private final String taskManagerName;
 
+    /**
+     * Constructor for the CreateTaskManagerResult endpoint.
+     * @param managerId the unique identifier for the taskManager
+     * @param creatorId the unique id for the creator
+     * @param taskManagerName the name of the taskManager
+     */
     private CreateTaskManagerResult(String managerId, String creatorId, String taskManagerName) {
         this.creatorId = creatorId;
         this.taskManagerName = taskManagerName;

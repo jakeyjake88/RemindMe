@@ -7,7 +7,9 @@ public class GetUserRequest {
     private final String userId;
 
     /**
-     * Constructor for the GetUserRequest for the RemindMeClient.
+     * Constructor for the CreateUserRequest class.
+     *
+     * @param userId the unique identify for user
      */
     public GetUserRequest(String userId) {
         this.userId = userId;

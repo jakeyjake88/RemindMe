@@ -1,12 +1,19 @@
 package com.nashss.se.remindme.dynamodb.models;
 
-import com.amazonaws.services.dynamodbv2.datamodeling.*;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverted;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.nashss.se.remindme.converters.LocalDateTimeConverter;
 
 import java.time.LocalDateTime;
 
+/**
+ * Class for the Task.
+ */
+//CHECKSTYLE:OFF:Model
 @DynamoDBTable(tableName = "tasks")
-
 public class Task {
     private String taskId;
     private String taskManagerId;

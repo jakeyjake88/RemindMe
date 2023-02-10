@@ -2,6 +2,9 @@ package com.nashss.se.remindme.utils;
 
 import java.util.function.Supplier;
 
+/**
+ * NullChecker.
+ */
 public class NullUtils {
     private NullUtils() { }
 

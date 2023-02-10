@@ -6,6 +6,11 @@ package com.nashss.se.remindme.activity.requests;
 public class GetAllTasksRequest {
     private final String taskManagerId;
 
+    /**
+     * Constructor for the CreateUserRequest class.
+     *
+     * @param taskManagerId the unique identify for user
+     */
     private GetAllTasksRequest(String taskManagerId) {
         this.taskManagerId = taskManagerId;
     }
@@ -18,8 +23,7 @@ public class GetAllTasksRequest {
     public String toString() {
         return "GetAllTasksRequest{ " +
                 "taskManagerId'" +
-                taskManagerId + '\''
-                + '}';
+                taskManagerId + '\'' + '}';
     }
 
     //CHECKSTYLE:OFF:Builder

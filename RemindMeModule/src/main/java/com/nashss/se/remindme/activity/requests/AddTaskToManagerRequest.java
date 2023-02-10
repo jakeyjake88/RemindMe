@@ -12,6 +12,13 @@ public class AddTaskToManagerRequest {
     private String name;
     private String description;
 
+    /**
+     * Constructor for the CreateUserRequest class.
+     *
+     * @param taskManagerId The unique identifier for the taskManager
+     * @param name The name of the user
+     * @param description The description of the task
+     */
     private AddTaskToManagerRequest(String taskManagerId, String name, String description) {
         this.taskManagerId = taskManagerId;
         this.name = name;

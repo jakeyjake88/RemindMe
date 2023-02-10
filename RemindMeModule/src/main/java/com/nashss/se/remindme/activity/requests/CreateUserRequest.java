@@ -8,6 +8,13 @@ public class CreateUserRequest {
     private final String userName;
     private final String phoneNumber;
 
+    /**
+     * Constructor for the CreateUserRequest class.
+     *
+     * @param userId The unique identifier for the user
+     * @param userName The name of the user
+     * @param phoneNumber The phone number of the user
+     */
     public CreateUserRequest(String userId, String userName, String phoneNumber) {
         this.userId = userId;
         this.userName = userName;

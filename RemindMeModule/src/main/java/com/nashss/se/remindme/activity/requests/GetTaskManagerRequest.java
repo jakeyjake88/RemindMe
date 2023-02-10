@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 public class GetTaskManagerRequest {
     private final String creatorId;
 
+    /**
+     * Constructor for the GetTaskManagerRequest for the RemindMeClient.
+     */
     private GetTaskManagerRequest(String creatorId) {
         this.creatorId = creatorId;
     }

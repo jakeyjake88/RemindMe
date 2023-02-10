@@ -5,9 +5,16 @@ import com.nashss.se.remindme.dynamodb.models.User;
 
 import javax.inject.Inject;
 
+/**
+ * Class for the UserDao.
+ */
 public class UserDao {
     private final DynamoDBMapper dynamoDBMapper;
 
+    /**
+     * Constructor for the userDao class.
+     * @param dynamoDBMapper to access database
+     */
     @Inject
     public UserDao(DynamoDBMapper dynamoDBMapper) {
         this.dynamoDBMapper = dynamoDBMapper;
@@ -32,7 +39,9 @@ public class UserDao {
      * @throws IllegalArgumentException If no user with the given ID is found.
      */
     public User getUser(String userId) {
-        if (userId == null) throw new IllegalArgumentException("User not found");
+        if (userId == null) {
+            throw new IllegalArgumentException("User not found");
+        }
         User user = dynamoDBMapper.load(User.class, userId);
         if (null == user) {
             throw new IllegalArgumentException("User is null");

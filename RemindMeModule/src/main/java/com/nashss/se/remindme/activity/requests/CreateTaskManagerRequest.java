@@ -11,6 +11,12 @@ public class CreateTaskManagerRequest {
     private final String creatorId;
     private final String taskManagerName;
 
+    /**
+     * Constructor for the CreateUserRequest class.
+     *
+     * @param creatorId the unique identify for user
+     * @param taskManagerName the name associated with the taskManager
+     */
     private CreateTaskManagerRequest(String creatorId, String taskManagerName) {
         this.creatorId = creatorId;
         this.taskManagerName = taskManagerName;

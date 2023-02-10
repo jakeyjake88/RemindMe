@@ -13,10 +13,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Class for the TaskDao.
+ */
 @Singleton
 public class TaskDao {
     private final DynamoDBMapper dynamoDBMapper;
 
+    /**
+     * Constructor for the TaskDao class.
+     * @param dynamoDBMapper to access database
+     */
     @Inject
     public TaskDao(DynamoDBMapper dynamoDBMapper) {
         this.dynamoDBMapper = dynamoDBMapper;
@@ -31,8 +38,12 @@ public class TaskDao {
      * @throws TaskNotFoundException If the task manager ID or task ID is `null` or if the task cannot be found.
      */
     public Task getTask(String taskManagerId, String taskId) {
-        if (taskManagerId == null || taskId == null) throw new TaskNotFoundException("Nope");
+        if (taskManagerId == null || taskId == null) {
+            throw new TaskNotFoundException("Nope");
+        }
+
         Task task = dynamoDBMapper.load(Task.class, taskManagerId, taskId);
+
         if (null == task) {
             throw new TaskNotFoundException(
                     "Could not find Task with TaskManagerId '%s' and TaskId %d");
@@ -48,7 +59,10 @@ public class TaskDao {
      * @throws TaskNotFoundException If the task manager ID is `null` or if no tasks are found.
      */
     public List<Task> getAllTasksForManager(String taskManagerId) {
-        if (taskManagerId == null) throw new TaskNotFoundException("No task found!!");
+        if (taskManagerId == null) {
+            throw new TaskNotFoundException("No task found!!");
+        }
+
         Map<String, AttributeValue> expressionAttributeValues = new HashMap<String, AttributeValue>();
         expressionAttributeValues.put(":val1", new AttributeValue().withS(taskManagerId));
         DynamoDBScanExpression scanExpression = new DynamoDBScanExpression()
@@ -57,11 +71,22 @@ public class TaskDao {
         return dynamoDBMapper.scan(Task.class, scanExpression);
     }
 
+    /**
+     * Creates a Task in the Database.
+     *
+     * @param task The task to be saved.
+     * @return The saved task.
+     */
     public Task createTask(Task task) {
         this.dynamoDBMapper.save(task);
         return task;
     }
 
+    /**
+     * Creates a unique ID with 5 characters.
+     *
+     * @return The ID.
+     */
     public String generateNewId() {
         return RandomStringUtils.randomAlphanumeric(5);
     }

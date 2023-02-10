@@ -3,6 +3,10 @@ package com.nashss.se.remindme.models;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+/**
+ * Model for the Tasks.
+ */
+//CHECKSTYLE:OFF:Model
 public class TaskModel {
     private final String taskId;
     private final String taskManagerId;

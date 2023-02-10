@@ -8,6 +8,10 @@ import com.nashss.se.remindme.models.UserModel;
 public class GetUserResult {
     private final UserModel user;
 
+    /**
+     * Constructor for the GetUser class.
+     * @param user the associated user
+     */
     private GetUserResult(UserModel user) {
         this.user = user;
     }

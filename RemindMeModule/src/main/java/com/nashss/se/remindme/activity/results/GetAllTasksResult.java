@@ -10,6 +10,10 @@ import java.util.List;
 public class GetAllTasksResult {
     private final List<TaskModel> tasks;
 
+    /**
+     * Constructor for the GetAllTasksResult class.
+     * @param tasks the list of tasks
+     */
     private GetAllTasksResult(List<TaskModel> tasks) {
         this.tasks = tasks;
     }

@@ -9,7 +9,7 @@ public class UserModel {
     private final String phoneNumber;
 
 
-    private UserModel(String userId, String userName, String phoneNumber) {
+    public UserModel(String userId, String userName, String phoneNumber) {
         this.userId = userId;
         this.userName = userName;
         this.phoneNumber = phoneNumber;

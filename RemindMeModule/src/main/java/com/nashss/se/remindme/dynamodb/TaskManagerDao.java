@@ -3,7 +3,6 @@ package com.nashss.se.remindme.dynamodb;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.nashss.se.remindme.dynamodb.models.TaskManager;
-import net.bytebuddy.pool.TypePool;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import javax.inject.Inject;

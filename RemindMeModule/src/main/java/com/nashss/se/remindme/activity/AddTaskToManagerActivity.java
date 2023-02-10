@@ -12,11 +12,22 @@ import javax.inject.Inject;
 public class AddTaskToManagerActivity {
     private final TaskDao taskDao;
 
+    /**
+     * Constructor for the AddTaskToManagerActivity class.
+     *
+     * @param taskDao A data access object that performs operations on tasks
+     */
     @Inject
     public AddTaskToManagerActivity(TaskDao taskDao) {
         this.taskDao = taskDao;
     }
 
+    /**
+     * Handles the request to add a new task to a task manager.
+     *
+     * @param request An object that contains the information about the task to be added
+     * @return An object that contains the result of the task addition
+     */
     public AddTaskToManagerResult handleRequest(final AddTaskToManagerRequest request) {
         Task task = new Task();
         task.setTaskManagerId(request.getTaskManagerId());

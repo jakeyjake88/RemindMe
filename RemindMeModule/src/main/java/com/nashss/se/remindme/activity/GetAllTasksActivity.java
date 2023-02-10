@@ -14,6 +14,11 @@ import java.util.List;
 public class GetAllTasksActivity {
     private final TaskDao taskDao;
 
+    /**
+     * Constructor for the GetAllTasksActivity class.
+     *
+     * @param taskDao data access object that performs operations on tasks
+     */
     @Inject
     public GetAllTasksActivity(TaskDao taskDao) { this.taskDao = taskDao; }
 

@@ -14,6 +14,11 @@ import java.util.List;
 public class GetTaskManagerActivity {
     private final TaskManagerDao tmDao;
 
+    /**
+     * Constructor for the GetTaskManagerActivity class.
+     *
+     * @param tmDao data access object that performs operations on task managers
+     */
     @Inject
     public GetTaskManagerActivity(TaskManagerDao tmDao) {
         this.tmDao = tmDao;

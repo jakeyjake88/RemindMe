@@ -12,6 +12,11 @@ import javax.inject.Inject;
 public class GetTaskActivity {
     private final TaskDao taskDao;
 
+    /**
+     * Constructor for the GetTaskActivity class.
+     *
+     * @param taskDao data access object that performs operations on tasks
+     */
     @Inject
     public GetTaskActivity(TaskDao taskDao) {
         this.taskDao = taskDao;

@@ -8,7 +8,7 @@
 
 plugins {
     id "java"
-   // id "checkstyle"
+    id "checkstyle"
     id 'jacoco'
     id 'com.adarshr.test-logger' version '3.2.0'
 }
@@ -19,13 +19,13 @@ defaultTasks 'clean', 'build'
 
 repositories {
     mavenCentral()
-    /*maven {
+    maven {
         url = uri("https://maven.pkg.github.com/NSS-Software-Engineering/shared-java")
         credentials {
             username = project.findProperty('GH_PACKAGE_REG_READ_USER') ?: System.getenv('GH_PACKAGE_REG_READ_USER')
             password = project.findProperty('GH_PACKAGE_REG_READ_PASS') ?: System.getenv('GH_PACKAGE_REG_READ_PASS')
         }
-    } */
+    }
 }
 
 dependencies {
@@ -65,10 +65,9 @@ test {
 useJUnitPlatform()
 }
 
-/* checkstyles */
 
 // Applies Checkstyle plugin quality checks on project's Java source files and generates reports from these checks.
-/*checkstyle {
+checkstyle {
     toolVersion '8.17'
 
     // Expect the checkstyle config to be in a either the current directory or
@@ -87,17 +86,17 @@ useJUnitPlatform()
     }
 
     def checkstyleDir = configFile.toPath().parent
-    def suppressionFile = new File("$checkstyleDir/unit3/suppressions.xml")
+    def suppressionFile = new File("$checkstyleDir/suppressions.xml")
     configProperties.put('checkstyle.suppression.filter', suppressionFile) // This property is refereced in `checkstyle.xml`
 
     sourceSets = [sourceSets.main]
 }
 
 // If we are running the task 'staticchecks', do not ignore failures, otherwise ignore
-//checkstyleMain.doFirst {
-//    //ignoreFailures = !gradle.taskGraph.allTasks.any({ it.name ==~ /.*staticchecks/ })
-//    ignoreFailures = true
-//}
+checkstyleMain.doFirst {
+    ignoreFailures = !gradle.taskGraph.allTasks.any({ it.name ==~ /.*staticchecks/ })
+    ignoreFailures = true
+}
 
 check.dependsOn jacocoTestCoverageVerification
 jacocoTestCoverageVerification {
@@ -111,4 +110,3 @@ jacocoTestCoverageVerification {
     }
 }
 
- */

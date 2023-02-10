@@ -12,6 +12,11 @@ import javax.inject.Inject;
 public class CreateUserActivity {
     private final UserDao userDao;
 
+    /**
+     * Constructor for the CreateUserActivity class.
+     *
+     * @param userDao data access object that performs operations on users
+     */
     @Inject
     public CreateUserActivity(UserDao userDao) {
         this.userDao = userDao;

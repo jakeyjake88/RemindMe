@@ -10,6 +10,11 @@ import javax.inject.Inject;
 public class CreateTaskManagerActivity {
     private final TaskManagerDao taskManagerDao;
 
+    /**
+     * Constructor for the CreateTaskManagerActivity class.
+     *
+     * @param taskManagerDao A data access object that performs operations on tasks
+     */
     @Inject
     public CreateTaskManagerActivity(TaskManagerDao taskManagerDao) {
         this.taskManagerDao = taskManagerDao;

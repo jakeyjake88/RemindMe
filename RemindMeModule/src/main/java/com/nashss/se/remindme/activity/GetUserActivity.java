@@ -9,6 +9,11 @@ import com.nashss.se.remindme.models.UserModel;
 
 import javax.inject.Inject;
 
+/**
+ * Class for GetUserActivity in the RemindMeClient.
+ * <p>
+ * This endpoint allows for users to get an individual user.
+ */
 public class GetUserActivity {
     private final UserDao userDao;
 

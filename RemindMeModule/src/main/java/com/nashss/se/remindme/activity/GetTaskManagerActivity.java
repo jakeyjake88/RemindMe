@@ -11,6 +11,11 @@ import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for GetTaskManagerActivity in the RemindMeClient.
+ * <p>
+ * This endpoint allows for users to get an individual task manager.
+ */
 public class GetTaskManagerActivity {
     private final TaskManagerDao tmDao;
 

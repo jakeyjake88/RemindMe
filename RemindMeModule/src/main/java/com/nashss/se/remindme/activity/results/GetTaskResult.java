@@ -2,6 +2,9 @@ package com.nashss.se.remindme.activity.results;
 
 import com.nashss.se.remindme.models.TaskModel;
 
+/**
+ * Class for the GetTaskResult for the RemindMeClient.
+ */
 public class GetTaskResult {
     private final TaskModel task;
 

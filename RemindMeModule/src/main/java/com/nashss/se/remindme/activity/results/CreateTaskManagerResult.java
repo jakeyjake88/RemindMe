@@ -1,5 +1,8 @@
 package com.nashss.se.remindme.activity.results;
 
+/**
+ * Class for the CreateTaskManagerResult for the RemindMeClient.
+ */
 public class CreateTaskManagerResult {
     private final String managerId;
     private final String creatorId;
@@ -11,7 +14,9 @@ public class CreateTaskManagerResult {
         this.managerId = managerId;
     }
 
-    public String getManagerId() { return managerId; }
+    public String getManagerId() {
+        return managerId;
+    }
 
     @Override
     public String toString() {
@@ -19,6 +24,7 @@ public class CreateTaskManagerResult {
                 '}';
     }
 
+    //CHECKSTYLE:OFF:Builder
     public static Builder builder() { return new Builder(); }
 
     public static class Builder {

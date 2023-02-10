@@ -3,6 +3,9 @@ package com.nashss.se.remindme.activity.requests;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
+/**
+ * Class for the CreateTaskManagerRequest for the RemindMeClient.
+ */
 @JsonDeserialize(builder = CreateTaskManagerRequest.Builder.class)
 public class CreateTaskManagerRequest {
     private final String creatorId;
@@ -13,8 +16,12 @@ public class CreateTaskManagerRequest {
         this.taskManagerName = taskManagerName;
     }
 
-    public String getCreatorId() { return creatorId; }
-    public String getTaskManagerName() { return taskManagerName; }
+    public String getCreatorId() {
+        return creatorId;
+    }
+    public String getTaskManagerName() {
+        return taskManagerName;
+    }
 
 
     @Override
@@ -24,6 +31,7 @@ public class CreateTaskManagerRequest {
     }
 
 
+    //CHECKSTYLE:OFF:Builder
     public static Builder builder() { return new Builder(); }
     @JsonPOJOBuilder
     public static class Builder {

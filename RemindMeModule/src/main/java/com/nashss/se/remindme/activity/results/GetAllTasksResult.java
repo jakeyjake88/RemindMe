@@ -4,6 +4,9 @@ import com.nashss.se.remindme.models.TaskModel;
 
 import java.util.List;
 
+/**
+ * Class for the GetAllTasksResult for the RemindMeClient.
+ */
 public class GetAllTasksResult {
     private final List<TaskModel> tasks;
 
@@ -11,7 +14,9 @@ public class GetAllTasksResult {
         this.tasks = tasks;
     }
 
-    public List<TaskModel> getTasks() { return tasks; }
+    public List<TaskModel> getTasks() {
+        return tasks;
+    }
 
     @Override
     public String toString() {

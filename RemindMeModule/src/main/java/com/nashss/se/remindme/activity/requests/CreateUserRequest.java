@@ -1,5 +1,8 @@
 package com.nashss.se.remindme.activity.requests;
 
+/**
+ * Class for the CreateUserRequest for the RemindMeClient.
+ */
 public class CreateUserRequest {
     private final String userId;
     private final String userName;

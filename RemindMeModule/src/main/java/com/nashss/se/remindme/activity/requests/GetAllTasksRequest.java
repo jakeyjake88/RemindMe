@@ -1,5 +1,8 @@
 package com.nashss.se.remindme.activity.requests;
 
+/**
+ * Class for the GetAllTasksRequest for the RemindMeClient.
+ */
 public class GetAllTasksRequest {
     private final String taskManagerId;
 
@@ -13,11 +16,13 @@ public class GetAllTasksRequest {
 
     @Override
     public String toString() {
-        return "GetAllTasksRequest{ " + "taskManagerId'" + taskManagerId + '\''
+        return "GetAllTasksRequest{ " +
+                "taskManagerId'" +
+                taskManagerId + '\''
                 + '}';
     }
 
-    //CHECKSTYLE:Off:Builder
+    //CHECKSTYLE:OFF:Builder
     public static Builder builder() { return new Builder(); }
 
     public static class Builder {

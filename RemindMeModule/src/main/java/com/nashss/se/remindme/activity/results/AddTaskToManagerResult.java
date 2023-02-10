@@ -2,13 +2,21 @@ package com.nashss.se.remindme.activity.results;
 
 import com.nashss.se.remindme.models.TaskModel;
 
+/**
+ * Class for the AddTaskToManagerResult for the RemindMeClient.
+ */
 public class AddTaskToManagerResult {
     private final TaskModel task;
 
-    private AddTaskToManagerResult(TaskModel task) { this.task = task; }
+    private AddTaskToManagerResult(TaskModel task) {
+        this.task = task;
+    }
 
-    public TaskModel getTask() { return task; }
+    public TaskModel getTask() {
+        return task;
+    }
 
+    //CHECKSTYLE:OFF:Builder
     public static Builder builder() {
         return new Builder();
     }

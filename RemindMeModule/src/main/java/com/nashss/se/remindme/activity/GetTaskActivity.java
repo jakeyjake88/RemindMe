@@ -9,6 +9,11 @@ import com.nashss.se.remindme.models.TaskModel;
 
 import javax.inject.Inject;
 
+/**
+ * Class for GetTaskActivity in the RemindMeClient.
+ * <p>
+ * This endpoint allows for users to get an individual task.
+ */
 public class GetTaskActivity {
     private final TaskDao taskDao;
 

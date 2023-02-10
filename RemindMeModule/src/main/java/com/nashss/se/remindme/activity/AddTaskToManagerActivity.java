@@ -9,6 +9,11 @@ import com.nashss.se.remindme.models.TaskModel;
 
 import javax.inject.Inject;
 
+/**
+ * Class for AddTaskToManagerActivity for the RemindMeClient.
+ * <p>
+ * This endpoint allows for users to add a Task to a Manager.
+ */
 public class AddTaskToManagerActivity {
     private final TaskDao taskDao;
 

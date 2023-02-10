@@ -2,6 +2,10 @@ package com.nashss.se.remindme.models;
 
 import java.util.Objects;
 
+/**
+ * Model for the TaskManager.
+ */
+//CHECKSTYLE:OFF:Model
 public class TaskManagerModel {
     private final String creatorId;
     private final String taskManagerId;

@@ -3,6 +3,10 @@ package com.nashss.se.remindme.models;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+/**
+ * Model for the Tasks.
+ */
+//CHECKSTYLE:OFF:Model
 public class TaskModel {
     private final String taskId;
     private final String taskManagerId;
@@ -12,7 +16,7 @@ public class TaskModel {
     private final boolean isActive;
 
 
-    private TaskModel(String taskId, String taskManagerId, String name, LocalDateTime dueDate, String description, boolean isActive) {
+    public TaskModel(String taskId, String taskManagerId, String name, LocalDateTime dueDate, String description, boolean isActive) {
         this.taskId = taskId;
         this.taskManagerId = taskManagerId;
         this.name = name;

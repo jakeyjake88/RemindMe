@@ -9,14 +9,30 @@ import com.nashss.se.remindme.models.TaskModel;
 
 import javax.inject.Inject;
 
+/**
+ * Class for GetTaskActivity in the RemindMeClient.
+ * <p>
+ * This endpoint allows for users to get an individual task.
+ */
 public class GetTaskActivity {
     private final TaskDao taskDao;
 
+    /**
+     * Constructor for the GetTaskActivity class.
+     *
+     * @param taskDao data access object that performs operations on tasks
+     */
     @Inject
     public GetTaskActivity(TaskDao taskDao) {
         this.taskDao = taskDao;
     }
 
+    /**
+     * The `handleRequest` method handles a request to retrieve a task given the task manager id and task id.
+     *
+     * @param getTaskRequest the request that contains the task manager id and task id
+     * @return a GetTaskResult object containing the task
+     */
     public GetTaskResult handleRequest(final GetTaskRequest getTaskRequest) {
         String taskId = getTaskRequest.getTaskId();
         String taskManagerId = getTaskRequest.getTaskManagerId();

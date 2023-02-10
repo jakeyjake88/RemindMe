@@ -11,14 +11,31 @@ import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for GetTaskManagerActivity in the RemindMeClient.
+ * <p>
+ * This endpoint allows for users to get an individual task manager.
+ */
 public class GetTaskManagerActivity {
     private final TaskManagerDao tmDao;
 
+    /**
+     * Constructor for the GetTaskManagerActivity class.
+     *
+     * @param tmDao data access object that performs operations on task managers
+     */
     @Inject
     public GetTaskManagerActivity(TaskManagerDao tmDao) {
         this.tmDao = tmDao;
     }
 
+    /**
+     * This method handles a `GetTaskManagerRequest` and returns a `GetTaskManagerResult`.
+     * It retrieves a list of `TaskManagerModel` objects that are associated with the provided `creatorId`.
+     *
+     * @param request The `GetTaskManagerRequest` object that contains the `creatorId` to search for.
+     * @return A `GetTaskManagerResult` object that contains a list of `TaskManagerModel` objects.
+     */
     public GetTaskManagerResult handleRequest(final GetTaskManagerRequest request) {
         String creatorId = request.getCreatorId();
         List<TaskManagerModel> tmList = new ArrayList<>();

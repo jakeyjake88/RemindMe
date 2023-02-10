@@ -4,9 +4,16 @@ import com.nashss.se.remindme.models.TaskManagerModel;
 
 import java.util.List;
 
+/**
+ * Class for the GetTaskManagerResult for the RemindMeClient.
+ */
 public class GetTaskManagerResult {
     private final List<TaskManagerModel> tasks;
 
+    /**
+     * Constructor for the GetAllTaskManagersResult class.
+     * @param tasks the list of taskmanager
+     */
     private GetTaskManagerResult(List<TaskManagerModel> tasks) {
         this.tasks = tasks;
     }

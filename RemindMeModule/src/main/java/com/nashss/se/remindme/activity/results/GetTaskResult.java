@@ -2,9 +2,16 @@ package com.nashss.se.remindme.activity.results;
 
 import com.nashss.se.remindme.models.TaskModel;
 
+/**
+ * Class for the GetTaskResult for the RemindMeClient.
+ */
 public class GetTaskResult {
     private final TaskModel task;
 
+    /**
+     * Constructor for the GetTaskResult class.
+     * @param task the associated task
+     */
     private GetTaskResult(TaskModel task) {
         this.task = task;
     }

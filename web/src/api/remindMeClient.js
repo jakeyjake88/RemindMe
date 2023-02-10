@@ -2,10 +2,10 @@ import axios from "axios";
 import BindingClass from "../util/bindingClass";
 import Authenticator from "./authenticator";
 
-export default class RemindMePlaylistClient extends BindingClass {
+export default class RemindMeClient extends BindingClass {
     constructor(props = {}) {
         super();
-        const methodsToBind = ['clientLoaded', 'getIdentity', 'login', 'logout'];
+        const methodsToBind = ['clientLoaded', 'getIdentity', 'login', 'logout', 'getAllTasks'];
         this.bindClassMethods(methodsToBind, this);
         this.authenticator = new Authenticator();;
         this.props = props;
@@ -89,14 +89,12 @@ export default class RemindMePlaylistClient extends BindingClass {
         }
     }
 
-    async getAllTasks(errorCallback, taskManagerId) {
+    async getAllTasks(taskManagerId, errorCallback) {
         try {
-            console.log("About to get token(get TM");
+            console.log("About to get token(get tasks");
+            console.log(taskManagerId);
             const token = await this.getTokenOrThrow("Only authenticated users can get a tm");
-            console.log(token);
-            const response = await this.axiosClient.get('tasks', {
-                taskManagerId: taskManagerId
-            }, {
+            const response = await this.axiosClient.get(`tasks/${taskManagerId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -117,6 +115,24 @@ export default class RemindMePlaylistClient extends BindingClass {
                 }
             });
             return response.data.createUser;
+        }   catch (error) {
+        this.handleError(error, errorCallback);
+        }
+    }
+
+    async addTaskToManager(name, description, taskManagerId, errorCallback) {
+        try {
+            const token = await this.getTokenOrThrow("Only authenticated users can register.");
+            const response = await this.axiosClient.post('tasks', {
+                taskManagerId: taskManagerId,
+                name: name,
+                description: description
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.task;
         }   catch (error) {
         this.handleError(error, errorCallback);
         }

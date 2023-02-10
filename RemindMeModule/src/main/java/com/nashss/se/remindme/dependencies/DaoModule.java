@@ -6,6 +6,7 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import dagger.Module;
 import dagger.Provides;
+//CHECKSTYLE:OFF:DaoModule
 @Module
 public class DaoModule {
    @Singleton

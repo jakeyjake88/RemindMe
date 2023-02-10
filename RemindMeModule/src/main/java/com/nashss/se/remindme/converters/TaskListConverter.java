@@ -8,6 +8,9 @@ import com.nashss.se.remindme.dynamodb.models.Task;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for the TaskListConverter.
+ */
 public class TaskListConverter implements DynamoDBTypeConverter<String, List<Task>> {
     private static final Gson GSON = new Gson();
 

@@ -8,6 +8,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+/**
+ * Makes the Lambda Call.
+ * @param <T> The type of the concrete request that should be created from this LambdaRequest
+ */
 public class AuthenticatedLambdaRequest<T> extends LambdaRequest<T> {
 
     /**

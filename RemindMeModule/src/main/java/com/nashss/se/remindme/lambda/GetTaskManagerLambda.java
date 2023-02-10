@@ -5,8 +5,11 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.nashss.se.remindme.activity.requests.GetTaskManagerRequest;
 import com.nashss.se.remindme.activity.results.GetTaskManagerResult;
 
+/**
+ * Makes the Lambda Call.
+ */
 public class GetTaskManagerLambda extends LambdaActivityRunner<GetTaskManagerRequest, GetTaskManagerResult>
-implements RequestHandler<AuthenticatedLambdaRequest<GetTaskManagerRequest>, LambdaResponse> {
+    implements RequestHandler<AuthenticatedLambdaRequest<GetTaskManagerRequest>, LambdaResponse> {
 
     @Override
     public LambdaResponse handleRequest(AuthenticatedLambdaRequest<GetTaskManagerRequest> input, Context context) {
@@ -14,7 +17,7 @@ implements RequestHandler<AuthenticatedLambdaRequest<GetTaskManagerRequest>, Lam
                 GetTaskManagerRequest.builder()
                         .withCreatorId(claims.get("email"))
                         .build()),
-                (request, serviceComponent) -> serviceComponent.provideGetTaskManagerActivity().handleRequest(request)
+            (request, serviceComponent) -> serviceComponent.provideGetTaskManagerActivity().handleRequest(request)
         );
     }
 }

@@ -1,9 +1,19 @@
 package com.nashss.se.remindme.activity.requests;
 
+/**
+ * Class for the GetTaskRequest for the RemindMeClient.
+ */
 public class GetTaskRequest {
     private final String taskId;
     private final String taskManagerId;
 
+
+    /**
+     * Constructor for the CreateUserRequest class.
+     *
+     * @param taskManagerId the unique identify for taskManager
+     * @param taskId the unique identifier for the task
+     */
     private GetTaskRequest(String taskId, String taskManagerId) {
         this.taskId = taskId;
         this.taskManagerId = taskManagerId;

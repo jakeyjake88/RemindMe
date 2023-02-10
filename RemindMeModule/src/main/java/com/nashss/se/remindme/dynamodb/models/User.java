@@ -1,10 +1,10 @@
 package com.nashss.se.remindme.dynamodb.models;
 
-
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
+//CHECKSTYLE:OFF:Model
 @DynamoDBTable(tableName = "users")
 
 public class User {

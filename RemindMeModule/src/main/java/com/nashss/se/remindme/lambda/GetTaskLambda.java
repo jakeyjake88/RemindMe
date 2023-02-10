@@ -5,8 +5,12 @@ import com.nashss.se.remindme.activity.results.GetTaskResult;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
+/**
+ * Makes the Lambda Call.
+ */
 public class GetTaskLambda extends LambdaActivityRunner<GetTaskRequest, GetTaskResult>
     implements RequestHandler<LambdaRequest<GetTaskRequest>, LambdaResponse> {
+
 
     @Override
     public LambdaResponse handleRequest(LambdaRequest<GetTaskRequest> input, Context context) {
@@ -14,6 +18,6 @@ public class GetTaskLambda extends LambdaActivityRunner<GetTaskRequest, GetTaskR
                 .withTaskManagerId(path.get("taskManagerId"))
                 .withId(path.get("taskId"))
                 .build()),
-                (request, serviceComponent) -> serviceComponent.provideGetTaskActivity().handleRequest(request));
+            (request, serviceComponent) -> serviceComponent.provideGetTaskActivity().handleRequest(request));
     }
 }

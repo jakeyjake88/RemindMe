@@ -6,9 +6,48 @@
   <component name="ChangeListManager">
     <list default="true" id="0f7439c2-0b71-4768-8e06-aacc4c553105" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/template.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/taskManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/taskManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static_assets/taskManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static_assets/taskManager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/AddTaskToManagerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/AddTaskToManagerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/CreateTaskManagerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/CreateTaskManagerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/CreateUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/CreateUserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/GetAllTasksRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/GetAllTasksRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/GetTaskManagerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/GetTaskManagerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/GetTaskRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/GetTaskRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/GetUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/GetUserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/AddTaskToManagerResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/AddTaskToManagerResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/CreateTaskManagerResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/CreateTaskManagerResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/CreateUserResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/CreateUserResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/GetAllTasksResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/GetAllTasksResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/GetTaskManagerResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/GetTaskManagerResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/GetTaskResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/GetTaskResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/GetUserResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/results/GetUserResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/converters/LocalDateTimeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/converters/LocalDateTimeConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/converters/ModelConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/converters/ModelConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/converters/TaskListConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/converters/TaskListConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dependencies/DaoModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dependencies/DaoModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dependencies/DynamoDbClientProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dependencies/DynamoDbClientProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dependencies/ServiceComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dependencies/ServiceComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/TaskDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/TaskManagerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/TaskManagerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/models/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/models/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/models/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/models/TaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/exceptions/TaskNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/exceptions/TaskNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/AddTaskToManagerLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/AddTaskToManagerLambda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/AuthenticatedLambdaRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/AuthenticatedLambdaRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/CreateTaskManagerLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/CreateTaskManagerLambda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/CreateUserLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/CreateUserLambda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/GetAllTasksLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/GetAllTasksLambda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/GetTaskLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/GetTaskLambda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/GetTaskManagerLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/GetTaskManagerLambda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/GetUserLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/GetUserLambda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/LambdaActivityRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/LambdaActivityRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/LambdaRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/LambdaRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/LambdaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/LambdaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/models/TaskManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/models/TaskManagerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/models/TaskModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/models/TaskModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/models/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/utils/NullUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/utils/NullUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +114,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "11",
     "last_opened_file_path": "/home/jake/workspace/jpcapstone/RemindMe",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.sourceCode"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -83,8 +122,8 @@
       <recent name="com.nashss.se.remindme" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.RemindMe [build]">
-    <configuration name="RemindMe [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.TaskManagerDaoTest">
+    <configuration name="TaskDaoTest.testGetAllTasksForManager" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -95,33 +134,106 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":RemindMeModule:test" />
+            <option value="--tests" />
+            <option value="&quot;com.nashss.se.remindme.unittest.dao.TaskDaoTest.testGetAllTasksForManager&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RemindMe [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TaskDaoTest.testGetAllTasksForManagerWithNullTaskManagerId" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value=":RemindMeModule:test" />
+            <option value="--tests" />
+            <option value="&quot;com.nashss.se.remindme.unittest.dao.TaskDaoTest.testGetAllTasksForManagerWithNullTaskManagerId&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TaskDaoTest.testGetTask" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":RemindMeModule:test" />
+            <option value="--tests" />
+            <option value="&quot;com.nashss.se.remindme.unittest.dao.TaskDaoTest.testGetTask&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TaskManagerDaoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":RemindMeModule:test" />
+            <option value="--tests" />
+            <option value="&quot;com.nashss.se.remindme.unittest.dao.TaskManagerDaoTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserDaoTest.getUserNullTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":RemindMeModule:test" />
+            <option value="--tests" />
+            <option value="&quot;com.nashss.se.remindme.unittest.dao.UserDaoTest.getUserNullTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -140,14 +252,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.RemindMe [build]" />
-      <item itemvalue="Gradle.RemindMe [clean]" />
+      <item itemvalue="Gradle.TaskDaoTest.testGetAllTasksForManager" />
+      <item itemvalue="Gradle.TaskDaoTest.testGetAllTasksForManagerWithNullTaskManagerId" />
+      <item itemvalue="Gradle.TaskDaoTest.testGetTask" />
+      <item itemvalue="Gradle.TaskManagerDaoTest" />
+      <item itemvalue="Gradle.UserDaoTest.getUserNullTest" />
       <item itemvalue="Remote JVM Debug.debugger" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.RemindMe [build]" />
-        <item itemvalue="Gradle.RemindMe [clean]" />
+        <item itemvalue="Gradle.TaskManagerDaoTest" />
+        <item itemvalue="Gradle.TaskDaoTest.testGetAllTasksForManager" />
+        <item itemvalue="Gradle.TaskDaoTest.testGetAllTasksForManagerWithNullTaskManagerId" />
+        <item itemvalue="Gradle.TaskDaoTest.testGetTask" />
+        <item itemvalue="Gradle.UserDaoTest.getUserNullTest" />
       </list>
     </recent_temporary>
   </component>
@@ -161,5 +279,12 @@
       <updated>1674768031886</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.nashss.se.remindme.activity.requests.GetAllTasksRequest" memberName="taskManagerId" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

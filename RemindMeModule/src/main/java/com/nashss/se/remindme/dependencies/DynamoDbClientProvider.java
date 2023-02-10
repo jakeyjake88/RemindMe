@@ -1,3 +1,4 @@
+
 package com.nashss.se.remindme.dependencies;
 
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
@@ -8,6 +9,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 /**
  * Provides an {@code AmazonDynamoDB} client using default AWS credentials provider chain.
  */
+
 public class DynamoDbClientProvider {
 
     /**
@@ -36,4 +38,5 @@ public class DynamoDbClientProvider {
                 .withRegion(region)
                 .build();
     }
+
 }

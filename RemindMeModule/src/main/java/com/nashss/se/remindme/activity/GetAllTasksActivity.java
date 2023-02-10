@@ -11,12 +11,30 @@ import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for GetAllTasksActivity in the RemindMeClient.
+ * <p>
+ * This endpoint allows for users to get all tasks associated with a manager.
+ */
 public class GetAllTasksActivity {
     private final TaskDao taskDao;
 
+    /**
+     * Constructor for the GetAllTasksActivity class.
+     *
+     * @param taskDao data access object that performs operations on tasks
+     */
     @Inject
-    public GetAllTasksActivity(TaskDao taskDao) { this.taskDao = taskDao; }
+    public GetAllTasksActivity(TaskDao taskDao) {
+        this.taskDao = taskDao;
+    }
 
+    /**
+     * Handles the request to get all tasks for a task manager.
+     *
+     * @param request The request containing the task manager ID.
+     * @return A result object containing a list of task models.
+     */
     public GetAllTasksResult handleRequest(final GetAllTasksRequest request) {
         String taskManagerId = request.getTaskManagerId();
         List<TaskModel> taskModel = new ArrayList<>();

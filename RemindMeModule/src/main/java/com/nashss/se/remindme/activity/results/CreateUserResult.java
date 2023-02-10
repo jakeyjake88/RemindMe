@@ -2,9 +2,16 @@ package com.nashss.se.remindme.activity.results;
 
 import com.nashss.se.remindme.models.UserModel;
 
+/**
+ * Class for the CreateUserResult for the RemindMeClient.
+ */
 public class CreateUserResult {
     private final UserModel user;
 
+    /**
+     * Constructor for the CreateUserResult endpoint.
+     * @param user the user object
+     */
     public CreateUserResult(UserModel user) {
         this.user = user;
     }
@@ -12,6 +19,8 @@ public class CreateUserResult {
     public UserModel getUser() {
         return user;
     }
+
+    //CHECKSTYLE:OFF:Builder
     public static Builder builder() {
         return new Builder();
     }

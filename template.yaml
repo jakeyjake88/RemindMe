@@ -169,6 +169,62 @@ Resources:
       Domain: !Ref CognitoDomain
       UserPoolId: !Ref UserPool
 
+
+    #-----------------------------------------------------
+    # Role/Permissions/Policy Configuration
+    #-----------------------------------------------------
+
+  AccessRole:
+    Type: AWS::IAM::Role
+    Properties:
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/service-role/AWSLambdaRole'
+        - 'arn:aws:iam::aws:policy/AWSLambdaExecute'
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Policies:
+        - PolicyName: 'WriteToCloudWatch'
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                  - cloudwatch:PutMetricData
+                Resource: '*'
+        - PolicyName: 'AccessTaskManagersTable'
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: dynamodb:*
+                Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/taskManager"
+
+        - PolicyName: 'AccessTasksTable'
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: dynamodb:*
+                Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/tasks"
+
+        - PolicyName: 'AccessUsersTable'
+          PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action: dynamodb:*
+                  Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/users"
+
       #-----------------------------------------------------
       # API Endpoints and whatnot
       #-----------------------------------------------------
@@ -176,6 +232,7 @@ Resources:
   GetTaskLambda:
     Type: AWS::Serverless::Function
     Properties:
+      Role: !GetAtt AccessRole.Arn
       CodeUri: RemindMeModule
       Handler: com.nashss.se.remindme.lambda.GetTaskLambda::handleRequest
       Runtime: java11
@@ -194,6 +251,7 @@ Resources:
   GetAllTasksLambda:
     Type: AWS::Serverless::Function
     Properties:
+      Role: !GetAtt AccessRole.Arn
       CodeUri: RemindMeModule
       Handler: com.nashss.se.remindme.lambda.GetAllTasksLambda::handleRequest
       Runtime: java11
@@ -212,6 +270,7 @@ Resources:
   CreateTaskManagerLambda:
     Type: AWS::Serverless::Function
     Properties:
+      Role: !GetAtt AccessRole.Arn
       CodeUri: RemindMeModule
       Handler: com.nashss.se.remindme.lambda.CreateTaskManagerLambda::handleRequest
       Runtime: java11
@@ -230,6 +289,7 @@ Resources:
   AddTaskToManagerLambda:
     Type: AWS::Serverless::Function
     Properties:
+      Role: !GetAtt AccessRole.Arn
       CodeUri: RemindMeModule
       Handler: com.nashss.se.remindme.lambda.AddTaskToManagerLambda::handleRequest
       Runtime: java11
@@ -248,6 +308,7 @@ Resources:
   GetUserLambda:
     Type: AWS::Serverless::Function
     Properties:
+      Role: !GetAtt AccessRole.Arn
       CodeUri: RemindMeModule
       Handler: com.nashss.se.remindme.lambda.GetUserLambda::handleRequest
       Runtime: java11
@@ -266,6 +327,7 @@ Resources:
   GetTaskManagerLambda:
     Type: AWS::Serverless::Function
     Properties:
+      Role: !GetAtt AccessRole.Arn
       CodeUri: RemindMeModule
       Handler: com.nashss.se.remindme.lambda.GetTaskManagerLambda::handleRequest
       Runtime: java11
@@ -284,6 +346,7 @@ Resources:
   CreateUserLambda:
     Type: AWS::Serverless::Function
     Properties:
+      Role: !GetAtt AccessRole.Arn
       CodeUri: RemindMeModule
       Handler: com.nashss.se.remindme.lambda.CreateUserLambda::handleRequest
       Runtime: java11
@@ -351,39 +414,6 @@ Resources:
       BillingMode: "PAY_PER_REQUEST"
       TableName: "users"
 
-  AccessRole:
-    Type: AWS::IAM::Role
-    Properties:
-      ManagedPolicyArns:
-        - 'arn:aws:iam::aws:policy/service-role/AWSLambdaRole'
-        - 'arn:aws:iam::aws:policy/AWSLambdaExecute'
-      AssumeRolePolicyDocument:
-        Version: "2012-10-17"
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service:
-                - lambda.amazonaws.com
-            Action:
-              - 'sts:AssumeRole'
-      Policies:
-        - PolicyName: 'AccessTaskManagerTable'
-          PolicyDocument:
-            Version: '2012-10-17'
-            Statement:
-              - Effect: Allow
-                Action: dynamodb:*
-                Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/taskManager"
-        - PolicyName: 'AccessTasksTable'
-          PolicyDocument:
-            Version: '2012-10-17'
-            Statement:
-              - Effect: Allow
-                Action: dynamodb:*
-                Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/tasks"
-              - Effect : Allow
-                Action: dynamodb:*
-                Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/tasks/index/*"
                         #-----------------------------------------------------
                         # The outputs defined below will be printed
                         #  to the screen after a successful deploy

@@ -3,6 +3,7 @@ package com.nashss.se.remindme.activity.requests;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
+
 /**
  * Class for the AddTaskToManagerRequest for the RemindMeClient.
  */
@@ -12,6 +13,8 @@ public class AddTaskToManagerRequest {
     private String name;
     private String description;
 
+    private String dueDate;
+
     /**
      * Constructor for the CreateUserRequest class.
      *
@@ -19,10 +22,11 @@ public class AddTaskToManagerRequest {
      * @param name The name of the user
      * @param description The description of the task
      */
-    private AddTaskToManagerRequest(String taskManagerId, String name, String description) {
+    private AddTaskToManagerRequest(String taskManagerId, String name, String description, String dueDate) {
         this.taskManagerId = taskManagerId;
         this.name = name;
         this.description = description;
+        this.dueDate = dueDate;
     }
 
     public String getTaskManagerId() {
@@ -34,12 +38,16 @@ public class AddTaskToManagerRequest {
     public String getDescription() {
         return description;
     }
+    public String getDueDate() {
+        return dueDate;
+    }
 
     @Override
     public String toString() {
         return "AddTaskToManagerRequest{" +
                 "taskManagerId'" + taskManagerId +
-                "name'" + name;
+                "name'" + name +
+                "dueDate'" + dueDate;
     }
 
     //CHECKSTYLE:OFF:Builder
@@ -50,6 +58,7 @@ public class AddTaskToManagerRequest {
         private String taskManagerId;
         private String name;
         private String description;
+        private String dueDate;
 
         public Builder withTaskManagerId(String taskManagerId) {
             this.taskManagerId = taskManagerId;
@@ -66,6 +75,11 @@ public class AddTaskToManagerRequest {
             return this;
         }
 
-        public AddTaskToManagerRequest build() { return new AddTaskToManagerRequest(taskManagerId, name, description); }
+        public Builder withDueDate(String dueDate) {
+            this.dueDate = dueDate;
+            return this;
+        }
+
+        public AddTaskToManagerRequest build() { return new AddTaskToManagerRequest(taskManagerId, name, description, dueDate); }
     }
 }

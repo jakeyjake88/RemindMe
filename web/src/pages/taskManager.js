@@ -46,6 +46,7 @@ class TaskManager extends BindingClass {
                         <form id="addTaskForm">
                             <input type="text" id="taskName" placeholder="Task Name"></input><br>
                             <input type="text" id="taskDescription" placeholder="Task Description"></input><br>
+                            <input type="datetime-local" id="taskDateTime" placeholder="Task Date and Time"></input><br>
                             <input type="hidden" id="taskManagerId" value="${taskManagerId}"></input><br>
                             <button type="submit" id="submitTaskButton">Submit</button>
                         </form>

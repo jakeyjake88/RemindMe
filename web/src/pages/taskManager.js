@@ -59,7 +59,8 @@ class TaskManager extends BindingClass {
                         event.preventDefault();
                         const taskName = document.getElementById('taskName').value;
                         const taskDescription = document.getElementById('taskDescription').value;
-                        this.client.addTaskToManager(taskName, taskDescription, taskManagerId);
+                        const taskDueDate = document.getElementById('taskDateTime');
+                        this.client.addTaskToManager(taskName, taskDescription, taskManagerId, taskDueDate);
                     });
                 });
             }

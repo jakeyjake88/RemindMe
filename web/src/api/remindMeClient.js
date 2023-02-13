@@ -120,13 +120,14 @@ export default class RemindMeClient extends BindingClass {
         }
     }
 
-    async addTaskToManager(name, description, taskManagerId, errorCallback) {
+    async addTaskToManager(name, description, taskManagerId, dueDate, errorCallback) {
         try {
             const token = await this.getTokenOrThrow("Only authenticated users can register.");
             const response = await this.axiosClient.post('tasks', {
                 taskManagerId: taskManagerId,
                 name: name,
-                description: description
+                description: description,
+                dueDate: dueDate
             }, {
                 headers: {
                     Authorization: `Bearer ${token}`

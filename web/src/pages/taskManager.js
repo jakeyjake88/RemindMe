@@ -33,11 +33,35 @@ class TaskManager extends BindingClass {
                     const taskManagerId = event.target.id.split("_")[1];
                     const allT = await this.client.getAllTasks(taskManagerId);
                     for (let element of allT) {
-                        p += `<li class="anger"> ${element.name}</li>`;
+                        p += `<li class="anger"> ${element.name}
+                        <button class="markCompleteButton" id="markCompleteButton_${element.taskId}">Mark Complete</button> 
+                        <button class="deleteTaskButton" id="deleteTaskButton_${element.taskId}">Delete Task</button>
+                        </li>`;
+                        console.log(element.taskId);
                     }
                     document.getElementById('allTasks').innerHTML = p;
+                    const markIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
+                    console.log(markIsCompleteButtons);
+                    for (let markIsCompleteButton of markIsCompleteButtons) {
+                        markIsCompleteButton.addEventListener('click', (event) => {
+                            const taskId = event.target.id.split("_")[1];
+                            console.log("TaskId from onclick", taskId);
+                            this.client.markIsComplete(taskId);
+                        });
+                    }
+                    
+                    const deleteTaskButtons = document.querySelectorAll(".deleteTaskButton");
+                    for (let deleteTaskButton of deleteTaskButtons) {
+                        deleteTaskButton.addEventListener('click', (event) => {
+                            const taskId = event.target.id.split("_")[1];
+                            console.log("TaskId from onclick", taskId);
+                            this.client.deleteTask(taskId);
+                        });
+                    }
                 });
+                
             }
+
             const addTaskButtons = document.querySelectorAll(".addTaskButton");
             for (let addTaskButton of addTaskButtons) {
                 addTaskButton.addEventListener('click', async (event) => {
@@ -59,13 +83,14 @@ class TaskManager extends BindingClass {
                         event.preventDefault();
                         const taskName = document.getElementById('taskName').value;
                         const taskDescription = document.getElementById('taskDescription').value;
-                        const taskDueDate = document.getElementById('taskDateTime');
+                        const taskDueDate = document.getElementById('taskDateTime').value;
+                        console.log(taskDueDate);
                         this.client.addTaskToManager(taskName, taskDescription, taskManagerId, taskDueDate);
                     });
                 });
             }
         }
-    }
+    } 
 } 
 
 

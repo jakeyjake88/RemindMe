@@ -2,6 +2,7 @@ package com.nashss.se.remindme.activity;
 
 import com.nashss.se.remindme.activity.requests.AddTaskToManagerRequest;
 import com.nashss.se.remindme.activity.results.AddTaskToManagerResult;
+import com.nashss.se.remindme.converters.LocalDateTimeConverter;
 import com.nashss.se.remindme.converters.ModelConverter;
 import com.nashss.se.remindme.dynamodb.TaskDao;
 import com.nashss.se.remindme.dynamodb.models.Task;
@@ -39,6 +40,8 @@ public class AddTaskToManagerActivity {
         task.setDescription(request.getDescription());
         task.setName(request.getName());
         task.setTaskId(taskDao.generateNewId());
+        LocalDateTimeConverter converter = new LocalDateTimeConverter();
+        task.setDueDate(converter.unconvert(request.getDueDate()));
 
         taskDao.createTask(task);
 

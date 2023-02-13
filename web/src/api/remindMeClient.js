@@ -139,6 +139,38 @@ export default class RemindMeClient extends BindingClass {
         }
     }
 
+    async deleteTask(taskId, errorCallback) {
+        try {
+            const token = await this.getTokenOrThrow("Only authenticated users can register.");
+            const response = await this.axiosClient.delete('tasks', {
+                taskId: taskId
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.task;
+        }   catch (error) {
+        this.handleError(error, errorCallback);
+        }
+    }
+
+    async markIsComplete(taskId, errorCallback) {
+        try {
+            const token = await this.getTokenOrThrow("Only authenticated users can register.");
+            const response = await this.axiosClient.put('tasks', {
+                taskId: taskId
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.task;
+        }   catch (error) {
+        this.handleError(error, errorCallback);
+        }
+    }
+
     async verifyUser(errorCallback) {
         try {
             const token = await this.getTokenOrThrow("Only authenticated users can access their userinfo");

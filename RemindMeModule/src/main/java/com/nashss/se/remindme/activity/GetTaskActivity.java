@@ -36,7 +36,7 @@ public class GetTaskActivity {
     public GetTaskResult handleRequest(final GetTaskRequest getTaskRequest) {
         String taskId = getTaskRequest.getTaskId();
         String taskManagerId = getTaskRequest.getTaskManagerId();
-        Task task = taskDao.getTask(taskId);
+        Task task = taskDao.getTask(taskId, taskManagerId);
         TaskModel taskModel = new ModelConverter().toTaskModel(task);
 
         return GetTaskResult.builder()

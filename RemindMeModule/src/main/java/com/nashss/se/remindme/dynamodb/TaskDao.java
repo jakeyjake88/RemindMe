@@ -36,12 +36,12 @@ public class TaskDao {
      * @return The Task with the specified task manager ID and task ID.
      * @throws TaskNotFoundException If the task manager ID or task ID is `null` or if the task cannot be found.
      */
-    public Task getTask(String taskId) {
-        if (taskId == null) {
+    public Task getTask(String taskId, String taskManagerId) {
+        if (taskId == null || taskManagerId == null) {
             throw new TaskNotFoundException("Nope");
         }
 
-        Task task = dynamoDBMapper.load(Task.class, taskId);
+        Task task = dynamoDBMapper.load(Task.class, taskId, taskManagerId);
 
         if (null == task) {
             throw new TaskNotFoundException(

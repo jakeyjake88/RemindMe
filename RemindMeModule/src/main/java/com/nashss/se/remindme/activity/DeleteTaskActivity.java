@@ -28,7 +28,8 @@ public class DeleteTaskActivity {
 
     public DeleteTaskResult handleRequest(DeleteTaskRequest request) {
         String taskId = request.getTaskId();
-        Task task = taskDao.getTask(taskId);
+        String taskManagerId = request.getTaskManagerId();
+        Task task = taskDao.getTask(taskId, taskManagerId);
 
         if (task == null) {
             throw new TaskNotFoundException("Task is null in Activity class");

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f7439c2-0b71-4768-8e06-aacc4c553105" name="Changes" comment="" />
+    <list default="true" id="0f7439c2-0b71-4768-8e06-aacc4c553105" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/web/src/pages/taskManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/taskManager.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -241,11 +243,6 @@
           <url>file://$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/LambdaResponse.java</url>
           <line>34</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/LambdaActivityRunner.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

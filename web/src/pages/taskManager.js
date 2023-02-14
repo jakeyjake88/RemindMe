@@ -34,8 +34,8 @@ class TaskManager extends BindingClass {
                     const allT = await this.client.getAllTasks(taskManagerId);
                     for (let element of allT) {
                         p += `<li class="anger"> ${element.name}
-                        <button class="markCompleteButton" id="markCompleteButton_${element.taskId}">Mark Complete</button> 
-                        <button class="deleteTaskButton" id="deleteTaskButton_${element.taskId}">Delete Task</button>
+                        <button class="markCompleteButton" id="markCompleteButton_${element.taskId}_${element.taskManagerId}">Mark Complete</button> 
+                        <button class="deleteTaskButton" id="deleteTaskButton_${element.taskId}_${element.taskManagerId}">Delete Task</button>
                         </li>`;
                         console.log(element.taskId);
                     }
@@ -44,18 +44,20 @@ class TaskManager extends BindingClass {
                     console.log(markIsCompleteButtons);
                     for (let markIsCompleteButton of markIsCompleteButtons) {
                         markIsCompleteButton.addEventListener('click', (event) => {
+                            const tmid = event.target.id.split("_")[2];
                             const taskId = event.target.id.split("_")[1];
                             console.log("TaskId from onclick", taskId);
-                            this.client.markIsComplete(taskId);
+                            this.client.markIsComplete(taskId, tmid);
                         });
                     }
                     
                     const deleteTaskButtons = document.querySelectorAll(".deleteTaskButton");
                     for (let deleteTaskButton of deleteTaskButtons) {
                         deleteTaskButton.addEventListener('click', (event) => {
+                            const tmid = event.target.id.split("_")[2];
                             const taskId = event.target.id.split("_")[1];
                             console.log("TaskId from onclick", taskId);
-                            this.client.deleteTask(taskId);
+                            this.client.deleteTask(taskId, tmid);
                         });
                     }
                 });

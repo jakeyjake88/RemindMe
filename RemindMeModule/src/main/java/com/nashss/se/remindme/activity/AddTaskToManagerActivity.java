@@ -2,12 +2,14 @@ package com.nashss.se.remindme.activity;
 
 import com.nashss.se.remindme.activity.requests.AddTaskToManagerRequest;
 import com.nashss.se.remindme.activity.results.AddTaskToManagerResult;
+import com.nashss.se.remindme.converters.DateTimeLocalConverter;
 import com.nashss.se.remindme.converters.ModelConverter;
 import com.nashss.se.remindme.dynamodb.TaskDao;
 import com.nashss.se.remindme.dynamodb.models.Task;
 import com.nashss.se.remindme.models.TaskModel;
 
 import javax.inject.Inject;
+import java.time.LocalDateTime;
 
 /**
  * Class for AddTaskToManagerActivity for the RemindMeClient.
@@ -39,7 +41,10 @@ public class AddTaskToManagerActivity {
         task.setDescription(request.getDescription());
         task.setName(request.getName());
         task.setTaskId(taskDao.generateNewId());
-
+        task.setIsActive(true);
+        DateTimeLocalConverter converter = new DateTimeLocalConverter();
+        LocalDateTime time = converter.convertDatetimeLocalToJava(request.getDueDate());
+        task.setDueDate(time);
         taskDao.createTask(task);
 
         TaskModel taskM = new ModelConverter().toTaskModel(task);

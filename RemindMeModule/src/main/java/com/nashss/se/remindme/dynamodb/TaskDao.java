@@ -32,13 +32,13 @@ public class TaskDao {
     /**
      * Retrieves a Task from the database using the task manager ID and task ID.
      *
-     * @param taskManagerId The ID of the task manager that the task belongs to.
      * @param taskId The ID of the task to retrieve.
+     * @param taskManagerId the taskManagerId.
      * @return The Task with the specified task manager ID and task ID.
      * @throws TaskNotFoundException If the task manager ID or task ID is `null` or if the task cannot be found.
      */
-    public Task getTask(String taskManagerId, String taskId) {
-        if (taskManagerId == null || taskId == null) {
+    public Task getTask(String taskId, String taskManagerId) {
+        if (taskId == null || taskManagerId == null) {
             throw new TaskNotFoundException("Nope");
         }
 
@@ -79,6 +79,17 @@ public class TaskDao {
      */
     public Task createTask(Task task) {
         this.dynamoDBMapper.save(task);
+        return task;
+    }
+
+    /**
+     * Deletes a Task in the Database.
+     *
+     * @param task The task to be Deleted.
+     * @return The Deleted task.
+     */
+    public Task deleteTask(Task task) {
+        this.dynamoDBMapper.delete(task);
         return task;
     }
 

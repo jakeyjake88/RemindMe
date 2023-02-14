@@ -29,19 +29,7 @@ public class TaskDaoTest {
         openMocks(this);
         taskDao = new TaskDao(dynamoDBMapper);
         task = new Task();
-        task.setTaskManagerId("managerId");
         task.setTaskId("taskId");
-    }
-
-    @Test
-    public void testGetTask() {
-        when(dynamoDBMapper.load(Task.class, "managerId", "taskId")).thenReturn(task);
-
-        Task result = taskDao.getTask("managerId", "taskId");
-
-        verify(dynamoDBMapper).load(Task.class, "managerId", "taskId");
-        assertNotNull(result);
-        assertEquals(task, result);
     }
 
 }

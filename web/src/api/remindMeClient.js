@@ -120,13 +120,46 @@ export default class RemindMeClient extends BindingClass {
         }
     }
 
-    async addTaskToManager(name, description, taskManagerId, errorCallback) {
+    async addTaskToManager(name, description, taskManagerId, dueDate, errorCallback) {
         try {
             const token = await this.getTokenOrThrow("Only authenticated users can register.");
             const response = await this.axiosClient.post('tasks', {
                 taskManagerId: taskManagerId,
                 name: name,
-                description: description
+                description: description,
+                dueDate: dueDate
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.task;
+        }   catch (error) {
+        this.handleError(error, errorCallback);
+        }
+    }
+
+    async deleteTask(taskId, taskManagerId, errorCallback) {
+        console.log(taskId, taskManagerId);
+        try {
+            const token = await this.getTokenOrThrow("Only authenticated users can register.");
+            const response = await this.axiosClient.delete(`tasks/${taskManagerId}?taskId=${taskId}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.task;
+        }   catch (error) {
+        this.handleError(error, errorCallback);
+        }
+    }
+
+    async markIsComplete(taskId, taskManagerId, errorCallback) {
+        try {
+            const token = await this.getTokenOrThrow("Only authenticated users can register.");
+            const response = await this.axiosClient.put('tasks', {
+                taskId: taskId,
+                taskManagerId: taskManagerId
             }, {
                 headers: {
                     Authorization: `Bearer ${token}`

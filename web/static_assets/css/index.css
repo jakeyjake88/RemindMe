@@ -1,0 +1,38 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: darkgray;
+}
+
+header {
+  background-color: #53a9f0;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  text-emphasis-color: red;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+main {
+  padding: 50px 0;
+  background-color: darkgray;
+}
+
+.info-box {
+  background-color: darkgray;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: darkgray;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  background: url(https://i.imgur.com/wCG2csZ.png);
+}

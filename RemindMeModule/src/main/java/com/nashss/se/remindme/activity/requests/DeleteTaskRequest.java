@@ -4,23 +4,22 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
 /**
- * Class for the GetTaskRequest for the RemindMeClient.
+ * Class for the DeleteTaskRequest for the RemindMeClient.
  */
-@JsonDeserialize(builder = GetTaskRequest.Builder.class)
-public class GetTaskRequest {
+@JsonDeserialize(builder = DeleteTaskRequest.Builder.class)
+public class DeleteTaskRequest {
     private final String taskId;
     private final String taskManagerId;
-
 
     /**
      * Constructor for the CreateUserRequest class.
      *
-     * @param taskManagerId the unique identify for taskManager
-     * @param taskId the unique identifier for the task
+     * @param taskId The unique identifier for the task
+     * @param taskManagerId the managerid
      */
-    private GetTaskRequest(String taskId, String taskManagerId) {
-        this.taskId = taskId;
+    public DeleteTaskRequest(String taskId, String taskManagerId) {
         this.taskManagerId = taskManagerId;
+        this.taskId = taskId;
     }
 
     public String getTaskId() {
@@ -29,14 +28,6 @@ public class GetTaskRequest {
 
     public String getTaskManagerId() {
         return taskManagerId;
-    }
-
-    @Override
-    public String toString() {
-        return "GetTaskRequest{" +
-                "taskid='" + taskId + '\'' +
-                "taskManagerId'" + taskManagerId + '\'' +
-                '}';
     }
 
     //CHECKSTYLE:OFF:Builder
@@ -49,7 +40,7 @@ public class GetTaskRequest {
         private String taskId;
         private String taskManagerId;
 
-        public Builder withId(String taskId) {
+        public Builder withTaskId(String taskId) {
             this.taskId = taskId;
             return this;
         }
@@ -59,8 +50,8 @@ public class GetTaskRequest {
             return this;
         }
 
-        public GetTaskRequest build() {
-            return new GetTaskRequest(taskId, taskManagerId);
+        public DeleteTaskRequest build() {
+            return new DeleteTaskRequest(taskId, taskManagerId);
         }
     }
 }

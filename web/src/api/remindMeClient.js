@@ -140,12 +140,10 @@ export default class RemindMeClient extends BindingClass {
     }
 
     async deleteTask(taskId, taskManagerId, errorCallback) {
+        console.log(taskId, taskManagerId);
         try {
             const token = await this.getTokenOrThrow("Only authenticated users can register.");
-            const response = await this.axiosClient.delete('tasks', {
-                taskId: taskId,
-                taskManagerId: taskManagerId
-            }, {
+            const response = await this.axiosClient.delete(`tasks/${taskManagerId}?taskId=${taskId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -156,7 +154,7 @@ export default class RemindMeClient extends BindingClass {
         }
     }
 
-    async markIsComplete(taskId, errorCallback) {
+    async markIsComplete(taskId, taskManagerId, errorCallback) {
         try {
             const token = await this.getTokenOrThrow("Only authenticated users can register.");
             const response = await this.axiosClient.put('tasks', {

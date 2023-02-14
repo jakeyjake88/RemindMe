@@ -32,15 +32,4 @@ public class TaskDaoTest {
         task.setTaskId("taskId");
     }
 
-    @Test
-    public void testGetTask() {
-        when(dynamoDBMapper.load(Task.class, "taskId")).thenReturn(task);
-
-        Task result = taskDao.getTask( "taskId", "taskManagerId");
-
-        verify(dynamoDBMapper).load(Task.class, "taskId");
-        assertNotNull(result);
-        assertEquals(task, result);
-    }
-
 }

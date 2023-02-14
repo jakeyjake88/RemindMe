@@ -12,7 +12,10 @@ public class DeleteTaskLambda extends LambdaActivityRunner<DeleteTaskRequest, De
 
     @Override
     public LambdaResponse handleRequest(LambdaRequest<DeleteTaskRequest> input, Context context) {
-        return super.runActivity(() -> input.fromBody(DeleteTaskRequest.class), (request, serviceComponent) ->
+        return super.runActivity(() -> input.fromPathAndQuery((path, query) -> DeleteTaskRequest.builder()
+                .withTaskManagerId(path.get("taskManagerId"))
+                .withTaskId(query.get("taskId"))
+                .build()), (request, serviceComponent) ->
                 serviceComponent.provideDeleteTaskActivity().handleRequest(request)
         );
     }

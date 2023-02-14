@@ -44,6 +44,7 @@ public class MarkIsCompleteRequest {
     public static class Builder {
         private String taskId;
         private String taskManagerId;
+
         public Builder withTaskId(String taskId) {
             this.taskId = taskId;
             return this;

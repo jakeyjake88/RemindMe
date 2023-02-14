@@ -44,20 +44,21 @@ class TaskManager extends BindingClass {
                     console.log(markIsCompleteButtons);
                     for (let markIsCompleteButton of markIsCompleteButtons) {
                         markIsCompleteButton.addEventListener('click', (event) => {
-                            const tmid = event.target.id.split("_")[2];
+                            const taskManagerId = event.target.id.split("_")[2];
                             const taskId = event.target.id.split("_")[1];
                             console.log("TaskId from onclick", taskId);
-                            this.client.markIsComplete(taskId, tmid);
+                            console.log("taskManagerId from onclick", taskManagerId);
+                            this.client.markIsComplete(taskId, taskManagerId);
                         });
                     }
                     
                     const deleteTaskButtons = document.querySelectorAll(".deleteTaskButton");
                     for (let deleteTaskButton of deleteTaskButtons) {
                         deleteTaskButton.addEventListener('click', (event) => {
-                            const tmid = event.target.id.split("_")[2];
+                            const taskManagerId = event.target.id.split("_")[2];
                             const taskId = event.target.id.split("_")[1];
                             console.log("TaskId from onclick", taskId);
-                            this.client.deleteTask(taskId, tmid);
+                            this.client.deleteTask(taskId, taskManagerId);
                         });
                     }
                 });

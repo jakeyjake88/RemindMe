@@ -10,7 +10,6 @@ import com.nashss.se.remindme.activity.AddTaskToManagerActivity;
 import com.nashss.se.remindme.activity.MarkIsCompleteActivity;
 import com.nashss.se.remindme.activity.DeleteTaskActivity;
 
-
 import dagger.Component;
 
 import javax.inject.Singleton;

@@ -341,7 +341,7 @@ Resources:
         DeleteTaskLambda:
           Type: Api
           Properties:
-            Path: /tasks
+            Path: /tasks/{taskManagerId}
             Method: delete
   GetUserLambda:
     Type: AWS::Serverless::Function

@@ -3,6 +3,7 @@ package com.nashss.se.remindme.lambda;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import java.util.Map;
 
@@ -10,7 +11,7 @@ import java.util.Map;
  * An APIGateway response from a lambda function.
  */
 public class LambdaResponse extends APIGatewayProxyResponseEvent {
-    private static final ObjectMapper MAPPER = new ObjectMapper();
+    private static final ObjectMapper MAPPER = new ObjectMapper().registerModule(new JavaTimeModule());
 
     private LambdaResponse(int statusCode, String body) {
         super.setStatusCode(statusCode);

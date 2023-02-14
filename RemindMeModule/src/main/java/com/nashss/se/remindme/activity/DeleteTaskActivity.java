@@ -26,6 +26,13 @@ public class DeleteTaskActivity {
         this.taskDao = taskDao;
     }
 
+    /**
+     * This method handles a `DeleteTaskRequest` and returns a `DeleteTaskResult`.
+     * It deletes a task
+     *
+     * @param request The `DeleteTaskRequest'.
+     * @return A `DeleteTaskResult` object that contains a list of `TaskModel` objects.
+     */
     public DeleteTaskResult handleRequest(DeleteTaskRequest request) {
         String taskId = request.getTaskId();
         String taskManagerId = request.getTaskManagerId();

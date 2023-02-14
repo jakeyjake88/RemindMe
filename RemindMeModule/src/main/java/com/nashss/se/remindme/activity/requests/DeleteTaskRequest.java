@@ -1,8 +1,12 @@
 package com.nashss.se.remindme.activity.requests;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+
 /**
  * Class for the DeleteTaskRequest for the RemindMeClient.
  */
+@JsonDeserialize(builder = DeleteTaskRequest.Builder.class)
 public class DeleteTaskRequest {
     private final String taskId;
     private final String taskManagerId;
@@ -31,6 +35,7 @@ public class DeleteTaskRequest {
         return new Builder();
     }
 
+    @JsonPOJOBuilder
     public static class Builder {
         private String taskId;
         private String taskManagerId;

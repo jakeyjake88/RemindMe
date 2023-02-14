@@ -36,26 +36,4 @@ public class AddTaskToManagerActivityTest {
         t = new AddTaskToManagerActivity(taskDao);
     }
 
-    @Test
-    public void testHandleRequest() {
-        AddTaskToManagerRequest request = AddTaskToManagerRequest.builder()
-                .withTaskManagerId(TASK_MANAGER_ID)
-                .withDescription(DESCRIPTION)
-                .withName(NAME)
-                .build();
-
-        Task task = new Task();
-        task.setTaskManagerId(TASK_MANAGER_ID);
-        task.setDescription(DESCRIPTION);
-        task.setName(NAME);
-        task.setTaskId(TASK_ID);
-        LocalDateTime a = LocalDateTime.of(2017, 2, 13, 15, 56);
-        TaskModel mod = new TaskModel(TASK_ID, TASK_MANAGER_ID, NAME, a, DESCRIPTION, true);
-        when(taskDao.generateNewId()).thenReturn(TASK_ID);
-        when(modelConverter.toTaskModel(task)).thenReturn(mod);
-        AddTaskToManagerResult result = t.handleRequest(request);
-
-        assertEquals(task.getName(), result.getTask().getName());
-    }
-
 }

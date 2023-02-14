@@ -34,7 +34,6 @@ public class MarkIsCompleteActivity {
     public MarkIsCompleteResult handleRequest(final MarkIsCompleteRequest request) {
         String taskId = request.getTaskId();
         String taskManagerId = request.getTaskManagerId();
-
         Task task = taskDao.getTask(taskId, taskManagerId);
         task.setIsActive(false);
         taskDao.createTask(task);

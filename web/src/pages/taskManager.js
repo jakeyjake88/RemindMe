@@ -118,7 +118,7 @@ class TaskManager extends BindingClass {
     async handleAddTaskButtonClick(event) {
         const taskManagerId = event.target.id.split("_")[1];
         const form = `
-            <form id="addTaskForm">
+            <form class="form" id="addTaskForm">
                 <input type="text" id="taskName" placeholder="Task Name"></input><br>
                 <input type="text" id="taskDescription" placeholder="Task Description"></input><br>
                 <input type="datetime-local" id="taskDateTime" placeholder="Task Date and Time"></input><br>

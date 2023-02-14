@@ -44,6 +44,45 @@ h1:after {
   font-size: .4em;
   text-align: center;
 }
+button {
+  padding: 12px 20px; 
+  border: unset;
+  border-radius: 12px; 
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 14px; 
+  -webkit-box-shadow: 3px 6px 14px -2px rgba(0,0,0,0.27); 
+  box-shadow: 3px 6px 14px -2px rgba(0,0,0,0.27); 
+  transition: all 250ms;
+  overflow: hidden;
+  cursor:pointer;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 12px;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 3px 6px 14px -2px rgba(0,0,0,0.27); 
+  box-shadow: 3px 6px 14px -2px rgba(0,0,0,0.27); 
+  transition: all 250ms;
+}
+
+button:hover {
+  color: #e8e8e8;
+}
+
+button:hover::before {
+  width: 100%;
+}
 
 .button-line {
   font-family: 'Open Sans', sans-serif;
@@ -67,4 +106,44 @@ h1:after {
 .button-line:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+.inputGroup {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 1em 0 1em 0;
+  max-width: 190px;
+  position:relative;
+}
+
+.inputGroup input {
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+  transform: translateY(-50%) scale(.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: #e8e8e8;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+  border-color: rgb(150, 150, 200);
 }

@@ -39,6 +39,9 @@ class TaskManager extends BindingClass {
         }
         return temp;
     }
+      
+
+    
     generateTaskHTML(tasks) {
         let temp = "";
         for (let element of tasks) {
@@ -48,15 +51,27 @@ class TaskManager extends BindingClass {
                 checkmark = "&#10003;";
                 completeButton = "";
             }
+
+            const dateString = `${element.dueDate}`;
+            const dateParts = dateString.split(",");
+            const dateObj = new Date(
+                dateParts[0],
+                parseInt(dateParts[1]) - 1,
+                dateParts[2],
+                dateParts[3],
+                dateParts[4]
+              );
+            const formattedDate = `${dateObj.toLocaleTimeString("en-US", {hour12: true, hour: "numeric", minute: "numeric"})}, ${dateObj.toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"})}`;
             temp += `<li class="anger"> ${checkmark} ${element.name}
             <p>Description: ${element.description}</p>
-            <p>Due Date: ${element.dueDate}</p>
+            <p>Due Date: ${formattedDate}</p>
             ${completeButton}
             <button class="deleteTaskButton" id="deleteTaskButton_${element.taskId}_${element.taskManagerId}">Delete</button>
             </li>`;
         }
         return temp;
-    }
+    } 
+
     
     async displayTasks(event) {
         document.getElementById('allTasks').innerHTML = "";

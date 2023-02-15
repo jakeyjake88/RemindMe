@@ -29,8 +29,16 @@ class TaskManager extends BindingClass {
                     await this.displayTasks(event);
                 });
             }
+            //new code
+            const addTaskButtons = document.querySelectorAll(".addTaskButton");
+            for (let addTaskButton of addTaskButtons) {
+            addTaskButton.addEventListener('click', (event) => {
+                this.handleAddTaskButtonClick(event);
+            });
+            }
         }
-    }
+    } 
+
     generateTaskManagerHTML(managers) {
         let temp = "";
         for (let element of managers) {
@@ -38,8 +46,7 @@ class TaskManager extends BindingClass {
             <button class="addTaskButton" id="addTaskButton_${element.taskManagerId}">Add Task</button></li>`;
         }
         return temp;
-    }
-      
+    } 
 
     
     generateTaskHTML(tasks) {
@@ -72,7 +79,7 @@ class TaskManager extends BindingClass {
         return temp;
     } 
 
-    
+
     async displayTasks(event) {
         document.getElementById('allTasks').innerHTML = "";
         let p = "";
@@ -83,60 +90,88 @@ class TaskManager extends BindingClass {
         document.getElementById('allTasks').innerHTML = p;
         const markIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
         for (let markIsCompleteButton of markIsCompleteButtons) {
-            markIsCompleteButton.addEventListener('click', (event) => {
-                this.handleMarkCompleteButtonClick(event);
-            });
+            markIsCompleteButton.addEventListener('click', this.handleMarkCompleteButtonClick);
         }
     
         const deleteTaskButtons = document.querySelectorAll(".deleteTaskButton");
         for (let deleteTaskButton of deleteTaskButtons) {
-            deleteTaskButton.addEventListener('click', (event) => {
-                this.handleDeleteTaskButtonClick(event);
-            });
+            deleteTaskButton.addEventListener('click', this.handleDeleteTaskButtonClick);
         }
     
         const addTaskButtons = document.querySelectorAll(".addTaskButton");
         for (let addTaskButton of addTaskButtons) {
-            addTaskButton.addEventListener('click', (event) => {
-                this.handleAddTaskButtonClick(event);
-            });
+            addTaskButton.addEventListener('click', this.handleAddTaskButtonClick);
         }
-    }
+    } 
     
-    handleMarkCompleteButtonClick(event) {
+    async handleMarkCompleteButtonClick(event) {
         const taskManagerId = event.target.id.split("_")[2];
         const taskId = event.target.id.split("_")[1];
-        this.client.markIsComplete(taskId, taskManagerId);
+        await this.client.markIsComplete(taskId, taskManagerId);
+        document.getElementById('allTasks').innerHTML = "";
+        let p = "";
+        const allT = await this.client.getAllTasks(taskManagerId);
+        const taskHTML = this.generateTaskHTML(allT);
+        p += taskHTML;
+        document.getElementById('allTasks').innerHTML = p;
     }
     
-    handleDeleteTaskButtonClick(event) {
+    async handleDeleteTaskButtonClick(event) {
         const taskManagerId = event.target.id.split("_")[2];
         const taskId = event.target.id.split("_")[1];
-        this.client.deleteTask(taskId, taskManagerId);
+        await this.client.deleteTask(taskId, taskManagerId);
+        document.getElementById('allTasks').innerHTML = "";
+        let p = "";
+        const allT = await this.client.getAllTasks(taskManagerId);
+        const taskHTML = this.generateTaskHTML(allT);
+        p += taskHTML;
+        document.getElementById('allTasks').innerHTML = p;
     }
-    
+
     async handleAddTaskButtonClick(event) {
         const taskManagerId = event.target.id.split("_")[1];
         const form = `
             <form class="form" id="addTaskForm">
-                <input type="text" id="taskName" placeholder="Task Name"></input><br>
-                <input type="text" id="taskDescription" placeholder="Task Description"></input><br>
-                <input type="datetime-local" id="taskDateTime" placeholder="Task Date and Time"></input><br>
+                <input type="text" id="taskName" placeholder="Task Name" required></input><br>
+                <input type="text" id="taskDescription" placeholder="Task Description" required></input><br>
+                <input type="datetime-local" id="taskDateTime" placeholder="Task Date and Time" required></input><br>
                 <input type="hidden" id="taskManagerId" value="${taskManagerId}"></input><br>
-                <button type="submit" id="submitTaskButton">Submit</button>
+                <button type="submit" id="submitTaskButton" disabled>Submit</button>
             </form>
         `;
         document.getElementById('addTask').innerHTML = "";
         document.getElementById('addTask').innerHTML = form;
     
         const submitTaskButton = document.getElementById('submitTaskButton');
-        submitTaskButton.addEventListener('click', (event) => {
+        const taskNameInput = document.getElementById('taskName');
+        const taskDescriptionInput = document.getElementById('taskDescription');
+        const taskDateTimeInput = document.getElementById('taskDateTime');
+    
+        function checkInputs() {
+            if (taskNameInput.value && taskDescriptionInput.value && taskDateTimeInput.value) {
+                submitTaskButton.disabled = false;
+            } else {
+                submitTaskButton.disabled = true;
+            }
+        }
+    
+        taskNameInput.addEventListener('input', checkInputs);
+        taskDescriptionInput.addEventListener('input', checkInputs);
+        taskDateTimeInput.addEventListener('input', checkInputs);
+    
+        submitTaskButton.addEventListener('click', async (event) => {
             event.preventDefault();
             const taskName = document.getElementById('taskName').value;
             const taskDescription = document.getElementById('taskDescription').value;
             const taskDueDate = document.getElementById('taskDateTime').value;
             console.log(taskDueDate);
-            this.client.addTaskToManager(taskName, taskDescription, taskManagerId, taskDueDate);
+            await this.client.addTaskToManager(taskName, taskDescription, taskManagerId, taskDueDate);
+            document.getElementById('allTasks').innerHTML = "";
+            let p = "";
+            const allT = await this.client.getAllTasks(taskManagerId);
+            const taskHTML = this.generateTaskHTML(allT);
+            p += taskHTML;
+            document.getElementById('allTasks').innerHTML = p;
         });
     }
 } 

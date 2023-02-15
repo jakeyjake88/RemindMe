@@ -18,9 +18,9 @@ class CreateTaskManager extends BindingClass {
     async submit() {
         const btn = document.getElementById('click');
         const name = document.getElementById('name');
-        const decode = decodeURI(name.value);
-        const tm = await this.client.createTaskManager(decode);
-        this.dataStore.set('tm', decode);
+        const encode = encodeURI(name.value);
+        const tm = await this.client.createTaskManager(encode);
+        this.dataStore.set('tm', encode);
     }
 
     redirectToTaskManager() {

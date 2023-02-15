@@ -90,7 +90,7 @@ class TaskManager extends BindingClass {
         p += taskHTML;
         document.getElementById('allTasks').innerHTML = p;
     
-        const markIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
+        /*const markIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
         for (let markIsCompleteButton of markIsCompleteButtons) {
             markIsCompleteButton.removeEventListener('click', this.handleMarkCompleteButtonClick);
         }
@@ -98,7 +98,7 @@ class TaskManager extends BindingClass {
         const deleteTaskButtons = document.querySelectorAll(".deleteTaskButton");
         for (let deleteTaskButton of deleteTaskButtons) {
             deleteTaskButton.removeEventListener('click', this.handleDeleteTaskButtonClick);
-        }
+        } */
     
         const newMarkIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
         for (let newMarkIsCompleteButton of newMarkIsCompleteButtons) {
@@ -122,10 +122,13 @@ class TaskManager extends BindingClass {
         p += taskHTML;
         document.getElementById('allTasks').innerHTML = p;
         const newMarkIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
+        const newDeleteTaskButtons = document.querySelectorAll(".deleteTaskButton");
+        for (let newDeleteTaskButton of newDeleteTaskButtons) {
+            newDeleteTaskButton.addEventListener('click', this.handleDeleteTaskButtonClick);
+        }
         for (let newMarkIsCompleteButton of newMarkIsCompleteButtons) {
             newMarkIsCompleteButton.addEventListener('click', this.handleMarkCompleteButtonClick);
         }
-        
     }
     
     async handleDeleteTaskButtonClick(event) {
@@ -139,9 +142,13 @@ class TaskManager extends BindingClass {
         p += taskHTML;
         document.getElementById('allTasks').innerHTML = p;
         const newDeleteTaskButtons = document.querySelectorAll(".deleteTaskButton");
-        for (let newDeleteTaskButton of newDeleteTaskButtons) {
-            newDeleteTaskButton.addEventListener('click', this.handleDeleteTaskButtonClick);
-        }
+        const newMarkIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
+            for (let newMarkIsCompleteButton of newMarkIsCompleteButtons) {
+                newMarkIsCompleteButton.addEventListener('click', this.handleMarkCompleteButtonClick);
+            }
+            for (let newDeleteTaskButton of newDeleteTaskButtons) {
+                newDeleteTaskButton.addEventListener('click', this.handleDeleteTaskButtonClick);
+            }
     }
 
     async handleAddTaskButtonClick(event) {

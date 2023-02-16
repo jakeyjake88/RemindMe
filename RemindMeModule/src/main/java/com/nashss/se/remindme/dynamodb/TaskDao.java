@@ -71,6 +71,19 @@ public class TaskDao {
         return dynamoDBMapper.scan(Task.class, scanExpression);
     }
 
+    public List<Task> getAllTasksForCreator(String creatorId) {
+        if (creatorId == null) {
+            throw new TaskNotFoundException("No task found!!");
+        }
+
+        Map<String, AttributeValue> expressionAttributeValues = new HashMap<String, AttributeValue>();
+        expressionAttributeValues.put(":val1", new AttributeValue().withS(creatorId));
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression()
+                .withFilterExpression("creatorId = :val1")
+                .withExpressionAttributeValues(expressionAttributeValues);
+        return dynamoDBMapper.scan(Task.class, scanExpression);
+    }
+
     /**
      * Creates a Task in the Database.
      *

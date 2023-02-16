@@ -23,17 +23,8 @@ Additional AWS: Cognito, Amazon SNS
 
 <b> U4. </b> As a user, I want to be able to add a new task using the date and time for which the task is due.
 
-<b>U5.</b> As a working professional, I want to be able to invite my co-workers to participate in a to-do list so we can manage our workload for the day.
-
-<b>U6.</b> As a user, I want to be able to see only 10 tasks per page on my daily to-do list.
-
-<b>U7. </b> As a user, I want to be able to see 15 tasks per page on my all-time tasks list.
-
-<b>U8. </b> As a RemindMe user, I want to be able to sign up for SMS texts for certain reminders.
-
 <b>U9. </b> As a web user, I want to be able to comfortably utilize this application from the comfort of my PC.
 
-<b>U10. </b> As a person with a busy schedule, I want to be able to set up recurring tasks, so that I can be reminded to do regular activities like taking medication, paying bills, and doing exercise.
 
 
 <h1> 4. Scope </h1>
@@ -43,15 +34,8 @@ Additional AWS: Cognito, Amazon SNS
 
 * User can create a task manager to store their daily tasks
 
-* The creator of the task manager should be able to allow other users, upon invitation, to access the task manager.
-
 * The creator should be able to add a task using a date for which the task is due.
 
-* The daily tasks page, for sake of length, will only be able to hold 10 tasks per page.
-
-* The all tasks page will only be able to hold 15 tasks per page.
-
-* Creator and users should be able to select a RemindMe button for each task, giving them an SMS reminder shortly before the task is due.
 
 
 <h2> 4.2. Out of Scope</h2>
@@ -65,6 +49,12 @@ Additional AWS: Cognito, Amazon SNS
 * May want creators to have the ability to prioritize certain tasks
 
 * May want to allow for email reminders for tasks
+
+* The daily tasks page, for sake of length, will only be able to hold 10 tasks per page.
+
+* The all tasks page will only be able to hold 15 tasks per page.
+
+* Creator and users should be able to select a RemindMe button for each task, giving them an SMS reminder shortly before the task is due.
 
 <h1> 5. Architecture Overview </h1>
 

@@ -90,16 +90,6 @@ class TaskManager extends BindingClass {
         p += taskHTML;
         document.getElementById('allTasks').innerHTML = p;
     
-        /*const markIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
-        for (let markIsCompleteButton of markIsCompleteButtons) {
-            markIsCompleteButton.removeEventListener('click', this.handleMarkCompleteButtonClick);
-        }
-        
-        const deleteTaskButtons = document.querySelectorAll(".deleteTaskButton");
-        for (let deleteTaskButton of deleteTaskButtons) {
-            deleteTaskButton.removeEventListener('click', this.handleDeleteTaskButtonClick);
-        } */
-    
         const newMarkIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
         for (let newMarkIsCompleteButton of newMarkIsCompleteButtons) {
             newMarkIsCompleteButton.addEventListener('click', this.handleMarkCompleteButtonClick);
@@ -203,6 +193,7 @@ class TaskManager extends BindingClass {
             for (let newMarkIsCompleteButton of newMarkIsCompleteButtons) {
                 newMarkIsCompleteButton.addEventListener('click', this.handleMarkCompleteButtonClick);
             }
+            document.getElementById('addTaskForm').reset();
         });
     }
 } 

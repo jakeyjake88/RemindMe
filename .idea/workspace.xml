@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f7439c2-0b71-4768-8e06-aacc4c553105" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/activity/MarkAsCompleteActivityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/converters/DateTimeLocalConverterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/converters/LocalDateTimeConverterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/converters/ModelConverterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/AddTaskToManagerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/AddTaskToManagerActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/AddTaskToManagerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/AddTaskToManagerRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/models/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/dynamodb/models/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/AddTaskToManagerLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/lambda/AddTaskToManagerLambda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/models/TaskModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/models/TaskModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/activity/AddTaskToManagerActivityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/activity/AddTaskToManagerActivityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/template.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/MarkIsCompleteRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/MarkIsCompleteRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,8 +85,8 @@
       <recent name="com.nashss.se.remindme" />
     </key>
   </component>
-  <component name="RunManager" selected="Remote JVM Debug.debugger">
-    <configuration name="TaskDaoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.MarkAsCompleteActivityTest.testHandleRequest">
+    <configuration name="DateTimeLocalConverterTest.testConvertDatetimeLocalToJava" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -101,7 +99,7 @@
           <list>
             <option value=":RemindMeModule:test" />
             <option value="--tests" />
-            <option value="&quot;com.nashss.se.remindme.unittest.dao.TaskDaoTest&quot;" />
+            <option value="&quot;com.nashss.se.remindme.unittest.converters.DateTimeLocalConverterTest.testConvertDatetimeLocalToJava&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -111,7 +109,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TaskDaoTest.testGetAllTasksForManager" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LocalDateTimeConverterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -124,7 +122,7 @@
           <list>
             <option value=":RemindMeModule:test" />
             <option value="--tests" />
-            <option value="&quot;com.nashss.se.remindme.unittest.dao.TaskDaoTest.testGetAllTasksForManager&quot;" />
+            <option value="&quot;com.nashss.se.remindme.unittest.converters.LocalDateTimeConverterTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -134,7 +132,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TaskDaoTest.testGetTask" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MarkAsCompleteActivityTest.testHandleRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -147,7 +145,7 @@
           <list>
             <option value=":RemindMeModule:test" />
             <option value="--tests" />
-            <option value="&quot;com.nashss.se.remindme.unittest.dao.TaskDaoTest.testGetTask&quot;" />
+            <option value="&quot;com.nashss.se.remindme.unittest.activity.MarkAsCompleteActivityTest.testHandleRequest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -157,7 +155,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TaskManagerDaoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ModelConverterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -170,7 +168,7 @@
           <list>
             <option value=":RemindMeModule:test" />
             <option value="--tests" />
-            <option value="&quot;com.nashss.se.remindme.unittest.dao.TaskManagerDaoTest&quot;" />
+            <option value="&quot;com.nashss.se.remindme.unittest.converters.ModelConverterTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -215,20 +213,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.DateTimeLocalConverterTest.testConvertDatetimeLocalToJava" />
+      <item itemvalue="Gradle.LocalDateTimeConverterTest" />
+      <item itemvalue="Gradle.MarkAsCompleteActivityTest.testHandleRequest" />
+      <item itemvalue="Gradle.ModelConverterTest" />
       <item itemvalue="Gradle.Tests in 'RemindMe.RemindMeModule.test'" />
-      <item itemvalue="Gradle.TaskDaoTest" />
-      <item itemvalue="Gradle.TaskDaoTest.testGetAllTasksForManager" />
-      <item itemvalue="Gradle.TaskDaoTest.testGetTask" />
-      <item itemvalue="Gradle.TaskManagerDaoTest" />
       <item itemvalue="Remote JVM Debug.debugger" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MarkAsCompleteActivityTest.testHandleRequest" />
+        <item itemvalue="Gradle.ModelConverterTest" />
+        <item itemvalue="Gradle.LocalDateTimeConverterTest" />
+        <item itemvalue="Gradle.DateTimeLocalConverterTest.testConvertDatetimeLocalToJava" />
         <item itemvalue="Gradle.Tests in 'RemindMe.RemindMeModule.test'" />
-        <item itemvalue="Gradle.TaskDaoTest" />
-        <item itemvalue="Gradle.TaskDaoTest.testGetTask" />
-        <item itemvalue="Gradle.TaskManagerDaoTest" />
-        <item itemvalue="Gradle.TaskDaoTest.testGetAllTasksForManager" />
       </list>
     </recent_temporary>
   </component>

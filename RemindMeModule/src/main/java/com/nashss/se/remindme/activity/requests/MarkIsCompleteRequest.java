@@ -17,7 +17,7 @@ public class MarkIsCompleteRequest {
      * @param taskId The unique identifier for the taskManager
      * @param taskManagerId the managerId
      */
-    private MarkIsCompleteRequest(String taskId, String taskManagerId) {
+    public MarkIsCompleteRequest(String taskId, String taskManagerId) {
         this.taskManagerId = taskManagerId;
         this.taskId = taskId;
     }

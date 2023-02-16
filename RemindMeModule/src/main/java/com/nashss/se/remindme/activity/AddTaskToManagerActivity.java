@@ -7,7 +7,6 @@ import com.nashss.se.remindme.converters.ModelConverter;
 import com.nashss.se.remindme.dynamodb.TaskDao;
 import com.nashss.se.remindme.dynamodb.TaskManagerDao;
 import com.nashss.se.remindme.dynamodb.models.Task;
-import com.nashss.se.remindme.dynamodb.models.TaskManager;
 import com.nashss.se.remindme.models.TaskModel;
 
 import javax.inject.Inject;

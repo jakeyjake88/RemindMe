@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f7439c2-0b71-4768-8e06-aacc4c553105" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/activity/MarkAsCompleteActivityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/converters/DateTimeLocalConverterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/converters/LocalDateTimeConverterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/converters/ModelConverterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/MarkIsCompleteRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/requests/MarkIsCompleteRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/AddTaskToManagerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/AddTaskToManagerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/CreateTaskManagerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/CreateTaskManagerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/activity/MarkAsCompleteActivityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/test/java/com/nashss/se/remindme/unittest/activity/MarkAsCompleteActivityTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,10 +221,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.MarkAsCompleteActivityTest.testHandleRequest" />
+        <item itemvalue="Gradle.Tests in 'RemindMe.RemindMeModule.test'" />
         <item itemvalue="Gradle.ModelConverterTest" />
         <item itemvalue="Gradle.LocalDateTimeConverterTest" />
         <item itemvalue="Gradle.DateTimeLocalConverterTest.testConvertDatetimeLocalToJava" />
-        <item itemvalue="Gradle.Tests in 'RemindMe.RemindMeModule.test'" />
       </list>
     </recent_temporary>
   </component>

@@ -6,6 +6,7 @@ import com.nashss.se.remindme.dynamodb.TaskManagerDao;
 import com.nashss.se.remindme.dynamodb.models.TaskManager;
 
 import javax.inject.Inject;
+import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
 /**

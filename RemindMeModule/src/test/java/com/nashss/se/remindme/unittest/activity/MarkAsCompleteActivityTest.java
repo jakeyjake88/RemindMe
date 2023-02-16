@@ -31,6 +31,7 @@ public class MarkAsCompleteActivityTest {
 
     @Test
     public void testHandleRequest() {
+        // Setup
         String taskId = "test-task-id";
         String taskManagerId = "test-task-manager-id";
 
@@ -38,6 +39,7 @@ public class MarkAsCompleteActivityTest {
 
         // Execution
         MarkIsCompleteRequest request = new MarkIsCompleteRequest(taskId, taskManagerId);
+        MarkIsCompleteResult result = markIsCompleteActivity.handleRequest(request);
 
         // Verification
         verify(taskDao).getTask(taskId, taskManagerId);

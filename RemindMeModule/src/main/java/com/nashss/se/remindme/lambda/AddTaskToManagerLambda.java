@@ -9,11 +9,18 @@ import com.nashss.se.remindme.activity.results.AddTaskToManagerResult;
  * Makes the Lambda Call.
  */
 public class AddTaskToManagerLambda extends LambdaActivityRunner<AddTaskToManagerRequest, AddTaskToManagerResult>
-    implements RequestHandler<LambdaRequest<AddTaskToManagerRequest>, LambdaResponse> {
+    implements RequestHandler<AuthenticatedLambdaRequest<AddTaskToManagerRequest>, LambdaResponse> {
+
     @Override
-    public LambdaResponse handleRequest(LambdaRequest<AddTaskToManagerRequest> input, Context context) {
-        return super.runActivity(() -> input.fromBody(AddTaskToManagerRequest.class),
-            (request, serviceComponent) ->
-             serviceComponent.provideAddTaskToManagerActivity().handleRequest(request));
+    public LambdaResponse handleRequest(AuthenticatedLambdaRequest<AddTaskToManagerRequest> input, Context context) {
+        AddTaskToManagerRequest request = input.fromBody(AddTaskToManagerRequest.class);
+        return super.runActivity(() -> input.fromUserClaims(claims -> AddTaskToManagerRequest.builder()
+                .withCreatorId(claims.get("email"))
+                .withDescription(request.getDescription())
+                .withDueDate(request.getDueDate())
+                .withName(request.getName())
+                        .withTaskManagerId(request.getTaskManagerId())
+                .build()),
+                (req, serviceComponent) -> serviceComponent.provideAddTaskToManagerActivity().handleRequest(req));
     }
 }

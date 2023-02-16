@@ -21,6 +21,7 @@ public class Task {
     private LocalDateTime dueDate;
     private String description;
     private boolean isActive;
+    private String creatorId;
 
     @DynamoDBRangeKey(attributeName = "taskId")
     public String getTaskId() {
@@ -77,6 +78,15 @@ public class Task {
         this.isActive = isActive;
     }
 
+    @DynamoDBAttribute(attributeName = "creatorId")
+    public String getCreatorId() {
+        return creatorId;
+    }
+
+    public void setCreatorId(String creatorId) {
+        this.creatorId = creatorId;
+    }
+
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -87,6 +97,7 @@ public class Task {
         Task task = (Task) o;
         return taskId.equals(task.taskId) && name.equals(task.name)
                 && taskManagerId.equals(task.taskManagerId) && dueDate.equals(task.dueDate)
-                && description.equals(task.description) && isActive == task.isActive;
+                && description.equals(task.description) && isActive == task.isActive
+                && creatorId.equals(task.creatorId);
     }
 }

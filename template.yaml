@@ -142,11 +142,13 @@ Resources:
       UserPoolId: !Ref UserPool
       AllowedOAuthFlowsUserPoolClient: true
       CallbackURLs:
+        - http://localhost:8000/checker.html
         - !If
           - DeployCloudFront
           - !Sub "https://${CloudfrontDistribution.DomainName}/checker.html"
           - http://localhost:8000/checker.html
       LogoutURLs:
+        - http://localhost:8000
         - !If
           - DeployCloudFront
           - !Sub "https://${CloudfrontDistribution.DomainName}"

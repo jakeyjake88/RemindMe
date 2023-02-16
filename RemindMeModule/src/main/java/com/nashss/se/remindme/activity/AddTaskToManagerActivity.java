@@ -5,7 +5,9 @@ import com.nashss.se.remindme.activity.results.AddTaskToManagerResult;
 import com.nashss.se.remindme.converters.DateTimeLocalConverter;
 import com.nashss.se.remindme.converters.ModelConverter;
 import com.nashss.se.remindme.dynamodb.TaskDao;
+import com.nashss.se.remindme.dynamodb.TaskManagerDao;
 import com.nashss.se.remindme.dynamodb.models.Task;
+import com.nashss.se.remindme.dynamodb.models.TaskManager;
 import com.nashss.se.remindme.models.TaskModel;
 
 import javax.inject.Inject;
@@ -18,6 +20,7 @@ import java.time.LocalDateTime;
  */
 public class AddTaskToManagerActivity {
     private final TaskDao taskDao;
+    private final TaskManagerDao tmDao;
 
     /**
      * Constructor for the AddTaskToManagerActivity class.
@@ -25,7 +28,8 @@ public class AddTaskToManagerActivity {
      * @param taskDao A data access object that performs operations on tasks
      */
     @Inject
-    public AddTaskToManagerActivity(TaskDao taskDao) {
+    public AddTaskToManagerActivity(TaskDao taskDao, TaskManagerDao tmDao) {
+        this.tmDao = tmDao;
         this.taskDao = taskDao;
     }
 
@@ -41,7 +45,9 @@ public class AddTaskToManagerActivity {
         task.setDescription(request.getDescription());
         task.setName(request.getName());
         task.setTaskId(taskDao.generateNewId());
+        task.setCreatorId(request.getCreatorId());
         task.setIsActive(true);
+
         DateTimeLocalConverter converter = new DateTimeLocalConverter();
         LocalDateTime time = converter.convertDatetimeLocalToJava(request.getDueDate());
         task.setDueDate(time);

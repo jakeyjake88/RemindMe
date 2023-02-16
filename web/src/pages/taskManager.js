@@ -7,16 +7,58 @@ class TaskManager extends BindingClass {
         super();
         this.bindClassMethods(['mount', 'displayManagers', 'generateTaskManagerHTML', 
     'displayTasks', 'generateTaskHTML', 'handleMarkCompleteButtonClick', 'handleDeleteTaskButtonClick',
-'handleAddTaskButtonClick'], this);
+'handleAddTaskButtonClick', 'handleDateSelection', 'displayTasksForSelectedDate'], this);
         this.dataStore = new DataStore();
     }
-
-    
 
     mount() {
         this.client = new RemindMeClient();
         this.displayManagers();
+        this.handleDateSelection();
     }
+
+    async handleDateSelection() {
+        const submitDateButton = document.getElementById('submitDateButton');
+        submitDateButton.addEventListener('click', async (event) => {
+            event.preventDefault();
+            console.log("DateBoxValue", document.getElementById('date-box').value);
+            const selectedDate = new Date(document.getElementById('date-box').value + "T00:00");
+            console.log("SelectedDate", selectedDate);
+            const allTasks = await this.client.getAllTasksForCreator();
+            const tasksForSelectedDate = allTasks.filter(task => {
+              const dateString = `${task.dueDate}`;
+              const dateParts = dateString.split(",");
+              const dateObj = new Date(dateParts[0], parseInt(dateParts[1] -1), dateParts[2]);
+              const selectedDateFormatted = selectedDate.toLocaleDateString('en-US');
+              const dateObjFormatted = dateObj.toLocaleDateString('en-US');
+              console.log(dateObjFormatted);
+              console.log(selectedDateFormatted);
+              return (
+                dateObjFormatted === selectedDateFormatted
+              );
+            });
+            console.log(tasksForSelectedDate);
+            this.displayTasksForSelectedDate(tasksForSelectedDate);
+          });
+
+    }
+
+        displayTasksForSelectedDate(tasks) {
+      
+        const allTasksDate = document.getElementById("allTasksDate");
+      
+        allTasksDate.innerHTML = "";
+      
+        const taskList = document.createElement("ul");
+      
+        tasks.forEach(task => {
+          const taskItem = document.createElement("li");
+          taskItem.textContent = task.description;
+          taskList.appendChild(taskItem);
+        });
+      
+        allTasksDate.appendChild(taskList);
+      } 
 
     async displayManagers() {
         const managers = await this.client.getTaskManager();

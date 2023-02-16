@@ -104,6 +104,21 @@ export default class RemindMeClient extends BindingClass {
             this.handleError(error, errorCallback);
         }
     }
+
+    async getAllTasksForCreator(errorCallback) {
+        try {
+            console.log("About to get token(get tasks for creator");
+            const token = await this.getTokenOrThrow("Only authenticated users can get a tm");
+            const response = await this.axiosClient.get(`tasks`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.tasks;
+        } catch (error) {
+            this.handleError(error, errorCallback);
+        }
+    }
     
 
     async createUser(errorCallback) {

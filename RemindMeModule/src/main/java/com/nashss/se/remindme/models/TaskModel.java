@@ -14,15 +14,17 @@ public class TaskModel {
     private final LocalDateTime dueDate;
     private final String description;
     private final boolean isActive;
+    private final String creatorId;
 
 
-    public TaskModel(String taskId, String taskManagerId, String name, LocalDateTime dueDate, String description, boolean isActive) {
+    public TaskModel(String taskId, String taskManagerId, String name, LocalDateTime dueDate, String description, boolean isActive, String creatorId) {
         this.taskId = taskId;
         this.taskManagerId = taskManagerId;
         this.name = name;
         this.dueDate = dueDate;
         this.description = description;
         this.isActive = isActive;
+        this.creatorId = creatorId;
     }
 
     public String getTaskId() {
@@ -49,6 +51,10 @@ public class TaskModel {
         return isActive;
     }
 
+    public String getCreatorId() {
+        return creatorId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -62,7 +68,8 @@ public class TaskModel {
 
         return Objects.equals(taskId, that.taskId) && Objects.equals(taskManagerId, that.taskManagerId)
         && Objects.equals(name, that.name) && Objects.equals(dueDate, that.dueDate)
-        && Objects.equals(description, that.description) && Objects.equals(isActive, that.isActive);
+        && Objects.equals(description, that.description) && Objects.equals(isActive, that.isActive)
+                && Objects.equals(creatorId, that.creatorId);
     }
     //CHECKSTYLE:OFF:Builder
     public static Builder builder() {
@@ -71,7 +78,7 @@ public class TaskModel {
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, taskManagerId, name, dueDate, description, isActive);
+        return Objects.hash(taskId, taskManagerId, name, dueDate, description, isActive, creatorId);
     }
 
     public static class Builder {
@@ -81,6 +88,7 @@ public class TaskModel {
         private LocalDateTime dueDate;
         private String description;
         private boolean isActive;
+        private String creatorId;
 
         public Builder withTaskId(String taskId) {
             this.taskId = taskId;
@@ -112,8 +120,13 @@ public class TaskModel {
             return this;
         }
 
+        public Builder withCreatorId(String creatorId) {
+            this.creatorId = creatorId;
+            return this;
+        }
+
         public TaskModel build() {
-            return new TaskModel(taskId, taskManagerId, name, dueDate, description, isActive);
+            return new TaskModel(taskId, taskManagerId, name, dueDate, description, isActive, creatorId);
         }
     }
 }

@@ -12,8 +12,8 @@ public class AddTaskToManagerRequest {
     private String taskManagerId;
     private String name;
     private String description;
-
     private String dueDate;
+    private String creatorId;
 
     /**
      * Constructor for the CreateUserRequest class.
@@ -22,11 +22,13 @@ public class AddTaskToManagerRequest {
      * @param name The name of the user
      * @param description The description of the task
      */
-    private AddTaskToManagerRequest(String taskManagerId, String name, String description, String dueDate) {
+    private AddTaskToManagerRequest(String taskManagerId, String name,
+                                    String description, String dueDate, String creatorId) {
         this.taskManagerId = taskManagerId;
         this.name = name;
         this.description = description;
         this.dueDate = dueDate;
+        this.creatorId = creatorId;
     }
 
     public String getTaskManagerId() {
@@ -40,6 +42,9 @@ public class AddTaskToManagerRequest {
     }
     public String getDueDate() {
         return dueDate;
+    }
+    public String getCreatorId() {
+        return creatorId;
     }
 
     @Override
@@ -59,6 +64,7 @@ public class AddTaskToManagerRequest {
         private String name;
         private String description;
         private String dueDate;
+        private String creatorId;
 
         public Builder withTaskManagerId(String taskManagerId) {
             this.taskManagerId = taskManagerId;
@@ -80,6 +86,11 @@ public class AddTaskToManagerRequest {
             return this;
         }
 
-        public AddTaskToManagerRequest build() { return new AddTaskToManagerRequest(taskManagerId, name, description, dueDate); }
+        public Builder withCreatorId(String creatorId) {
+            this.creatorId = creatorId;
+            return this;
+        }
+
+        public AddTaskToManagerRequest build() { return new AddTaskToManagerRequest(taskManagerId, name, description, dueDate, creatorId); }
     }
 }

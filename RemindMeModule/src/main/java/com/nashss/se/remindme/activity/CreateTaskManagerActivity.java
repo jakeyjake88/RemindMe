@@ -6,6 +6,8 @@ import com.nashss.se.remindme.dynamodb.TaskManagerDao;
 import com.nashss.se.remindme.dynamodb.models.TaskManager;
 
 import javax.inject.Inject;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 
 /**
  * Class for CreateTaskManagerActivity for the RemindMeClient.
@@ -38,7 +40,8 @@ public class CreateTaskManagerActivity {
     public CreateTaskManagerResult handleRequest(final CreateTaskManagerRequest request) {
         TaskManager taskManager = new TaskManager();
         taskManager.setTaskManagerId(taskManagerDao.generateNewId());
-        taskManager.setTaskManagerName(request.getTaskManagerName());
+        String name = URLDecoder.decode(request.getTaskManagerName());
+        taskManager.setTaskManagerName(name);
         taskManager.setCreatorId(request.getCreatorId());
 
         taskManagerDao.createTaskManager(taskManager);

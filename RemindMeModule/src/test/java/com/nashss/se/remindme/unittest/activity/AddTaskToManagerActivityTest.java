@@ -5,6 +5,7 @@ import com.nashss.se.remindme.activity.requests.AddTaskToManagerRequest;
 import com.nashss.se.remindme.activity.results.AddTaskToManagerResult;
 import com.nashss.se.remindme.converters.ModelConverter;
 import com.nashss.se.remindme.dynamodb.TaskDao;
+import com.nashss.se.remindme.dynamodb.TaskManagerDao;
 import com.nashss.se.remindme.dynamodb.models.Task;
 import com.nashss.se.remindme.models.TaskModel;
 
@@ -30,10 +31,13 @@ public class AddTaskToManagerActivityTest {
     @Mock
     private TaskDao taskDao;
 
+    @Mock
+    private TaskManagerDao tmDao;
+
     @BeforeEach
     public void setUp() {
         openMocks(this);
-        t = new AddTaskToManagerActivity(taskDao);
+        t = new AddTaskToManagerActivity(taskDao, tmDao);
     }
 
 }

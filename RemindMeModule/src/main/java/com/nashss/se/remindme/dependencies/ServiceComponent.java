@@ -9,6 +9,7 @@ import com.nashss.se.remindme.activity.GetUserActivity;
 import com.nashss.se.remindme.activity.AddTaskToManagerActivity;
 import com.nashss.se.remindme.activity.MarkIsCompleteActivity;
 import com.nashss.se.remindme.activity.DeleteTaskActivity;
+import com.nashss.se.remindme.activity.GetAllTasksForCreatorActivity;
 
 import dagger.Component;
 
@@ -74,4 +75,10 @@ public interface ServiceComponent {
      * @return DeleteTaskActivity
      */
     DeleteTaskActivity provideDeleteTaskActivity();
+
+    /**
+     * Provides the relevant activity.
+     * @return GetAllTasksForCreatorActivity
+     */
+    GetAllTasksForCreatorActivity provideGetAllTasksForCreatorActivity();
 }

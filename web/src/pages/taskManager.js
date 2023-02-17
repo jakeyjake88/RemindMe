@@ -21,9 +21,7 @@ class TaskManager extends BindingClass {
         const submitDateButton = document.getElementById('submitDateButton');
         submitDateButton.addEventListener('click', async (event) => {
             event.preventDefault();
-            console.log("DateBoxValue", document.getElementById('date-box').value);
             const selectedDate = new Date(document.getElementById('date-box').value + "T00:00");
-            console.log("SelectedDate", selectedDate);
             const allTasks = await this.client.getAllTasksForCreator();
             const tasksForSelectedDate = allTasks.filter(task => {
               const dateString = `${task.dueDate}`;
@@ -37,7 +35,6 @@ class TaskManager extends BindingClass {
                 dateObjFormatted === selectedDateFormatted
               );
             });
-            console.log(tasksForSelectedDate);
             this.displayTasksForSelectedDate(tasksForSelectedDate);
           });
 

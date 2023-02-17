@@ -203,6 +203,20 @@ Resources:
                   - logs:PutLogEvents
                   - cloudwatch:PutMetricData
                 Resource: '*'
+        - PolicyName: 'AccessTaskManagerSearchById'
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: dynamodb:*
+                Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/taskManager/index/TaskManagerSearchById"
+        - PolicyName: 'AccessTaskSearch'
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: dynamodb:*
+                Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/tasks/index/TaskManagerSearch"
         - PolicyName: 'AccessTaskManagersTable'
           PolicyDocument:
             Version: '2012-10-17'

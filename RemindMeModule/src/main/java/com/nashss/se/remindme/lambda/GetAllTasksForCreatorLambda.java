@@ -12,14 +12,15 @@ public class GetAllTasksForCreatorLambda extends LambdaActivityRunner<GetAllTask
         GetAllTasksForCreatorResult> implements RequestHandler<AuthenticatedLambdaRequest<GetAllTasksForCreatorRequest>,
         LambdaResponse> {
     @Override
-    public LambdaResponse handleRequest(AuthenticatedLambdaRequest<GetAllTasksForCreatorRequest> input, Context context) {
+    public LambdaResponse handleRequest(AuthenticatedLambdaRequest<GetAllTasksForCreatorRequest> input,
+                                        Context context) {
         return super.runActivity(
-                () -> input.fromUserClaims(claims ->
+            () -> input.fromUserClaims(claims ->
                         GetAllTasksForCreatorRequest.builder()
                                 .withCreatorId(claims.get("email"))
-                                .build()),
-                (request, serviceComponent)
-                        -> serviceComponent.provideGetAllTasksForCreatorActivity().handleRequest(request)
+                    .build()),
+            (request, serviceComponent)
+                -> serviceComponent.provideGetAllTasksForCreatorActivity().handleRequest(request)
         );
     }
 }

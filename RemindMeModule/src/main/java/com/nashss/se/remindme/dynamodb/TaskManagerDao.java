@@ -2,11 +2,14 @@ package com.nashss.se.remindme.dynamodb;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
+import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.nashss.se.remindme.dynamodb.models.TaskManager;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import javax.inject.Inject;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Class for the TaskManagerDao.
@@ -41,6 +44,28 @@ public class TaskManagerDao {
             throw new IllegalArgumentException("TaskManager is null");
         }
         return tm;
+    }
+
+    public TaskManager getTaskManagerById(String taskManagerId) {
+        if (taskManagerId == null) {
+            throw new IllegalArgumentException("Couldn't find taskManager");
+        }
+
+        DynamoDBQueryExpression<TaskManager> queryExpression = new DynamoDBQueryExpression<TaskManager>()
+                .withIndexName("TaskManagerSearchById")
+                .withConsistentRead(false)
+                .withKeyConditionExpression("taskManagerId = :taskManagerId")
+                .withExpressionAttributeValues(Map.of(
+                        ":taskManagerId", new AttributeValue().withS(taskManagerId)
+                ));
+
+        PaginatedQueryList<TaskManager> result = dynamoDBMapper.query(TaskManager.class, queryExpression);
+
+        if (result.isEmpty()) {
+            throw new IllegalArgumentException("TaskManager is null");
+        }
+
+        return result.get(0);
     }
 
     /**

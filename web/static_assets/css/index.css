@@ -1,38 +1,64 @@
+/* Global styles */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: darkgray;
 }
 
-header {
-  background-color: #53a9f0;
+/* Header styles */
+#header {
+  background-color: #2d2d2d;
+  color: #fff;
   padding: 20px;
   text-align: center;
-  color: white;
-  text-emphasis-color: red;
 }
 
-header h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+#header h1 {
+  font-size: 3em;
+  margin: 0;
 }
 
-main {
-  padding: 50px 0;
-  background-color: darkgray;
+#header p {
+  font-size: 1.5em;
+  margin: 0;
 }
 
-.info-box {
-  background-color: darkgray;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  padding: 30px;
-  text-align: center;
+/* Main styles */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h2 {
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
-footer {
-  background-color: darkgray;
-  padding: 20px;
+p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+/* Info box styles */
+.info-box {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
   text-align: center;
-  color: white;
-  background: url(https://i.imgur.com/wCG2csZ.png);
+  transition: box-shadow 0.3s;
+}
+
+.info-box:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.info-box h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.info-box p {
+  font-size: 1.2em;
+  line-height: 1.5;
 }

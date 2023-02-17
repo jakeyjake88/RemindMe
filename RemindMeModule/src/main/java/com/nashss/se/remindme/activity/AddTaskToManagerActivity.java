@@ -27,6 +27,7 @@ public class AddTaskToManagerActivity {
      * Constructor for the AddTaskToManagerActivity class.
      *
      * @param taskDao A data access object that performs operations on tasks
+     * @param tmDao - the task manager dao
      */
     @Inject
     public AddTaskToManagerActivity(TaskDao taskDao, TaskManagerDao tmDao) {
@@ -51,8 +52,7 @@ public class AddTaskToManagerActivity {
         TaskManager tm = tmDao.getTaskManagerById(request.getTaskManagerId());
         if (tm == null) {
             throw new IllegalArgumentException("TaskManager is null");
-        }
-        else if (!Objects.equals(tm.getCreatorId(), task.getCreatorId())) {
+        } else if (!Objects.equals(tm.getCreatorId(), task.getCreatorId())) {
             throw new IllegalArgumentException("The creatorIds don't match!");
         }
 

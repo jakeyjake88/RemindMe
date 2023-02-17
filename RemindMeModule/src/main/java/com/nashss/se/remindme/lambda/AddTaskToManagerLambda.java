@@ -18,9 +18,8 @@ public class AddTaskToManagerLambda extends LambdaActivityRunner<AddTaskToManage
                 .withCreatorId(claims.get("email"))
                 .withDescription(request.getDescription())
                 .withDueDate(request.getDueDate())
-                .withName(request.getName())
-                        .withTaskManagerId(request.getTaskManagerId())
+                .withName(request.getName()).withTaskManagerId(request.getTaskManagerId())
                 .build()),
-                (req, serviceComponent) -> serviceComponent.provideAddTaskToManagerActivity().handleRequest(req));
+            (req, serviceComponent) -> serviceComponent.provideAddTaskToManagerActivity().handleRequest(req));
     }
 }

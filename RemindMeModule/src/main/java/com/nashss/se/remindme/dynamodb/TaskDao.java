@@ -71,6 +71,13 @@ public class TaskDao {
         return dynamoDBMapper.scan(Task.class, scanExpression);
     }
 
+    /**
+     * Retrieves all tasks for a task manager from the database.
+     *
+     * @param creatorId The ID of the task manager to retrieve tasks for.
+     * @return A list of all tasks for the specified task manager.
+     * @throws TaskNotFoundException If the task manager ID is `null` or if no tasks are found.
+     */
     public List<Task> getAllTasksForCreator(String creatorId) {
         if (creatorId == null) {
             throw new TaskNotFoundException("No task found!!");

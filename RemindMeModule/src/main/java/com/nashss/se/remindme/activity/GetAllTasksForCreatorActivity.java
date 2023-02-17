@@ -1,9 +1,7 @@
 package com.nashss.se.remindme.activity;
 
 import com.nashss.se.remindme.activity.requests.GetAllTasksForCreatorRequest;
-import com.nashss.se.remindme.activity.requests.GetAllTasksRequest;
 import com.nashss.se.remindme.activity.results.GetAllTasksForCreatorResult;
-import com.nashss.se.remindme.activity.results.GetAllTasksResult;
 import com.nashss.se.remindme.converters.ModelConverter;
 import com.nashss.se.remindme.dynamodb.TaskDao;
 import com.nashss.se.remindme.dynamodb.models.Task;

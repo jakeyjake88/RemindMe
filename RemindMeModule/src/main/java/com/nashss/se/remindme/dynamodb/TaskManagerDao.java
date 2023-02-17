@@ -46,6 +46,14 @@ public class TaskManagerDao {
         return tm;
     }
 
+    /**
+     * Retrieves a TaskManager from the database using the creator ID and task manager name.
+     *
+     * @param taskManagerId the ID of the taskManager.
+     * @return The TaskManager with the specified creator ID and task manager name.
+     * @throws IllegalArgumentException If the creator ID or task manager name is `null`
+     * or if the task manager cannot be found.
+     */
     public TaskManager getTaskManagerById(String taskManagerId) {
         if (taskManagerId == null) {
             throw new IllegalArgumentException("Couldn't find taskManager");

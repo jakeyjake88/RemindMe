@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f7439c2-0b71-4768-8e06-aacc4c553105" name="Changes" comment="" />
+    <list default="true" id="0f7439c2-0b71-4768-8e06-aacc4c553105" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/sns/SnsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/build.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,29 +82,19 @@
       <recent name="com.nashss.se.remindme" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MarkAsCompleteActivityTest.testHandleRequest">
-    <configuration name="DateTimeLocalConverterTest.testConvertDatetimeLocalToJava" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":RemindMeModule:test" />
-            <option value="--tests" />
-            <option value="&quot;com.nashss.se.remindme.unittest.converters.DateTimeLocalConverterTest.testConvertDatetimeLocalToJava&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+  <component name="RunManager" selected="Application.SnsDao">
+    <configuration name="SnsDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nashss.se.remindme.sns.SnsDao" />
+      <module name="RemindMe.RemindMeModule.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nashss.se.remindme.sns.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="LocalDateTimeConverterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -206,7 +200,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.DateTimeLocalConverterTest.testConvertDatetimeLocalToJava" />
+      <item itemvalue="Application.SnsDao" />
       <item itemvalue="Gradle.LocalDateTimeConverterTest" />
       <item itemvalue="Gradle.MarkAsCompleteActivityTest.testHandleRequest" />
       <item itemvalue="Gradle.ModelConverterTest" />
@@ -215,11 +209,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SnsDao" />
         <item itemvalue="Gradle.MarkAsCompleteActivityTest.testHandleRequest" />
         <item itemvalue="Gradle.Tests in 'RemindMe.RemindMeModule.test'" />
         <item itemvalue="Gradle.ModelConverterTest" />
         <item itemvalue="Gradle.LocalDateTimeConverterTest" />
-        <item itemvalue="Gradle.DateTimeLocalConverterTest.testConvertDatetimeLocalToJava" />
       </list>
     </recent_temporary>
   </component>

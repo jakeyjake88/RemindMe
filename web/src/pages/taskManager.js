@@ -128,7 +128,7 @@ class TaskManager extends BindingClass {
     
         const incompleteTasks = allT.filter(task => task.isActive === true);
         const completedTasks = allT.filter(task => task.isActive === false);
-    
+
         const sortByDueDate = (a, b) => new Date(a.dueDate) - new Date(b.dueDate);
         incompleteTasks.sort(sortByDueDate);
         completedTasks.sort(sortByDueDate);

@@ -39,21 +39,6 @@ public class GetAllTasksForCreatorActivity {
      * @param request The request containing the creatorId.
      * @return A result object containing a list of task models.
      */
-    /*public GetAllTasksForCreatorResult handleRequest(final GetAllTasksForCreatorRequest request) {
-        String creatorId = request.getCreatorId();
-        List<TaskModel> taskModel = new ArrayList<>();
-        if (taskDao.getAllTasksForCreator(creatorId) != null) {
-            for (Task t : taskDao.getAllTasksForCreator(creatorId)) {
-                TaskModel taskM = new ModelConverter().toTaskModel(t);
-                taskModel.add(taskM);
-            }
-        }
-
-        return GetAllTasksForCreatorResult.builder()
-                .withTasks(taskModel)
-                .build();
-    } */
-
     public GetAllTasksForCreatorResult handleRequest(final GetAllTasksForCreatorRequest request) {
         String creatorId = request.getCreatorId();
         List<TaskModel> taskModel = new ArrayList<>();

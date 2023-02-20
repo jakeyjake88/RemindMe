@@ -9,6 +9,8 @@ import com.nashss.se.remindme.models.TaskModel;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -44,6 +46,13 @@ public class GetAllTasksActivity {
                 taskModel.add(taskM);
             }
         }
+
+        Collections.sort(taskModel, new Comparator<TaskModel>() {
+            @Override
+            public int compare(TaskModel t1, TaskModel t2) {
+                return t1.getDueDate().compareTo(t2.getDueDate());
+            }
+        });
 
         return GetAllTasksResult.builder()
                 .withTasks(taskModel)

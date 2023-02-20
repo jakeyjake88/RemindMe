@@ -67,16 +67,7 @@ public class GetAllTasksForCreatorActivity {
         Collections.sort(taskModel, new Comparator<TaskModel>() {
             @Override
             public int compare(TaskModel t1, TaskModel t2) {
-                LocalDate date1 = t1.getDueDate().toLocalDate();
-                LocalDate date2 = t2.getDueDate().toLocalDate();
-                int dateComparison = date1.compareTo(date2);
-                if (dateComparison != 0) {
-                    return dateComparison;
-                } else {
-                    LocalTime time1 = t1.getDueDate().toLocalTime();
-                    LocalTime time2 = t2.getDueDate().toLocalTime();
-                    return time1.compareTo(time2);
-                }
+                return t1.getDueDate().compareTo(t2.getDueDate());
             }
         });
         return GetAllTasksForCreatorResult.builder()

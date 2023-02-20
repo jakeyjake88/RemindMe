@@ -50,7 +50,7 @@ class TaskManager extends BindingClass {
       
         tasks.forEach(task => {
           const taskItem = document.createElement("li");
-          taskItem.textContent = task.description;
+          taskItem.textContent = task.name + " " + task.description;
           taskList.appendChild(taskItem);
         });
       
@@ -68,6 +68,8 @@ class TaskManager extends BindingClass {
                     await this.displayTasks(event);
                 });
             }
+
+             //Refresh on-click events
             const addTaskButtons = document.querySelectorAll(".addTaskButton");
             for (let addTaskButton of addTaskButtons) {
                 addTaskButton.removeEventListener('click', this.handleAddTaskButtonClick);
@@ -110,6 +112,7 @@ class TaskManager extends BindingClass {
                 dateParts[4]
               );
             const formattedDate = `${dateObj.toLocaleTimeString("en-US", {hour12: true, hour: "numeric", minute: "numeric"})}, ${dateObj.toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"})}`;
+            
             temp += `<li class="anger"> ${checkmark} ${element.name}
             <p>Description: ${element.description}</p>
             <p>Due Date: ${formattedDate}</p>
@@ -138,7 +141,8 @@ class TaskManager extends BindingClass {
         const taskHTML = this.generateTaskHTML(tasks);
         p += taskHTML;
         document.getElementById('allTasks').innerHTML = p;
-    
+
+        //Refresh on-click events
         const newMarkIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
         for (let newMarkIsCompleteButton of newMarkIsCompleteButtons) {
             newMarkIsCompleteButton.addEventListener('click', this.handleMarkCompleteButtonClick);
@@ -165,6 +169,7 @@ class TaskManager extends BindingClass {
         p += taskHTML;
         document.getElementById('allTasks').innerHTML = p;
         
+        //Refresh on-click events
         const newMarkIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
         const newDeleteTaskButtons = document.querySelectorAll(".deleteTaskButton");
 
@@ -180,13 +185,19 @@ class TaskManager extends BindingClass {
     async handleDeleteTaskButtonClick(event) {
         const taskManagerId = event.target.id.split("_")[2];
         const taskId = event.target.id.split("_")[1];
+
         await this.client.deleteTask(taskId, taskManagerId);
+
         document.getElementById('allTasks').innerHTML = "";
         let p = "";
+
         const allT = await this.client.getAllTasks(taskManagerId);
+
         const taskHTML = this.generateTaskHTML(allT);
         p += taskHTML;
         document.getElementById('allTasks').innerHTML = p;
+        
+        //Refresh on-click events
         const newDeleteTaskButtons = document.querySelectorAll(".deleteTaskButton");
         const newMarkIsCompleteButtons = document.querySelectorAll(".markCompleteButton");
             for (let newMarkIsCompleteButton of newMarkIsCompleteButtons) {
@@ -227,20 +238,24 @@ class TaskManager extends BindingClass {
         taskNameInput.addEventListener('input', checkInputs);
         taskDescriptionInput.addEventListener('input', checkInputs);
         taskDateTimeInput.addEventListener('input', checkInputs);
-    
+
         submitTaskButton.addEventListener('click', async (event) => {
             event.preventDefault();
             const taskName = document.getElementById('taskName').value;
             const taskDescription = document.getElementById('taskDescription').value;
             const taskDueDate = document.getElementById('taskDateTime').value;
+
             console.log(taskDueDate);
             await this.client.addTaskToManager(taskName, taskDescription, taskManagerId, taskDueDate);
+            
             document.getElementById('allTasks').innerHTML = "";
             let p = "";
             const allT = await this.client.getAllTasks(taskManagerId);
             const taskHTML = this.generateTaskHTML(allT);
             p += taskHTML;
             document.getElementById('allTasks').innerHTML = p;
+            
+            //Refresh on-click events
             const newDeleteTaskButtons = document.querySelectorAll(".deleteTaskButton");
             for (let newDeleteTaskButton of newDeleteTaskButtons) {
                 newDeleteTaskButton.addEventListener('click', this.handleDeleteTaskButtonClick);

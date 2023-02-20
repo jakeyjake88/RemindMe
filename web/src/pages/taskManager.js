@@ -33,7 +33,7 @@ class TaskManager extends BindingClass {
               console.log(selectedDateFormatted);
               return (
                 dateObjFormatted === selectedDateFormatted
-              );
+              ); 
             });
             this.displayTasksForSelectedDate(tasksForSelectedDate);
           });
@@ -131,13 +131,8 @@ class TaskManager extends BindingClass {
     
         const incompleteTasks = allT.filter(task => task.isActive === true);
         const completedTasks = allT.filter(task => task.isActive === false);
-
-        const sortByDueDate = (a, b) => new Date(a.dueDate) - new Date(b.dueDate);
-        incompleteTasks.sort(sortByDueDate);
-        completedTasks.sort(sortByDueDate);
     
         const tasks = incompleteTasks.concat(completedTasks);
-        tasks.sort(sortByDueDate);
         const taskHTML = this.generateTaskHTML(tasks);
         p += taskHTML;
         document.getElementById('allTasks').innerHTML = p;

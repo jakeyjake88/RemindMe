@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f7439c2-0b71-4768-8e06-aacc4c553105" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/sns/SnsDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemindMeModule/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/GetAllTasksForCreatorActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemindMeModule/src/main/java/com/nashss/se/remindme/activity/GetAllTasksForCreatorActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/taskManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/taskManager.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

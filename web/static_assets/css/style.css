@@ -72,7 +72,7 @@ button {
   color: #212121;
   z-index: 1;
   background: #e8e8e8;
-  position: relative;
+  position:relative;
   font-weight: 1000;
   font-size: 14px; 
   -webkit-box-shadow: 3px 6px 14px -2px rgba(0,0,0,0.27); 
@@ -80,6 +80,7 @@ button {
   transition: all 250ms;
   overflow: hidden;
   cursor:pointer;
+  margin-left:auto;
 }
 
 button::before {
@@ -123,4 +124,20 @@ input[type="text"] {
 #side-bar button {
   display:inline-block;
   margin:40px;
+}
+
+#task-box {
+  display: flexbox;
+
+}
+#addTaskButton {
+  margin-left:auto;
+}
+
+.task {
+  display:flex;
+}
+
+.addTaskButton {
+  align-self: flex-end;
 }

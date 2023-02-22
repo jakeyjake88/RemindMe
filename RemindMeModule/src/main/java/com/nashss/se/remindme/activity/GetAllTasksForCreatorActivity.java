@@ -8,7 +8,11 @@ import com.nashss.se.remindme.dynamodb.models.Task;
 import com.nashss.se.remindme.models.TaskModel;
 
 import javax.inject.Inject;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -45,6 +49,12 @@ public class GetAllTasksForCreatorActivity {
             }
         }
 
+        Collections.sort(taskModel, new Comparator<TaskModel>() {
+            @Override
+            public int compare(TaskModel t1, TaskModel t2) {
+                return t1.getDueDate().compareTo(t2.getDueDate());
+            }
+        });
         return GetAllTasksForCreatorResult.builder()
                 .withTasks(taskModel)
                 .build();

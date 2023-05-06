@@ -11,7 +11,7 @@ Every day life is busy. It's easy to lose track of what you need to accomplish t
 
 **Client:** Java, JavaScript, CSS
 
-**AWS:** Lambda, DynamoDB, CloudWatch, CloudFront, API Gateway, Cognito
+**AWS:** Lambda, DynamoDB, CloudWatch, CloudFront, API Gateway, Cognito.
 
 <h1><a href="DesignDocument.md">Design Document</a><h1>
 

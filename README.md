@@ -9,7 +9,7 @@ Every day life is busy. It's easy to lose track of what you need to accomplish t
 
 ## Tech Stack
 
-**Client:** Java, JavaScript, CSS
+**Client:** Java, JavaScript, CSS.
 
 **AWS:** Lambda, DynamoDB, CloudWatch, CloudFront, API Gateway, Cognito.
 
